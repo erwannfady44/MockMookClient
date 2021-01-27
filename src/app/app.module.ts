@@ -17,32 +17,32 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RequestOptions} from '@angular/http';
 
 const appRoutes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'sign-up', component: SingupComponent},
-  {path: '', component: HomeComponent},
-  {path: '**', component: NotFoundComponent}
+    {path: 'login', component: LoginComponent},
+    {path: 'sign-up', component: SingupComponent},
+    {path: '', component: HomeComponent},
+    {path: '**', component: NotFoundComponent}
 
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NavbarComponent,
-    LoginComponent,
-    SingupComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-right'
-    }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        NavbarComponent,
+        LoginComponent,
+        SingupComponent,
+        NotFoundComponent
+    ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-top-right'
+        }),
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

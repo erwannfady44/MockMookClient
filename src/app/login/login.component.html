@@ -1,28 +1,28 @@
 <div class="card">
-  <article class="card-body ">
-    <h4 class="card-title text-center mb-4 mt-1">Connexion</h4>
-    <hr>
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-          </div>
-          <input class="form-control" placeholder="Pseudo" type="text" name="pseudo" ngModel required>
-        </div> <!-- input-group.// -->
-      </div> <!-- form-group// -->
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-          </div>
-          <input class="form-control" placeholder="******" type="password" name="password" ngModel required>
-        </div> <!-- input-group.// -->
-      </div> <!-- form-group// -->
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid"> Login  </button>
-      </div> <!-- form-group// -->
-      <p class="text-center"><a class="btn" (click)="onSignUp()" >Pas encore inscrit ?</a></p>
-    </form>
-  </article>
+    <article class="card-body ">
+        <h4 class="card-title text-center mb-4 mt-1">Connexion</h4>
+        <hr>
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Pseudo" type="text" name="pseudo" ngModel required>
+                </div> <!-- input-group.// -->
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="******" type="password" name="password" ngModel required>
+                </div> <!-- input-group.// -->
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid"> Login</button>
+            </div> <!-- form-group// -->
+            <p class="text-center"><a class="btn" (click)="onSignUp()">Pas encore inscrit ?</a></p>
+        </form>
+    </article>
 </div>

@@ -15,6 +15,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RequestOptions} from '@angular/http';
+import { RoutingComponent } from './routing/routing.component';
 
 const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
         NavbarComponent,
         LoginComponent,
         SingupComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        RoutingComponent
     ],
     imports: [
         BrowserModule,

@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthService {
-  private URL = 'http://localhost:3000/api/user/';
+  private URL = 'http://localhost:3000/api/user';
   private token: string;
 
   constructor(private http: HttpClient,

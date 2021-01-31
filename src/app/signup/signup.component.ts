@@ -5,12 +5,11 @@ import {NgForm} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class SignupComponent implements OnInit {
   constructor(private router: Router,
               private toastr: ToastrService,
               private auth: AuthService) {
@@ -20,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
-    this.auth.login(form.value.pseudo, form.value.password)
+    this.auth.signUp(form.value.pseudo, form.value.password)
       .subscribe(
         res => {
           this.auth._user._id = res.idUser;
@@ -28,8 +27,8 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('token', res.token);
           sessionStorage.setItem('idUser', res.idUser);
           sessionStorage.setItem('pseudo', form.value.pseudo);
+          this.toastr.success('Bienvenue ' + form.value.pseudo + ' !', 'Inscription réussi');
           this.router.navigate(['']);
-          this.toastr.success('Bienvenue ' + form.value.pseudo + ' !', 'Connexion réussi');
 
         }, error => {
           this.toastr.error(error.error.error, 'Erreur');
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  onSignUp(): void {
-    this.router.navigate(['sign-up']);
+  onLogin(): void {
+    this.router.navigate(['login']);
   }
 }

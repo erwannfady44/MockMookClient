@@ -1,6 +1,6 @@
 <div class="card">
   <article class="card-body ">
-    <h4 class="card-title text-center mb-4 mt-1">Connexion</h4>
+    <h4 class="card-title text-center mb-4 mt-1">Inscription</h4>
     <hr>
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
       <div class="form-group">
@@ -22,7 +22,7 @@
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid"> Login</button>
       </div> <!-- form-group// -->
-      <p class="text-center"><a class="btn" (click)="onSignUp()">Pas encore inscrit ?</a></p>
+      <p class="text-center"><a class="btn" (click)="onLogin()">Déjà inscrit ?</a></p>
     </form>
   </article>
 </div>

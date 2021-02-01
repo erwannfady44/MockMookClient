@@ -15,11 +15,25 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {AuthService} from './services/auth.service';
 import {UserModel} from './model/User.model';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CreateClassesComponent } from './create-classes/create-classes.component';
+import { CreateRessourceComponent } from './create-ressource/create-ressource.component';
+import { ViewRessourceComponent } from './view-ressource/view-ressource.component';
+import { CreatePathComponent } from './create-path/create-path.component';
+import { ViewPathComponent } from './view-path/view-path.component';
+import {PathService} from './services/path.service';
+import {PathModel} from './model/Path.model';
+import {ClassesService} from './services/classes.service';
+import {ClassesModel} from './model/Classes.model';
+import {RessourceService} from './services/ressource.service';
+import {RessourceModel} from './model/Ressource.model';
 
 
 const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'signup', component: SignupComponent},
+    {path: 'create-path', component: CreatePathComponent},
+    {path: 'create-classes', component: CreateClassesComponent},
+    {path: 'create-ressource', component: CreateRessourceComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
 
@@ -34,7 +48,12 @@ const appRoutes: Routes = [
         SignupComponent,
         HomeComponent,
         NotFoundComponent,
-        NavbarComponent
+        NavbarComponent,
+        CreateClassesComponent,
+        CreateRessourceComponent,
+        ViewRessourceComponent,
+        CreatePathComponent,
+        ViewPathComponent
     ],
     imports: [
         BrowserModule,
@@ -49,6 +68,12 @@ const appRoutes: Routes = [
     providers: [
         AuthService,
         UserModel,
+        PathService,
+        PathModel,
+        ClassesService,
+        ClassesModel,
+        RessourceService,
+        RessourceModel
     ],
     bootstrap: [AppComponent]
 })

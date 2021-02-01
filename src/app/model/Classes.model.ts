@@ -1,11 +1,19 @@
 import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
-
-export class PathModel {
+export class ClassesModel {
+    private idPath: string;
     private idCreator: string;
     private title: string;
     private description: string;
+
+    get _idPath(): string {
+        return this.idPath;
+    }
+
+    set _idPath(value: string) {
+        this.idPath = value;
+    }
 
     get _idCreator(): string {
         return this.idCreator;

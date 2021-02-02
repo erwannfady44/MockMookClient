@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PathModel} from '../model/Path.model';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PathService {
     private URL = 'http://localhost:3000/api/path';
+    private allPath = [];
+    pathSubject = new Subject<PathModel[]>();
 
     constructor(private http: HttpClient,
                 private path: PathModel) {
@@ -27,5 +29,21 @@ export class PathService {
         return this.http.put<any>(`${this.URL}/`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
+    }
+
+    getAllPath(): void {
+        this.http.get<any>(`${this.URL}/`).subscribe(
+            res => {
+                this.allPath = res.paths;
+                this.emitPathSubject();
+            }, error => {
+                console.log(error.message);
+            }
+        );
+    }
+
+    emitPathSubject(): void {
+        this.getAllPath();
+        this.pathSubject.next(this.allPath.slice());
     }
 }

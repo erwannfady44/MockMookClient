@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
 
   onDisconnect(): void {
     sessionStorage.clear();
+    this.router.navigate(['']);
   }
 
   getPseudo(): string {

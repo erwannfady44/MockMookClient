@@ -26,6 +26,7 @@ import {ClassesService} from './services/classes.service';
 import {ClassesModel} from './model/Classes.model';
 import {RessourceService} from './services/ressource.service';
 import {RessourceModel} from './model/Ressource.model';
+import { PathComponent } from './path/path.component';
 
 
 const appRoutes: Routes = [
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
         CreateRessourceComponent,
         ViewRessourceComponent,
         CreatePathComponent,
-        ViewPathComponent
+        ViewPathComponent,
+        PathComponent
     ],
     imports: [
         BrowserModule,

@@ -23,7 +23,6 @@ export class ViewPathComponent implements OnInit {
         this.pathSubscription = this.pathService.pathSubject.subscribe(
             (paths: PathModel[]) => {
                 this.allPath = paths;
-                console.log(this.allPath);
             }
         );
         this.pathService.emitPathSubject();

@@ -3,16 +3,36 @@ import {Injectable} from '@angular/core';
 @Injectable({providedIn: 'root'})
 
 export class PathModel {
-    private idCreator: string;
     private title: string;
     private description: string;
+    private pseudoCreator: string;
+    private idPath: string;
+    private date: Date;
 
-    get _idCreator(): string {
-        return this.idCreator;
+
+    constructor(title: string, description: string, pseudoCreator: string, idPath: string, date: Date) {
+        this.title = title;
+        this.description = description;
+        this.pseudoCreator = pseudoCreator;
+        this.idPath = idPath;
+        this.date = date;
     }
 
-    set _idCreator(value: string) {
-        this.idCreator = value;
+
+    get _date(): Date {
+        return this.date;
+    }
+
+    set _date(value: Date) {
+        this.date = value;
+    }
+
+    get _idPath(): string {
+        return this.idPath;
+    }
+
+    set _idPath(value: string) {
+        this.idPath = value;
     }
 
     get _title(): string {
@@ -29,5 +49,9 @@ export class PathModel {
 
     set _description(value: string) {
         this.description = value;
+    }
+
+    toString(): string {
+        return this._title + ' : ' + this._description;
     }
 }

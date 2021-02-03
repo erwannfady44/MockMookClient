@@ -1,17 +1,19 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {PathModel} from '../model/Path.model';
 
 @Component({
-  selector: 'app-path',
-  templateUrl: './path.component.html',
-  styleUrls: ['./path.component.css']
+    selector: 'app-path',
+    templateUrl: './path.component.html',
+    styleUrls: ['./path.component.css']
 })
 export class PathComponent implements OnInit {
-    @Input() title: string;
-    @Input() description: string;
+    @Input() path: PathModel;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        console.log(typeof this.path);
+    }
 
 }

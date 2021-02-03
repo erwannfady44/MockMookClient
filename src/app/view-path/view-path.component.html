@@ -1,7 +1,6 @@
 <h2>Les parcours : </h2><br>
 <ul class="list-group">
     <app-path *ngFor="let path of this.allPath"
-              [title]="path._description"
-              [description]="'test'"
-              ></app-path>
+              [path]="path"
+    ></app-path>
 </ul>

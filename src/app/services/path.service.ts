@@ -8,23 +8,19 @@ import {Observable, Subject} from 'rxjs';
 })
 export class PathService {
     private URL = 'http://localhost:3000/api/path';
-    private allPath = [];
+    private allPath = Array<PathModel>();
     pathSubject = new Subject<PathModel[]>();
 
-    constructor(private http: HttpClient,
-                private path: PathModel) {
-        this.path = new PathModel();
+    constructor(private http: HttpClient) {
     }
 
     createPath(title: string, description: string): Observable<any> {
-        this.path._title = title;
-        this.path._description = description;
-        this.path._idCreator = sessionStorage.getItem('idUser');
+        const path = new PathModel(title, description, sessionStorage.getItem('pseudo'), '', new Date());
 
         const params = {
             idUser: sessionStorage.getItem('idUser'),
-            title: this.path._title,
-            description: this.path._description
+            title: path._title,
+            description: path._description
         };
         return this.http.put<any>(`${this.URL}/`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
@@ -34,7 +30,19 @@ export class PathService {
     getAllPath(): void {
         this.http.get<any>(`${this.URL}/`).subscribe(
             res => {
-                this.allPath = res.paths;
+                this.allPath = [];
+                res.json.forEach(path => {
+                    this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, new Date()));
+                });
+                this.allPath.sort((a, b) => {
+                    if (a._date < b._date) {
+                        return 1;
+                    } else if (a._date === b._date) {
+                        return 0;
+                    } else {
+                        return -1;
+                    }
+                });
                 this.emitPathSubject();
             }, error => {
                 console.log(error.message);
@@ -43,7 +51,6 @@ export class PathService {
     }
 
     emitPathSubject(): void {
-        this.getAllPath();
         this.pathSubject.next(this.allPath.slice());
     }
 }

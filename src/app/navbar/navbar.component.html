@@ -1,19 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="navbar-nav mr-auto">
-      <a class="navbar-brand" href="#">Mock Mook</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-              (click)="onHome()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="#">Mock Mook</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    (click)="onHome()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="form-inline my-2 my-lg-0">
+            <button type="button" class="btn btn-primary" *ngIf="!isConnect()" (click)="onLogin()">Se connecter</button>
+            <button type="button" class="btn btn-secondary" *ngIf="!isConnect()" (click)="onSignUp()">S'inscrire
+            </button>
+            <h5 [textContent]="getPseudo()" *ngIf="isConnect()"></h5>
+            <button type="button" class="btn btn-primary" *ngIf="isConnect()" (click)="onDisconnect()">Déconnexion
+            </button>
+        </div>
     </div>
-    <form class="form-inline my-2 my-lg-0">
-      <button type="button" class="btn btn-primary" *ngIf="!isConnect()" (click)="onLogin()">Se connecter</button>
-      <button type="button" class="btn btn-secondary" *ngIf="!isConnect()" (click)="onSignUp()">S'inscrire</button>
-      <h5 [textContent]="getPseudo()"></h5>
-      <button type="button" class="btn btn-primary" *ngIf="isConnect()" (click)="onDisconnect()">Déconnexion</button>
-    </form>
-  </div>
 </nav>
 

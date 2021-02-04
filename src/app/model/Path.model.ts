@@ -51,7 +51,12 @@ export class PathModel {
         this.description = value;
     }
 
-    toString(): string {
-        return this._title + ' : ' + this._description;
+
+    get _pseudoCreator(): string {
+        return this.pseudoCreator;
+    }
+
+    set _pseudoCreator(value: string) {
+        this.pseudoCreator = value;
     }
 }

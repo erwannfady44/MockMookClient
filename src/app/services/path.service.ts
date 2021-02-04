@@ -15,7 +15,7 @@ export class PathService {
     }
 
     createPath(title: string, description: string): Observable<any> {
-        const path = new PathModel(title, description, sessionStorage.getItem('pseudo'), '', new Date());
+        const path = new PathModel(title, description, sessionStorage.getItem('pseudo'), '', null);
 
         const params = {
             idUser: sessionStorage.getItem('idUser'),
@@ -32,16 +32,7 @@ export class PathService {
             res => {
                 this.allPath = [];
                 res.json.forEach(path => {
-                    this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, new Date()));
-                });
-                this.allPath.sort((a, b) => {
-                    if (a._date < b._date) {
-                        return 1;
-                    } else if (a._date === b._date) {
-                        return 0;
-                    } else {
-                        return -1;
-                    }
+                    this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, null));
                 });
                 this.emitPathSubject();
             }, error => {

@@ -13,7 +13,6 @@ export class PathComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(typeof this.path);
     }
 
 }

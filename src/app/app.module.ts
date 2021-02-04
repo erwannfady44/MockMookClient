@@ -27,6 +27,7 @@ import {ClassesModel} from './model/Classes.model';
 import {RessourceService} from './services/ressource.service';
 import {RessourceModel} from './model/Ressource.model';
 import { PathComponent } from './path/path.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
@@ -55,7 +56,8 @@ const appRoutes: Routes = [
         ViewRessourceComponent,
         CreatePathComponent,
         ViewPathComponent,
-        PathComponent
+        PathComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,

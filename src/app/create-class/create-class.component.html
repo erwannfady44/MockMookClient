@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="form-group">
+        <label for="title">Titre</label>
+        <input class="form-text" id="title" name="title" ngModel required>
+    </div>
+    <div class="form-group">
+        <label for="title">Description</label>
+        <input class="form-text" id="description" name="description" ngModel required>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Créer le cours" [disabled]="!form.valid">
+</form>

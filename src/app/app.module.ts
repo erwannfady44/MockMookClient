@@ -15,20 +15,20 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {AuthService} from './services/auth.service';
 import {UserModel} from './model/User.model';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CreateClassesComponent } from './create-classes/create-classes.component';
 import { CreateRessourceComponent } from './create-ressource/create-ressource.component';
 import { ViewRessourceComponent } from './view-ressource/view-ressource.component';
 import { CreatePathComponent } from './create-path/create-path.component';
 import { ViewPathComponent } from './view-path/view-path.component';
 import {PathService} from './services/path.service';
 import {PathModel} from './model/Path.model';
-import {ClassesService} from './services/classes.service';
-import {ClassesModel} from './model/Classes.model';
+import {ClassService} from './services/class.service';
+import {ClassModel} from './model/Class.model';
 import {RessourceService} from './services/ressource.service';
 import {RessourceModel} from './model/Ressource.model';
 import { PathComponent } from './path/path.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewOnePathComponent } from './view-one-path/view-one-path.component';
+import { CreateClassComponent } from './create-class/create-class.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     {path: 'signup', component: SignupComponent},
     {path: 'path/:idPath', component: ViewOnePathComponent},
     {path: 'create-path', component: CreatePathComponent},
-    {path: 'path/:idPath/create-class', component: CreateClassesComponent},
+    {path: 'path/:idPath/create-class', component: CreateClassComponent},
     {path: 'create-ressource', component: CreateRessourceComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
@@ -53,14 +53,15 @@ const appRoutes: Routes = [
         HomeComponent,
         NotFoundComponent,
         NavbarComponent,
-        CreateClassesComponent,
+        // CreateClassesComponent,
         CreateRessourceComponent,
         ViewRessourceComponent,
         CreatePathComponent,
         ViewPathComponent,
         PathComponent,
         FooterComponent,
-        ViewOnePathComponent
+        ViewOnePathComponent,
+        CreateClassComponent
     ],
     imports: [
         BrowserModule,
@@ -77,8 +78,8 @@ const appRoutes: Routes = [
         UserModel,
         PathService,
         PathModel,
-        ClassesService,
-        ClassesModel,
+        ClassService,
+        ClassModel,
         RessourceService,
         RessourceModel
     ],

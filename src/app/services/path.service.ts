@@ -2,12 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PathModel} from '../model/Path.model';
 import {Observable, Subject} from 'rxjs';
+import {ClassModel} from '../model/Class.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PathService {
-    private URL = 'http://localhost:3000/api/path';
+    private URL = 'http://localhost:3000/api';
     private allPath = Array<PathModel>();
     allPathSubject = new Subject<PathModel[]>();
     onePathSubject = new Subject<PathModel>();
@@ -24,13 +25,13 @@ export class PathService {
             title: path._title,
             description: path._description
         };
-        return this.http.put<any>(`${this.URL}/`, params, {
+        return this.http.put<any>(`${this.URL}/path/`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }
 
     getAllPath(): void {
-        this.http.get<any>(`${this.URL}/`).subscribe(
+        this.http.get<any>(`${this.URL}/path/`).subscribe(
             res => {
                 this.allPath = [];
                 res.json.forEach(path => {
@@ -44,9 +45,12 @@ export class PathService {
     }
 
     getOnePath(idPath: string): void {
-        this.http.get<any>(`${this.URL}/${idPath}`).subscribe(
+        this.http.get<any>(`${this.URL}/path/${idPath}`).subscribe(
             res => {
                 this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, res.date);
+                res.classes.forEach((Class) => {
+                   this.path.addClass(new ClassModel(res.idPath, Class.pseudo, Class.title, Class.description));
+                });
                 this.emitOnePathSubject();
             }, error => {
                 console.log(error.message);

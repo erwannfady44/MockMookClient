@@ -22,7 +22,7 @@ export class CreatePathComponent implements OnInit {
     onSubmit(form: NgForm): void {
         this.pathService.createPath(form.value.title, form.value.description)
             .subscribe((res) => {
-                this.toastr.success('Le parcours ' + form.value.title + ' a été crée avec succès² !', 'Créé avec succès');
+                this.toastr.success('Le parcours ' + form.value.title + ' a été crée avec succès !', 'Créé avec succès');
                 this.router.navigate(['']);
             }, error => {
                 this.toastr.error(error.message, 'Erreur');

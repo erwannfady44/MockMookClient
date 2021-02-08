@@ -30,4 +30,7 @@ export class ViewOnePathComponent implements OnInit {
         this.pathService.emitOnePathSubject();
     }
 
+    onCreateClass(): void {
+        this.router.navigate(['path', this.route.snapshot.paramMap.get('idPath'), 'create-class']);
+    }
 }

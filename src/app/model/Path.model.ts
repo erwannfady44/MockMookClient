@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {ClassModel} from './Class.model';
 
 @Injectable({providedIn: 'root'})
 
@@ -8,7 +9,7 @@ export class PathModel {
     private pseudoCreator: string;
     private idPath: string;
     private date: Date;
-
+    private classes: Array<ClassModel>;
 
     constructor(title: string, description: string, pseudoCreator: string, idPath: string, date: Date) {
         this.title = title;
@@ -16,8 +17,21 @@ export class PathModel {
         this.pseudoCreator = pseudoCreator;
         this.idPath = idPath;
         this.date = date;
+        this.classes = new Array<ClassModel>();
     }
 
+
+    get _classes(): Array<ClassModel> {
+        return this.classes;
+    }
+
+    set _classes(value: Array<ClassModel>) {
+        this.classes = value;
+    }
+
+    addClass(Class: ClassModel): void {
+        this.classes.push(Class);
+    }
 
     get _date(): Date {
         return this.date;

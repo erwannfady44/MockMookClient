@@ -28,13 +28,15 @@ import {RessourceService} from './services/ressource.service';
 import {RessourceModel} from './model/Ressource.model';
 import { PathComponent } from './path/path.component';
 import { FooterComponent } from './footer/footer.component';
+import { ViewOnePathComponent } from './view-one-path/view-one-path.component';
 
 
 const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'signup', component: SignupComponent},
+    {path: 'path/:idPath', component: ViewOnePathComponent},
     {path: 'create-path', component: CreatePathComponent},
-    {path: 'create-classes', component: CreateClassesComponent},
+    {path: 'path/:idPath/create-class', component: CreateClassesComponent},
     {path: 'create-ressource', component: CreateRessourceComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
@@ -57,7 +59,8 @@ const appRoutes: Routes = [
         CreatePathComponent,
         ViewPathComponent,
         PathComponent,
-        FooterComponent
+        FooterComponent,
+        ViewOnePathComponent
     ],
     imports: [
         BrowserModule,

@@ -9,7 +9,9 @@ import {Observable, Subject} from 'rxjs';
 export class PathService {
     private URL = 'http://localhost:3000/api/path';
     private allPath = Array<PathModel>();
-    pathSubject = new Subject<PathModel[]>();
+    allPathSubject = new Subject<PathModel[]>();
+    onePathSubject = new Subject<PathModel>();
+    private path: PathModel;
 
     constructor(private http: HttpClient) {
     }
@@ -34,14 +36,29 @@ export class PathService {
                 res.json.forEach(path => {
                     this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, null));
                 });
-                this.emitPathSubject();
+                this.emitAllPathSubject();
             }, error => {
                 console.log(error.message);
             }
         );
     }
 
-    emitPathSubject(): void {
-        this.pathSubject.next(this.allPath.slice());
+    getOnePath(idPath: string): void {
+        this.http.get<any>(`${this.URL}/${idPath}`).subscribe(
+            res => {
+                this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, res.date);
+                this.emitOnePathSubject();
+            }, error => {
+                console.log(error.message);
+            }
+        );
+    }
+
+    emitAllPathSubject(): void {
+        this.allPathSubject.next(this.allPath.slice());
+    }
+
+    emitOnePathSubject(): void {
+        this.onePathSubject.next(this.path);
     }
 }

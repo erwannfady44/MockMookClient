@@ -16,10 +16,6 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    onAddClass(): void {
-
-    }
-
     onAddPath(): void {
         this.router.navigate(['create-path']);
     }

@@ -20,12 +20,12 @@ export class ViewPathComponent implements OnInit {
     ngOnInit(): void {
         this.pathService.getAllPath();
         this.allPath = [];
-        this.pathSubscription = this.pathService.pathSubject.subscribe(
+        this.pathSubscription = this.pathService.allPathSubject.subscribe(
             (paths: PathModel[]) => {
                 this.allPath = paths;
             }
         );
-        this.pathService.emitPathSubject();
+        this.pathService.emitAllPathSubject();
     }
 
 }

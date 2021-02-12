@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {PathComponent} from './path.component';
+import {CreateModuleComponent} from './create-module.component';
 
-describe('PathComponent', () => {
-    let component: PathComponent;
-    let fixture: ComponentFixture<PathComponent>;
+describe('CreateClassComponent', () => {
+    let component: CreateModuleComponent;
+    let fixture: ComponentFixture<CreateModuleComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PathComponent]
+            declarations: [CreateModuleComponent]
         })
             .compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(PathComponent);
+        fixture = TestBed.createComponent(CreateModuleComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

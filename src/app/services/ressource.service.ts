@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
     providedIn: 'root'
 })
 export class RessourceService {
-    private URL = 'http://localhost:3000/api/class';
+    private URL = 'http://localhost:3000/api/module';
 
     constructor(private http: HttpClient) {
     }

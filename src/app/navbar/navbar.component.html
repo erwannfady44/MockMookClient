@@ -2,19 +2,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav mr-auto">
             <a class="navbar-brand" href="#">Mock Mook</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    (click)="onHome()">
+            <button (click)="onHome()" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse"
+                    type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
 
         <div class="form-inline my-2 my-lg-0">
-            <button type="button" class="btn btn-primary" *ngIf="!isConnect()" (click)="onLogin()">Se connecter</button>
-            <button type="button" class="btn btn-secondary" *ngIf="!isConnect()" (click)="onSignUp()">S'inscrire
+            <button (click)="onLogin()" *ngIf="!isConnect()" class="btn btn-primary" type="button">Se connecter</button>
+            <button (click)="onSignUp()" *ngIf="!isConnect()" class="btn btn-secondary" type="button">S'inscrire
             </button>
-            <h5 [textContent]="getPseudo()" *ngIf="isConnect()"></h5>
-            <button type="button" class="btn btn-primary" *ngIf="isConnect()" (click)="onDisconnect()">Déconnexion
+            <h5 *ngIf="isConnect()" [textContent]="getPseudo()"></h5>
+            <button (click)="onDisconnect()" *ngIf="isConnect()" class="btn btn-primary" type="button">Déconnexion
             </button>
         </div>
     </div>

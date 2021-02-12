@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
         <label for="title">Titre</label>
         <input class="form-text" id="title" name="title" ngModel required>
@@ -7,5 +7,5 @@
         <label for="title">Description</label>
         <input class="form-text" id="description" name="description" ngModel required>
     </div>
-    <input type="submit" class="btn btn-primary" value="Créer le cours" [disabled]="!form.valid">
+    <input [disabled]="!form.valid" class="btn btn-primary" type="submit" value="Créer le module">
 </form>

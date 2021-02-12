@@ -19,18 +19,18 @@ export class ViewOnePathComponent implements OnInit {
                 private tosatr: ToastrService,
                 private pathService: PathService) {
     }
+
     ngOnInit(): void {
         this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
         this.pathSubscription = this.pathService.onePathSubject.subscribe(
             (path: PathModel) => {
                 this.path = path;
-                console.log(path);
             }
         );
         this.pathService.emitOnePathSubject();
     }
 
-    onCreateClass(): void {
-        this.router.navigate(['path', this.route.snapshot.paramMap.get('idPath'), 'create-class']);
+    onCreateModule(): void {
+        this.router.navigate(['path', this.route.snapshot.paramMap.get('idPath'), 'create-module']);
     }
 }

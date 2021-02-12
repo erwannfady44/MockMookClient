@@ -1,21 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {ClassModel} from '../model/Class.model';
+import {ModuleModel} from '../model/Module.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {ClassService} from '../services/class.service';
+import {ModuleService} from '../services/module.service';
 
 @Component({
     selector: 'app-create-class',
-    templateUrl: './create-class.component.html',
-    styleUrls: ['./create-class.component.css']
+    templateUrl: './create-module.component.html',
+    styleUrls: ['./create-module.component.css']
 })
-export class CreateClassComponent implements OnInit {
+export class CreateModuleComponent implements OnInit {
 
     constructor(private router: Router,
                 private route: ActivatedRoute,
                 private toastr: ToastrService,
-                private classService: ClassService) {
+                private moduleService: ModuleService) {
     }
 
     ngOnInit(): void {
@@ -26,14 +26,14 @@ export class CreateClassComponent implements OnInit {
         if (!sessionStorage.getItem('token')) {
             this.router.navigate(['login']);
         }
-        const Class = new ClassModel(this.route.snapshot.paramMap.get('idPath'),
+        const module = new ModuleModel(this.route.snapshot.paramMap.get('idPath'),
             sessionStorage.getItem('idUser'),
             form.value.title,
             form.value.description);
-        this.classService.createClasses(Class)
+        this.moduleService.createModule(module)
             .subscribe(
                 () => {
-                    this.toastr.success('Le cours ' + form.value.title + ' a été crée !', 'Cours crée');
+                    this.toastr.success('Le cours ' + form.value.title + ' a été crée !', 'Module crée');
                     this.router.navigate(['path/', this.route.snapshot.paramMap.get('idPath')]);
                 }, error => {
                     this.toastr.error(error.message, 'erreur');

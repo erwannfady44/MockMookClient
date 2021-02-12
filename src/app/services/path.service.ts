@@ -2,16 +2,16 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PathModel} from '../model/Path.model';
 import {Observable, Subject} from 'rxjs';
-import {ClassModel} from '../model/Class.model';
+import {ModuleModel} from '../model/Module.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PathService {
-    private URL = 'http://localhost:3000/api';
-    private allPath = Array<PathModel>();
     allPathSubject = new Subject<PathModel[]>();
     onePathSubject = new Subject<PathModel>();
+    private URL = 'http://localhost:3000/api';
+    private allPath = Array<PathModel>();
     private path: PathModel;
 
     constructor(private http: HttpClient) {
@@ -48,8 +48,8 @@ export class PathService {
         this.http.get<any>(`${this.URL}/path/${idPath}`).subscribe(
             res => {
                 this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, res.date);
-                res.classes.forEach((Class) => {
-                   this.path.addClass(new ClassModel(res.idPath, Class.pseudo, Class.title, Class.description));
+                res.modules.forEach((module) => {
+                    this.path.addModule(new ModuleModel(res.idPath, module.pseudo, module.title, module.description));
                 });
                 this.emitOnePathSubject();
             }, error => {

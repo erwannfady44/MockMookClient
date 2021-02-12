@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
-export class ClassModel {
+export class ModuleModel {
     private idPath: string;
     private pseudo: string;
     private title: string;
     private description: string;
+    private idModule: string;
 
     constructor(idPath: string, idCreator: string, title: string, description: string) {
         this.idPath = idPath;
@@ -44,5 +45,14 @@ export class ClassModel {
 
     set _description(value: string) {
         this.description = value;
+    }
+
+
+    get _idModule(): string {
+        return this.idModule;
+    }
+
+    set _idModule(value: string) {
+        this.idModule = value;
     }
 }

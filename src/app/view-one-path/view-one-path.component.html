@@ -1,12 +1,16 @@
 <div>
-    <h1>{{this.path._title}}</h1>
+
+    <app-path [path]="this.path">
+    </app-path>
+
     <ol>
-        <li *ngFor="let Class of this.path._modules">
+        <li *ngFor="let module of this.path._modules">
             <div>
-                <h3>{{Class._title}}   Par {{Class._pseudo}}</h3><br>
-                <p>{{Class._description}}</p>
+                <h3>{{module._title}}</h3><br>
+                <!--<p>{{module._description}}</p>-->
             </div>
         </li>
     </ol>
+
     <button (click)="onCreateModule()" class="btn btn-dark">Ajouter un cours</button>
 </div>

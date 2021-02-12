@@ -1,0 +1,42 @@
+.top-nav {
+    position: relative;
+    background: #fafafa;
+    overflow: hidden;
+    font-family: 'Nunito', sans-serif;
+
+    a {
+        text-align: center;
+        color: #000000;
+        float: left;
+        padding: 10px 35px;
+        text-decoration: none;
+        font-size: 20px;
+
+        &:hover {
+
+        }
+
+        .active {
+
+        }
+    }
+
+    .top-nav-left {
+        svg {
+            margin: 0 10px 0 25px;
+        }
+    }
+
+    .top-nav-center {
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .top-nav-right {
+        float: right;
+        margin-right: 35px;
+    }
+}

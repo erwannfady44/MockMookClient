@@ -1,22 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="#">Mock Mook</a>
-            <button (click)="onHome()" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse"
-                    type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav>
+    <div class="top-nav">
+        <div class="top-nav-left">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 50 55">
+                    <rect width="46.974" height="45.972" x="2.437" y="2.472" stroke="#000" stroke-width="3" rx="8.5"/>
+                    <path fill="#000"
+                          d="M36.668 12.44c.456 0 .804.144 1.044.432.264.264.396.624.396 1.08V36.74c0 .432-.12.78-.36 1.044s-.576.396-1.008.396c-.432 0-.756-.132-.972-.396-.216-.264-.324-.612-.324-1.044V18.344L27.632 33.32c-.336.696-.828 1.044-1.476 1.044-.624 0-1.116-.348-1.476-1.044l-7.848-14.796V36.74c0 .432-.12.78-.36 1.044-.216.264-.54.396-.972.396-.432 0-.768-.132-1.008-.396s-.36-.612-.36-1.044V13.952c0-.456.132-.816.396-1.08.264-.288.624-.432 1.08-.432.6 0 1.08.348 1.44 1.044l9.144 17.532 9.036-17.532c.192-.384.396-.648.612-.792.24-.168.516-.252.828-.252z"/>
+                </svg>
+                MockMooc
+            </a>
         </div>
 
-        <div class="form-inline my-2 my-lg-0">
-            <button (click)="onLogin()" *ngIf="!isConnect()" class="btn btn-primary" type="button">Se connecter</button>
-            <button (click)="onSignUp()" *ngIf="!isConnect()" class="btn btn-secondary" type="button">S'inscrire
-            </button>
-            <h5 *ngIf="isConnect()" [textContent]="getPseudo()"></h5>
-            <button (click)="onDisconnect()" *ngIf="isConnect()" class="btn btn-primary" type="button">Déconnexion
-            </button>
+        <div class="top-nav-center">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Explore
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 15 10">
+                    <path stroke="#000" stroke-width="2" d="M0-1h9.131" transform="rotate(-44.987 14.932 -5.77)"/>
+                    <path stroke="#000" stroke-width="2" d="M0-1h9.892" transform="rotate(-135.013 6.331 2.032)"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="top-nav-right">
+            <svg height="60" width="60">
+                <circle cx="30" cy="30" r="20" fill="#DBF2F1"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 15 10">
+                <path stroke="#000" stroke-width="2" d="M0-1h9.131" transform="rotate(-44.987 14.932 -5.77)"/>
+                <path stroke="#000" stroke-width="2" d="M0-1h9.892" transform="rotate(-135.013 6.331 2.032)"/>
+            </svg>
         </div>
     </div>
 </nav>
-

@@ -37,6 +37,17 @@ export class PathService {
                 res.json.forEach(path => {
                     this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, new Date(path.date)));
                 });
+                this.allPath.sort((a, b) => {
+                    if (a._date > b._date) {
+                        return -1;
+                    }
+                    else if (a._date < b._date) {
+                        return 1;
+ }
+                    else {
+                        return 0;
+ }
+                });
                 this.emitAllPathSubject();
             }, error => {
                 console.log(error.message);

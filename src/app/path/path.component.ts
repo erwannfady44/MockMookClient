@@ -23,40 +23,38 @@ export class PathComponent implements OnInit {
 
     getTime(): string {
         function dateDiff(date1, date2): { sec, min, hour, day } {
-            const diff = {sec: null, min: null, hour: null, day: null};
-            let tmp = date2 - date1;
+            const diff2 = {sec: null, min: null, hour: null, day: null};
+            let tmp2 = date2 - date1;
 
-            tmp = Math.floor(tmp / 1000);
-            diff.sec = tmp % 60;
+            tmp2 = Math.floor(tmp2 / 1000);
+            diff2.sec = tmp2 % 60;
 
-            tmp = Math.floor((tmp - diff.sec) / 60);
-            diff.min = tmp % 60;
-
-
-            tmp = Math.floor((tmp - diff.min) / 60);
-            diff.hour = tmp % 24;
+            tmp2 = Math.floor((tmp2 - diff2.sec) / 60);
+            diff2.min = tmp2 % 60;
 
 
-            tmp = Math.floor((tmp - diff.hour) / 24);
-            diff.day = tmp;
+            tmp2 = Math.floor((tmp2 - diff2.min) / 60);
+            diff2.hour = tmp2 % 24;
 
-            if (diff.day) {
-                diff.day += 'j';
-            } else if (diff.hour) {
-                diff.hour += 'h';
-            } else if (diff.min) {
-                diff.min += 'min';
+
+            tmp2 = Math.floor((tmp2 - diff2.hour) / 24);
+            diff2.day = tmp2;
+
+            if (diff2.day) {
+                diff2.day += 'j';
+            } else if (diff2.hour) {
+                diff2.hour += 'h';
+            } else if (diff2.min) {
+                diff2.min += 'min';
             } else {
-                diff.sec += 'sec';
+                diff2.sec += 'sec';
             }
 
-            return diff;
+            return diff2;
         }
-
 
         const time = dateDiff(this.path._date, Date.now());
         console.log(time);
-
         return time.day ? time.day : time.hour ? time.hour : time.min;
     }
 }

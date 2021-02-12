@@ -1,14 +1,12 @@
 <div>
 
     <app-path [path]="this.path">
-
     </app-path>
-
 
     <ol>
         <li *ngFor="let module of this.path._modules">
             <div>
-                <h3>{{module._title}}   Par {{module._pseudo}}</h3><br>
+                <h3>{{module._title}}</h3><br>
                 <!--<p>{{module._description}}</p>-->
             </div>
         </li>

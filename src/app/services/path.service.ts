@@ -35,7 +35,7 @@ export class PathService {
             res => {
                 this.allPath = [];
                 res.json.forEach(path => {
-                    this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, null));
+                    this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, path.date));
                 });
                 this.emitAllPathSubject();
             }, error => {

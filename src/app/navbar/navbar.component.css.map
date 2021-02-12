@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "sourceRoot": "",
-    "sources": [
-        "navbar.component.scss"
-    ],
-    "names": [],
-    "mappings": "AAAA;EACI;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;;AAYA;EACI;;AAIR;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;EACA",
-    "file": "navbar.component.css"
-}
+{"version":3,"sourceRoot":"","sources":["navbar.component.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;;AAQA;EACI;;AAIR;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;EACA","file":"navbar.component.css"}

@@ -29,6 +29,7 @@ import {PathComponent} from './path/path.component';
 import {FooterComponent} from './footer/footer.component';
 import {ViewOnePathComponent} from './view-one-path/view-one-path.component';
 import {CreateModuleComponent} from './create-module/create-module.component';
+import { ModuleComponent } from './module/module.component';
 
 
 const appRoutes: Routes = [
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
         PathComponent,
         FooterComponent,
         ViewOnePathComponent,
-        CreateModuleComponent
+        CreateModuleComponent,
+        ModuleComponent
     ],
     imports: [
         BrowserModule,

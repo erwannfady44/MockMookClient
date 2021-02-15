@@ -54,7 +54,6 @@ export class PathComponent implements OnInit {
         }
 
         const time = dateDiff(this.path._date, Date.now());
-        console.log(time);
         return time.day ? time.day : time.hour ? time.hour : time.min;
     }
 }

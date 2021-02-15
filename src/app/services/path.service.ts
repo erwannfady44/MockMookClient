@@ -40,13 +40,11 @@ export class PathService {
                 this.allPath.sort((a, b) => {
                     if (a._date > b._date) {
                         return -1;
-                    }
-                    else if (a._date < b._date) {
+                    } else if (a._date < b._date) {
                         return 1;
- }
-                    else {
+                    } else {
                         return 0;
- }
+                    }
                 });
                 this.emitAllPathSubject();
             }, error => {

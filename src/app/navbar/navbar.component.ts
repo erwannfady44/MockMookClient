@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css']
+    styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 
@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
         return !!sessionStorage.getItem('token');
     }
 
-    onDisconnect(): void {
+    onLogOut(): void {
         sessionStorage.clear();
         this.router.navigate(['']);
     }

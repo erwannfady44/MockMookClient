@@ -30,11 +30,6 @@ export class NavbarComponent implements OnInit {
         return !!sessionStorage.getItem('token');
     }
 
-    onLogOut(): void {
-        sessionStorage.clear();
-        this.router.navigate(['']);
-    }
-
     getPseudo(): string {
         return sessionStorage.getItem('pseudo');
     }

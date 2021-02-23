@@ -69,7 +69,9 @@ const appRoutes: Routes = [
         ViewOnePathComponent,
         CreateModuleComponent,
         ModuleComponent,
-        ViewAllModuleComponent
+        ViewAllModuleComponent,
+        UserDropdownComponent,
+        RessourceComponent
     ],
     imports: [
         BrowserModule,

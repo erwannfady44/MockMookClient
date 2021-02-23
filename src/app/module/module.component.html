@@ -1,16 +1,4 @@
-<div>
-
-    <app-module [module]="this.module">
-    </app-module>
-
-    <ol>
-        <li>
-            <button class="btn btn-dark">créer une nouvelle ressource</button>
-        </li>
-        <li *ngFor="let ressource of this.module._ressources">
-            <div [routerLink]="['ressource/', ressource._idModule]">
-                <h3>{{ressource._title}}</h3><br>
-            </div>
-        </li>
-    </ol>
-</div>
+<li [routerLink]="['module/', module._idModule]" class="list-group-item">
+    <h4>{{this.module._title}}</h4>
+    <p>{{this.module._description}}</p>
+</li>

@@ -31,6 +31,8 @@ import {ViewOnePathComponent} from './view-one-path/view-one-path.component';
 import {CreateModuleComponent} from './create-module/create-module.component';
 import {ModuleComponent} from './module/module.component';
 import { ViewAllModuleComponent } from './view-all-module/view-all-module.component';
+import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
+import { RessourceComponent } from './ressource/ressource.component';
 
 
 const appRoutes: Routes = [

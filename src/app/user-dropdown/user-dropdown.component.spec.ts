@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewRessourceComponent } from './view-ressource.component';
+import { UserDropdownComponent } from './user-dropdown.component';
 
-describe('ViewRessourceComponent', () => {
-  let component: ViewRessourceComponent;
-  let fixture: ComponentFixture<ViewRessourceComponent>;
+describe('UserDropdownComponent', () => {
+  let component: UserDropdownComponent;
+  let fixture: ComponentFixture<UserDropdownComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewRessourceComponent ]
+      declarations: [ UserDropdownComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewRessourceComponent);
+    fixture = TestBed.createComponent(UserDropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

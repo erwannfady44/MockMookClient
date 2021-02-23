@@ -4,13 +4,20 @@
     </app-path>
 
     <ol>
+
+        <li>
+            <button [routerLink]="['view-all-module']" class="btn btn-dark">Ajouter un module existant</button>
+        </li>
+        <li>
+            <button (click)="onCreateModule()" class="btn btn-dark">créer un nouveau module</button>
+        </li>
         <li *ngFor="let module of this.path._modules">
-            <div>
+            <div [routerLink]="['module/', module._idModule]">
                 <h3>{{module._title}}</h3><br>
                 <!--<p>{{module._description}}</p>-->
             </div>
         </li>
     </ol>
 
-    <button (click)="onCreateModule()" class="btn btn-dark">Ajouter un cours</button>
+
 </div>

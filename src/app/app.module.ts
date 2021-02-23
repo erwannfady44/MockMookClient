@@ -30,6 +30,7 @@ import {FooterComponent} from './footer/footer.component';
 import {ViewOnePathComponent} from './view-one-path/view-one-path.component';
 import {CreateModuleComponent} from './create-module/create-module.component';
 import {ModuleComponent} from './module/module.component';
+import { ViewAllModuleComponent } from './view-all-module/view-all-module.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,10 @@ const appRoutes: Routes = [
     {path: 'path/:idPath', component: ViewOnePathComponent},
     {path: 'create-path', component: CreatePathComponent},
     {path: 'path/:idPath/create-module', component: CreateModuleComponent},
-    {path: 'create-ressource', component: CreateRessourceComponent},
+    // {path: 'create-ressource', component: CreateRessourceComponent},
+    {path: 'path/:idPath/module/:idModule', component: ModuleComponent},
+    {path: 'path/:idPath/view-all-module', component: ViewAllModuleComponent},
+    {path: 'path/:idPath/module/:idModule/create-ressource', component: CreateRessourceComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
 
@@ -63,7 +67,8 @@ const appRoutes: Routes = [
         FooterComponent,
         ViewOnePathComponent,
         CreateModuleComponent,
-        ModuleComponent
+        ModuleComponent,
+        ViewAllModuleComponent
     ],
     imports: [
         BrowserModule,

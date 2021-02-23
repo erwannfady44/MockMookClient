@@ -33,6 +33,7 @@ import {ModuleComponent} from './module/module.component';
 import { ViewAllModuleComponent } from './view-all-module/view-all-module.component';
 import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { RessourceComponent } from './ressource/ressource.component';
+import { AccountComponent } from './account/account.component';
 
 
 const appRoutes: Routes = [
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
     {path: 'path/:idPath/module/:idModule', component: ModuleComponent},
     {path: 'path/:idPath/view-all-module', component: ViewAllModuleComponent},
     {path: 'path/:idPath/module/:idModule/create-ressource', component: CreateRessourceComponent},
+    {path: 'account', component: AccountComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
 ];
@@ -71,7 +73,8 @@ const appRoutes: Routes = [
         ModuleComponent,
         ViewAllModuleComponent,
         UserDropdownComponent,
-        RessourceComponent
+        RessourceComponent,
+        AccountComponent
     ],
     imports: [
         BrowserModule,

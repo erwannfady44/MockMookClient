@@ -27,7 +27,7 @@
                 <button class="login-button" [routerLink]="['login']">Login</button>
                 <button class="signup-button" [routerLink]="['signup']">Sign up</button>
             </div>
-            <div class="dropdown" *ngIf="isConnect()">
+            <div class="dropdown" *ngIf="isConnect()" >
                 <svg height="60" width="60">
                     <circle cx="30" cy="30" r="20" fill="#DBF2F1"/>
                 </svg>
@@ -36,6 +36,7 @@
                     <path stroke="#000" stroke-width="2" d="M0-1h9.892" transform="rotate(-135.013 6.331 2.032)"/>
                 </svg>
             </div>
+            <app-user-dropdown *ngIf=""></app-user-dropdown>
         </div>
     </div>
 </nav>

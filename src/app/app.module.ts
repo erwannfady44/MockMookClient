@@ -16,7 +16,6 @@ import {AuthService} from './services/auth.service';
 import {UserModel} from './model/User.model';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CreateRessourceComponent} from './create-ressource/create-ressource.component';
-import {ViewRessourceComponent} from './view-ressource/view-ressource.component';
 import {CreatePathComponent} from './create-path/create-path.component';
 import {ViewPathComponent} from './view-path/view-path.component';
 import {PathService} from './services/path.service';
@@ -34,6 +33,7 @@ import { ViewAllModuleComponent } from './view-all-module/view-all-module.compon
 import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { RessourceComponent } from './ressource/ressource.component';
 import { AccountComponent } from './account/account.component';
+import { ViewOneModuleComponent} from './view-one-module/view-one-module.component';
 
 
 const appRoutes: Routes = [
@@ -63,7 +63,6 @@ const appRoutes: Routes = [
         NavbarComponent,
         // CreateClassesComponent,
         CreateRessourceComponent,
-        ViewRessourceComponent,
         CreatePathComponent,
         ViewPathComponent,
         PathComponent,
@@ -74,7 +73,8 @@ const appRoutes: Routes = [
         ViewAllModuleComponent,
         UserDropdownComponent,
         RessourceComponent,
-        AccountComponent
+        AccountComponent,
+        ViewOneModuleComponent
     ],
     imports: [
         BrowserModule,

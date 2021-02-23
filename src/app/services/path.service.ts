@@ -54,7 +54,7 @@ export class PathService {
     async getOnePath(idPath: string): Promise<any> {
         return new Promise(resolve => this.http.get<any>(`${this.URL}/path/${idPath}`).subscribe(
             res => {
-                this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, res.date);
+                this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, new Date(res.date));
                 res.modules.forEach((module) => {
                     this.path.addModule(new ModuleModel(res.idPath, module.pseudo, module.title, module.description));
                 });

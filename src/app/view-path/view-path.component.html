@@ -2,5 +2,6 @@
 <ul class="list-group">
     <app-path *ngFor="let path of this.allPath"
               [path]="path"
+              [routerLink]="['path/', path._idPath]"
     ></app-path>
 </ul>

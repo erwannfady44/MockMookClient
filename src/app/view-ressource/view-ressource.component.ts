@@ -1,16 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-view-ressource',
-    templateUrl: './view-ressource.component.html',
-    styleUrls: ['./view-ressource.component.css']
+  selector: 'app-view-ressource',
+  templateUrl: './view-ressource.component.html',
+  styleUrls: ['./view-ressource.component.css']
 })
 export class ViewRessourceComponent implements OnInit {
 
-    constructor() {
-    }
+  constructor() { }
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+  }
 
 }

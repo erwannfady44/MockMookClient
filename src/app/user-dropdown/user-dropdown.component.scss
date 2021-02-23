@@ -1,0 +1,45 @@
+.dropdown-content {
+    position: absolute;
+    top: 75px;
+    right: 40px;
+    width: 200px;
+    height: auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 10px 15px 29px -5px rgba(0, 0, 0, 0.25);
+
+    a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 20px;
+
+        i {
+            padding-right: 10px;
+            padding-top: 3px;
+        }
+    }
+
+    .account {
+        border: 2px solid white;
+        border-radius: 20px 20px 0 0;
+
+        &:hover {
+            border: 2px solid black;
+        }
+    }
+
+    .logout {
+        background: #DBF2F1;
+        border: 2px solid #DBF2F1;
+        border-radius: 0 0 20px 20px;
+
+        &:hover {
+            border: 2px solid black;
+        }
+    }
+}

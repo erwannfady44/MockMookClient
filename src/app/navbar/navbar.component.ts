@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+    userDropDown = false;
     constructor(private router: Router) {
     }
 

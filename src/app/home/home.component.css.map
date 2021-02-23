@@ -1,8 +1,1 @@
-{
-    "version": 3,
-    "sourceRoot": "",
-    "sources": [],
-    "names": [],
-    "mappings": "",
-    "file": "home.component.css"
-}
+{"version":3,"sourceRoot":"","sources":["home.component.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;;AAQA;EACI;;AAIR;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;EACA","file":"home.component.css"}

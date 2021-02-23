@@ -34,5 +34,42 @@
     .top-nav-right {
         float: right;
         margin-right: 40px;
+        margin-top: 11px;
+
+        .signup-button {
+            border: none;
+            width: 100px;
+            height: 35px;
+            background: linear-gradient(#b4eeed, #c8eeb7);
+            border-radius: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            transition: color ease-in-out .2s;
+
+            &:hover {
+                color: #c8eeb7;
+                background: white;
+                border: 2px solid #c8eeb7;
+            }
+        }
+        .login-button {
+            margin-right: 15px;
+            border: 2px solid #c8eeb7;
+            width: 100px;
+            height: 35px;
+            background: white;
+            border-radius: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #c8eeb7;
+            transition: color ease-in-out .2s;
+
+            &:hover {
+                color: white;
+                background: linear-gradient(#b4eeed, #c8eeb7);
+            }
+        }
+
     }
 }

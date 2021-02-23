@@ -24,8 +24,8 @@
 
         <div class="top-nav-right">
             <div *ngIf="!isConnect()">
-                <button class="btn btn-primary" [routerLink]="['login']">Connexion</button>
-                <button class="btn" [routerLink]="['signup']">Inscription</button>
+                <button class="login-button" [routerLink]="['login']">Login</button>
+                <button class="signup-button" [routerLink]="['signup']">Sign up</button>
             </div>
             <div class="dropdown" *ngIf="isConnect()">
                 <svg height="60" width="60">

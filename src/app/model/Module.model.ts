@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {RessourceModel} from './Ressource.model';
+
 
 @Injectable({providedIn: 'root'})
 export class ModuleModel {
@@ -7,12 +9,22 @@ export class ModuleModel {
     private title: string;
     private description: string;
     private idModule: string;
+    private ressource: Array<RessourceModel>;
 
     constructor(idPath: string, idCreator: string, title: string, description: string) {
         this.idPath = idPath;
         this.pseudo = idCreator;
         this.title = title;
         this.description = description;
+        this.ressource = new Array<RessourceModel>();
+    }
+
+    get _ressources(): Array<RessourceModel>{
+        return this.ressource;
+    }
+
+    set _ressources(value: Array<RessourceModel>){
+        this.ressource = value;
     }
 
     get _idPath(): string {

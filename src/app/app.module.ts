@@ -45,7 +45,6 @@ const appRoutes: Routes = [
     {path: 'path/:idPath/module/:idModule/create-ressource', component: CreateRessourceComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
-
 ];
 
 

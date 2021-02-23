@@ -16,10 +16,6 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    onAddPath(): void {
-        this.router.navigate(['create-path']);
-    }
-
     isConnected(): boolean {
         return !!sessionStorage.getItem('token');
     }

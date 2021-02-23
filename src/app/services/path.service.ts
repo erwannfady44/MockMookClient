@@ -8,8 +8,6 @@ import {ModuleModel} from '../model/Module.model';
     providedIn: 'root'
 })
 export class PathService {
-    allPathSubject = new Subject<PathModel[]>();
-    onePathSubject = new Subject<PathModel>();
     private URL = 'http://localhost:3000/api';
     private allPath = Array<PathModel>();
     private path: PathModel;
@@ -30,8 +28,8 @@ export class PathService {
         });
     }
 
-    getAllPath(): void {
-        this.http.get<any>(`${this.URL}/path/`).subscribe(
+    async getAllPath(): Promise<any> {
+        return new Promise(resolve => this.http.get<any>(`${this.URL}/path/`).subscribe(
             res => {
                 this.allPath = [];
                 res.json.forEach(path => {
@@ -46,32 +44,24 @@ export class PathService {
                         return 0;
                     }
                 });
-                this.emitAllPathSubject();
+                resolve(this.allPath);
             }, error => {
                 console.log(error.message);
             }
-        );
+        ));
     }
 
-    getOnePath(idPath: string): void {
-        this.http.get<any>(`${this.URL}/path/${idPath}`).subscribe(
+    async getOnePath(idPath: string): Promise<any> {
+        return new Promise(resolve => this.http.get<any>(`${this.URL}/path/${idPath}`).subscribe(
             res => {
                 this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, res.date);
                 res.modules.forEach((module) => {
                     this.path.addModule(new ModuleModel(res.idPath, module.pseudo, module.title, module.description));
                 });
-                this.emitOnePathSubject();
+                resolve(this.path);
             }, error => {
                 console.log(error.message);
             }
-        );
-    }
-
-    emitAllPathSubject(): void {
-        this.allPathSubject.next(this.allPath.slice());
-    }
-
-    emitOnePathSubject(): void {
-        this.onePathSubject.next(this.path);
+        ));
     }
 }

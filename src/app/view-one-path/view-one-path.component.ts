@@ -12,7 +12,6 @@ import {Subscription} from 'rxjs';
 })
 export class ViewOnePathComponent implements OnInit {
     path: PathModel;
-    pathSubscription: Subscription;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -20,14 +19,8 @@ export class ViewOnePathComponent implements OnInit {
                 private pathService: PathService) {
     }
 
-    ngOnInit(): void {
-        this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
-        this.pathSubscription = this.pathService.onePathSubject.subscribe(
-            (path: PathModel) => {
-                this.path = path;
-            }
-        );
-        this.pathService.emitOnePathSubject();
+    async ngOnInit(): Promise<any> {
+        this.path = await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
     }
 
     onCreateModule(): void {

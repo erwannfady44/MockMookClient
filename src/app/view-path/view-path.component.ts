@@ -17,15 +17,10 @@ export class ViewPathComponent implements OnInit {
                 private toastr: ToastrService) {
     }
 
-    ngOnInit(): void {
-        this.pathService.getAllPath();
-        this.allPath = [];
-        this.pathSubscription = this.pathService.allPathSubject.subscribe(
-            (paths: PathModel[]) => {
-                this.allPath = paths;
-            }
-        );
-        this.pathService.emitAllPathSubject();
+    async ngOnInit(): Promise<any> {
+        this.allPath = await this.pathService.getAllPath();
+        console.log(this.allPath);
+
     }
 
 }

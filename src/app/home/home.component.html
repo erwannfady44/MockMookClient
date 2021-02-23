@@ -1,2 +1,3 @@
-<button (click)="onAddPath()" *ngIf="isConnected()" class="btn-primary btn">Créer un parcours</button>
+<button [routerLink]="['create-path']" *ngIf="isConnected()" class="btn-primary btn">Créer un parcours</button>
 <app-view-path></app-view-path>
+

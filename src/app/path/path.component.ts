@@ -14,11 +14,7 @@ export class PathComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(typeof this.path._date);
-    }
 
-    onViewOnPath(): void {
-        this.router.navigate(['path/', this.path._idPath]);
     }
 
     getTime(): string {

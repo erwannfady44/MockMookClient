@@ -25,14 +25,12 @@ export class PathService {
             description: path._description
         };
         return this.http.put<any>(`${this.app.URL}/path/`, params, {
-            headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`).set('Content-Type', 'application/x-www-form-urlencoded')
+            headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }
 
     async getAllPath(): Promise<any> {
-        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/`, {
-            headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-        }).subscribe(
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/`).subscribe(
             res => {
                 this.allPath = [];
                 if (res.json) {
@@ -57,9 +55,7 @@ export class PathService {
     }
 
     async getOnePath(idPath: string): Promise<any> {
-        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}`, {
-            headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-        }).subscribe(
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}`).subscribe(
             res => {
                 this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, new Date(res.date));
                 if (res.modules) {

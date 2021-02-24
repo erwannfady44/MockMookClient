@@ -6,7 +6,9 @@
     height: auto;
     background: white;
     border-radius: 7px;
-    box-shadow: 5px 10px 15px -5px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 7px 7px 5px 0px #888;
+    -moz-box-shadow: 7px 7px 5px 0px #888;
+    box-shadow: 7px 7px 5px 0px #888;
     z-index: 20;
 
     a {

@@ -1,10 +1,16 @@
 .card {
-    min-width: 363px;
+    min-width: 366px;
     min-height: 250px;
-    max-width: 362px;
+    max-width: 363px;
     max-height: 545px;
     cursor: pointer;
     margin-top: 2em;
+    transition: all ease-in-out .2s;
+    border: 2px solid #DDD;
+    border-radius: 7px;
+    -webkit-box-shadow: 7px 7px 5px 0px #DDD;
+    -moz-box-shadow: 7px 7px 5px 0px #DDD;
+    box-shadow: 7px 7px 5px 0px #DDD;
 
     svg {
         min-width: 362px;
@@ -41,5 +47,9 @@
         span {
             margin: 0 10px;
         }
+    }
+
+    &:hover {
+        border: 2px solid #777;
     }
 }

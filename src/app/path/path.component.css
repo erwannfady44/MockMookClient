@@ -1,5 +1,5 @@
 .card {
-  min-width: 362px;
+  min-width: 363px;
   min-height: 250px;
   max-width: 362px;
   max-height: 545px;
@@ -9,6 +9,7 @@
 .card svg {
   min-width: 362px;
   min-height: 180px;
+  border-radius: 5px 5px 0 0;
 }
 .card .card-body {
   font-family: "Nunito", sans-serif;

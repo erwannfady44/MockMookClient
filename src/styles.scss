@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Nunito:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
+@import '~ngx-toastr/toastr';
+
+@import '~ngx-toastr/toastr-bs4-alert';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
 *:focus {
     outline: none;
 }

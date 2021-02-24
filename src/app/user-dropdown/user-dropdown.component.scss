@@ -34,9 +34,10 @@
     }
 
     .logout {
-        background: #DBF2F1;
-        border: 2px solid #DBF2F1;
+        background: #000000;
+        border: 2px solid #000000;
         border-radius: 0 0 20px 20px;
+        color: white;
 
         &:hover {
             border: 2px solid black;

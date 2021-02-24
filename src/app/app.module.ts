@@ -34,6 +34,11 @@ import {UserDropdownComponent} from './user-dropdown/user-dropdown.component';
 import {RessourceComponent} from './ressource/ressource.component';
 import {AccountComponent} from './account/account.component';
 import {ViewOneModuleComponent} from './view-one-module/view-one-module.component';
+import {enableProdMode} from '@angular/core';
+
+export const environment = {
+    production: true
+};
 
 const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},

@@ -19,8 +19,6 @@ export class ViewPathComponent implements OnInit {
 
     async ngOnInit(): Promise<any> {
         this.allPath = await this.pathService.getAllPath();
-        console.log(this.allPath);
-
     }
 
 }

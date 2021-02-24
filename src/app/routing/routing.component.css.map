@@ -1,1 +1,10 @@
-{"version":3,"sourceRoot":"","sources":["routing.component.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA","file":"routing.component.css"}
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": [
+        "routing.component.scss"
+    ],
+    "names": [],
+    "mappings": "AAAA;EACI;EACA;EACA",
+    "file": "routing.component.css"
+}

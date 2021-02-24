@@ -19,15 +19,11 @@ export class ModuleModel {
         this.resource = new Array<ResourceModel>();
     }
 
-    addResource(resource: ResourceModel): void {
-        this.resource.push(resource);
-    }
-
-    get _resources(): Array<ResourceModel>{
+    get _resources(): Array<ResourceModel> {
         return this.resource;
     }
 
-    set _resources(value: Array<ResourceModel>){
+    set _resources(value: Array<ResourceModel>) {
         this.resource = value;
     }
 
@@ -63,12 +59,15 @@ export class ModuleModel {
         this.description = value;
     }
 
-
     get _idModule(): string {
         return this.idModule;
     }
 
     set _idModule(value: string) {
         this.idModule = value;
+    }
+
+    addResource(resource: ResourceModel): void {
+        this.resource.push(resource);
     }
 }

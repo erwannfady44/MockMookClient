@@ -1,1 +1,10 @@
-{"version":3,"sourceRoot":"","sources":["user-dropdown.component.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAIR;EACI;EACA;EACA;;AAEA;EACI;EACA;;AAIR;EACI;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA","file":"user-dropdown.component.css"}
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": [
+        "user-dropdown.component.scss"
+    ],
+    "names": [],
+    "mappings": "AAAA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAIR;EACI;EACA;EACA;;AAEA;EACI;EACA;;AAIR;EACI;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA",
+    "file": "user-dropdown.component.css"
+}

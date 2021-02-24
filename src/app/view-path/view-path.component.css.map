@@ -1,1 +1,10 @@
-{"version":3,"sourceRoot":"","sources":["view-path.component.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA","file":"view-path.component.css"}
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": [
+        "view-path.component.scss"
+    ],
+    "names": [],
+    "mappings": "AAAA;EACI;EACA;EACA;EACA",
+    "file": "view-path.component.css"
+}

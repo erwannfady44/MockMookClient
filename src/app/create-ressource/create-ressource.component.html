@@ -4,8 +4,12 @@
         <input class="form-text" id="title" name="title" ngModel required>
     </div>
     <div class="form-group">
-        <label for="title">Description</label>
+        <label for="description">Description</label>
         <input class="form-text" id="description" name="description" ngModel required>
     </div>
-    <input class="btn-primary" type="submit" value="Créer le cours">
+    <div class="form-group">
+        <label for="url">URL</label>
+        <input class="form-text" id="url" name="url" ngModel required>
+    </div>
+    <input [disabled]="!form.valid" class="btn-primary" type="submit" value="Créer la ressource">
 </form>

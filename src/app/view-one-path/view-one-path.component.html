@@ -3,10 +3,12 @@
 
     <ol>
         <li>
-            <button [routerLink]="['view-all-module']" class="btn btn-dark">Ajouter un module existant</button>
+            <button (click)="onViewAllModule()" class="btn btn-dark">Ajouter un module existant</button>
         </li>
         <li>
-            <button (click)="onCreateModule()" class="btn btn-dark">créer un nouveau module</button>
+            <button [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
+                    class="btn btn-dark">créer un nouveau module
+            </button>
         </li>
         <li *ngFor="let module of this.path._modules">
             <div [routerLink]="[module._idModule]">

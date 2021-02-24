@@ -1,1 +1,6 @@
-<p>view-all-module works!</p>
+<input type="text" class="form-control" [(ngModel)]="keyWord" (ngModelChange)="search()">
+
+<app-module *ngFor="let module of this.modules"
+            [module]="module">
+
+</app-module>

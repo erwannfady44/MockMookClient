@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {ModuleModel} from '../model/Module.model';
 import {Observable} from 'rxjs';
 import {ResourceModel} from '../model/Resource.model';
@@ -42,6 +42,8 @@ export class ModuleService {
                     });
                 }
                 resolve(this.module);
+            }, error => {
+                console.log(error);
             }
         ));
     }
@@ -59,5 +61,22 @@ export class ModuleService {
                 headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
             }
         );
+    }
+
+    searchByKeyWords(keyWords: Array<string>): Promise<any> {
+        const params = new HttpParams()
+            .append('keyWords', keyWords.join(', '));
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/module/findByKeyWords`, {params}).subscribe(
+            res => {
+                console.log(res);
+                const modules = [];
+                res.forEach(module => {
+                    modules.push(new ModuleModel(module.idPath, module.idCreator, module.title, module.description));
+                });
+                resolve(modules);
+            }, error => {
+                console.log(error);
+            }
+        ));
     }
 }

@@ -3,7 +3,6 @@ import {PathModel} from '../model/Path.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {PathService} from '../services/path.service';
-import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-view-one-path',
@@ -13,17 +12,18 @@ import {Subscription} from 'rxjs';
 export class ViewOnePathComponent implements OnInit {
     path: PathModel;
 
-    constructor(private route: ActivatedRoute,
+    constructor(public route: ActivatedRoute,
                 private router: Router,
                 private tosatr: ToastrService,
                 private pathService: PathService) {
     }
 
     async ngOnInit(): Promise<any> {
-        this.path = await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
+        if (this.route.snapshot.paramMap.get('idPath') !== 'view-on-module')
+            this.path = await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
     }
 
-    onCreateModule(): void {
-        this.router.navigate(['path', this.route.snapshot.paramMap.get('idPath'), 'create-module']);
+    onViewAllModule(): void {
+        this.router.navigate(['/path', this.path._idPath, 'view-all-module']);
     }
 }

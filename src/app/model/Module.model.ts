@@ -9,22 +9,26 @@ export class ModuleModel {
     private title: string;
     private description: string;
     private idModule: string;
-    private ressource: Array<ResourceModel>;
+    private resource: Array<ResourceModel>;
 
     constructor(idPath: string, idCreator: string, title: string, description: string) {
         this.idPath = idPath;
         this.pseudo = idCreator;
         this.title = title;
         this.description = description;
-        this.ressource = new Array<ResourceModel>();
+        this.resource = new Array<ResourceModel>();
     }
 
-    get _ressources(): Array<ResourceModel>{
-        return this.ressource;
+    addResource(resource: ResourceModel): void {
+        this.resource.push(resource);
     }
 
-    set _ressources(value: Array<ResourceModel>){
-        this.ressource = value;
+    get _resources(): Array<ResourceModel>{
+        return this.resource;
+    }
+
+    set _resources(value: Array<ResourceModel>){
+        this.resource = value;
     }
 
     get _idPath(): string {

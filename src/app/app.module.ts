@@ -35,7 +35,6 @@ import {RessourceComponent} from './ressource/ressource.component';
 import {AccountComponent} from './account/account.component';
 import {ViewOneModuleComponent} from './view-one-module/view-one-module.component';
 
-
 const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'signup', component: SignupComponent},

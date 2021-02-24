@@ -7,9 +7,9 @@
         <li>
             <button class="btn btn-dark" [routerLink]="['create-resource']">créer une nouvelle ressource</button>
         </li>
-        <li *ngFor="let ressource of this.module._ressources">
+        <li *ngFor="let resource of this.module._resources">
             <div>
-                <h3>{{ressource._title}}</h3><br>
+                <h3>{{resource._title}}</h3><br>
             </div>
         </li>
     </ol>

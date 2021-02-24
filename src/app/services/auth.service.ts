@@ -33,9 +33,10 @@ export class AuthService {
     signUp(pseudo: string, password: string): Observable<any> {
         this._user._pseudo = pseudo;
         this._user._password = password;
-        return this.http.post<any>(`${this.app.URL}/user/signup`, this._user, {
-            headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-        });
+        return this.http.post<any>(`${this.app.URL}/user/signup`, ({
+            pseudo: this._user._pseudo,
+            password: this._user._password
+        }));
     }
 
     login(pseudo: string, password: string): Observable<any> {

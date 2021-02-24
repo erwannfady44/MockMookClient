@@ -25,11 +25,15 @@ export class ModuleService {
         };
         return this.http.put<any>(`${this.app.URL}/path/${module._idPath}/module`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+                .set('Content-Type', 'application/x-www-form-urlencoded')
+
         });
     }
 
     async getOneModule(idPath: string, idModule: string): Promise<any> {
-        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}/${idModule}`).subscribe(
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}/${idModule}`, {
+            headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+        }).subscribe(
             res => {
                 this.module = new ModuleModel(res.idPath, res.idCreator, res.title, res.description);
                 this.module._idModule = res.idModule;
@@ -56,7 +60,10 @@ export class ModuleService {
         };
 
         return this.http.put<any>(`${this.app.URL}/path/${resource._idModule}/resource`, params, {
-            headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
-        });
+                headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+                    .set('Content-Type', 'application/x-www-form-urlencoded')
+
+            }
+        );
     }
 }

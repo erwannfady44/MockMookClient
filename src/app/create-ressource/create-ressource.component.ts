@@ -39,6 +39,6 @@ export class CreateRessourceComponent implements OnInit {
             }, error => {
                 this.toastr.error(error.message, 'erreur');
             }
-        )
+        );
     }
 }

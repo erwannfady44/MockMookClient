@@ -26,7 +26,7 @@ export class CreateRessourceComponent implements OnInit {
             this.router.navigate(['login']);
         }
 
-        const resource = new ResourceModel(this.route.snapshot.paramMap.get('idPath'),
+        const resource = new ResourceModel(this.route.snapshot.paramMap.get('idModule'),
             form.value.url,
             form.value.title,
             form.value.description,

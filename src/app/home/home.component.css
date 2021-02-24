@@ -1,30 +1,5 @@
-.top-nav {
-  position: relative;
-  background: #fafafa;
-  overflow: hidden;
-  font-family: "Nunito", sans-serif;
-}
-.top-nav a {
-  text-align: center;
-  color: #000000;
-  float: left;
-  padding: 10px 35px;
-  text-decoration: none;
-  font-size: 20px;
-}
-.top-nav .top-nav-left svg {
-  margin: 0 10px 0 25px;
-}
-.top-nav .top-nav-center {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.top-nav .top-nav-right {
-  float: right;
-  margin-right: 40px;
+section {
+  margin: 2em 0;
 }
 
 /*# sourceMappingURL=home.component.css.map */

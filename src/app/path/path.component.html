@@ -1,10 +1,10 @@
 <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <svg width="362" height="180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 180" preserveAspectRatio="none"><defs><style type="text/css">#holder_177d43bf56d text { fill:rgba(255,255,255,.75);font-weight:normal;font-family:Helvetica, monospace;font-size:18pt } </style></defs><g id="holder_177d43bf56d"><rect width="362" height="180" fill="#777"></rect><g><text x="134.953125" y="98.1"></text></g></g></svg>
     <div class="card-body">
         <h5 class="card-title">{{this.path._title}}</h5>
         <p class="card-text">{{this.path._description}}</p>
     </div>
     <div class="card-footer">
-        <small class="text-muted"><i class="far fa-clock"></i> {{this.getTime()}} <strong>{{this.path._pseudoCreator}}</strong></small>
+        <small class="text-muted"><i class="far fa-clock"></i> {{this.getTime()}} ago<span><strong>by {{this.path._pseudoCreator}}</strong></span></small>
     </div>
 </div>

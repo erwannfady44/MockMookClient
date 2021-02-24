@@ -5,13 +5,13 @@
   width: 200px;
   height: auto;
   background: white;
-  border-radius: 20px;
+  border-radius: 5px;
   box-shadow: 10px 15px 29px -5px rgba(0, 0, 0, 0.25);
 }
 .dropdown-content a {
   padding: 10px 20px;
   text-decoration: none;
-  color: black;
+  color: #777;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -24,19 +24,19 @@
 }
 .dropdown-content .account {
   border: 2px solid white;
-  border-radius: 20px 20px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 .dropdown-content .account:hover {
-  border: 2px solid black;
+  border: 2px solid #777;
 }
 .dropdown-content .logout {
-  background: #000000;
-  border: 2px solid #000000;
-  border-radius: 0 0 20px 20px;
+  background: #777;
+  border: 2px solid #777;
+  border-radius: 0 0 5px 5px;
   color: white;
 }
 .dropdown-content .logout:hover {
-  border: 2px solid black;
+  border: 2px solid #777;
 }
 
 /*# sourceMappingURL=user-dropdown.component.css.map */

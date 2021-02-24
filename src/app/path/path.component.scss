@@ -1,0 +1,12 @@
+.card {
+    min-width: 362px;
+    min-height: 250px;
+    cursor: pointer;
+
+    .card-footer {
+
+        span {
+            margin: 0 5px;
+        }
+    }
+}

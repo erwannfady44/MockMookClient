@@ -1,3 +1,10 @@
-
+.card {
+  min-width: 362px;
+  min-height: 250px;
+  cursor: pointer;
+}
+.card .card-footer span {
+  margin: 0 5px;
+}
 
 /*# sourceMappingURL=path.component.css.map */

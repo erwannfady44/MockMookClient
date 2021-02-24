@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 
 export class ModuleService {
-    private URL = 'http://localhost:3000/api/module';
+    private URL = 'http://localhost:3000/api';
 
     constructor(private http: HttpClient) {
     }
@@ -20,7 +20,7 @@ export class ModuleService {
             description: module._description,
             idUser: sessionStorage.getItem('idUser')
         };
-        return this.http.put<any>(`${this.URL}/`, params, {
+        return this.http.put<any>(`${this.URL}/path/${module._idPath}/module`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }

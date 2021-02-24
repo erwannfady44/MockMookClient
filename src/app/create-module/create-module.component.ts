@@ -22,7 +22,6 @@ export class CreateModuleComponent implements OnInit {
     }
 
     onSubmit(form: NgForm): void {
-        console.log('token');
         if (!sessionStorage.getItem('token')) {
             this.router.navigate(['login']);
         }

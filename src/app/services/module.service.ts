@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ModuleModel} from '../model/Module.model';
 import {Observable} from 'rxjs';
+import {ResourceModel} from '../model/Resource.model';
 
 @Injectable({
     providedIn: 'root'
@@ -31,8 +32,28 @@ export class ModuleService {
             res => {
                 this.module = new ModuleModel(res.idPath, res.idCreator, res.title, res.description);
                 this.module._idModule = res.idModule;
+                if (res.resources) {
+                    res.resources.forEach(resource => {
+                        const r = new ResourceModel(this.module._idModule, resource.url, resource.title, resource.description);
+                        r._idResource = resource.idResource;
+                    });
+                }
                 resolve(this.module);
             }
         ));
+    }
+
+    addResource(resource: ResourceModel): Observable<any> {
+        const params = {
+            idModule: resource._idModule,
+            title: resource._title,
+            description: resource._description,
+            url: resource._url,
+            idUser: sessionStorage.getItem('idUser')
+        };
+
+        return this.http.put<any>(`${this.URL}/path/${resource._idModule}/resource`, params, {
+            headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+        });
     }
 }

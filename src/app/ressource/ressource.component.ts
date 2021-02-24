@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RessourceModel} from '../model/Ressource.model';
+import {ResourceModel} from '../model/Resource.model';
 
 @Component({
   selector: 'app-ressource',
@@ -7,7 +7,7 @@ import {RessourceModel} from '../model/Ressource.model';
   styleUrls: ['./ressource.component.css']
 })
 export class RessourceComponent implements OnInit {
-    @Input() ressource: RessourceModel;
+    @Input() ressource: ResourceModel;
 
   constructor() { }
 

@@ -23,17 +23,17 @@ import {PathModel} from './model/Path.model';
 import {ModuleService} from './services/module.service';
 import {ModuleModel} from './model/Module.model';
 import {RessourceService} from './services/ressource.service';
-import {RessourceModel} from './model/Ressource.model';
+import {ResourceModel} from './model/Resource.model';
 import {PathComponent} from './path/path.component';
 import {FooterComponent} from './footer/footer.component';
 import {ViewOnePathComponent} from './view-one-path/view-one-path.component';
 import {CreateModuleComponent} from './create-module/create-module.component';
 import {ModuleComponent} from './module/module.component';
-import { ViewAllModuleComponent } from './view-all-module/view-all-module.component';
-import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
-import { RessourceComponent } from './ressource/ressource.component';
-import { AccountComponent } from './account/account.component';
-import { ViewOneModuleComponent} from './view-one-module/view-one-module.component';
+import {ViewAllModuleComponent} from './view-all-module/view-all-module.component';
+import {UserDropdownComponent} from './user-dropdown/user-dropdown.component';
+import {RessourceComponent} from './ressource/ressource.component';
+import {AccountComponent} from './account/account.component';
+import {ViewOneModuleComponent} from './view-one-module/view-one-module.component';
 
 
 const appRoutes: Routes = [
@@ -42,10 +42,9 @@ const appRoutes: Routes = [
     {path: 'path/:idPath', component: ViewOnePathComponent},
     {path: 'create-path', component: CreatePathComponent},
     {path: 'path/:idPath/create-module', component: CreateModuleComponent},
-    // {path: 'create-ressource', component: CreateRessourceComponent},
     {path: 'path/:idPath/:idModule', component: ViewOneModuleComponent},
     {path: 'path/:idPath/view-all-module', component: ViewAllModuleComponent},
-    {path: 'path/:idPath/:idModule/create-ressource', component: CreateRessourceComponent},
+    {path: 'path/:idPath/:idModule/create-resource', component: CreateRessourceComponent},
     {path: 'account', component: AccountComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
@@ -61,7 +60,6 @@ const appRoutes: Routes = [
         HomeComponent,
         NotFoundComponent,
         NavbarComponent,
-        // CreateClassesComponent,
         CreateRessourceComponent,
         CreatePathComponent,
         ViewPathComponent,
@@ -94,7 +92,7 @@ const appRoutes: Routes = [
         ModuleService,
         ModuleModel,
         RessourceService,
-        RessourceModel
+        ResourceModel
     ],
     bootstrap: [AppComponent]
 })

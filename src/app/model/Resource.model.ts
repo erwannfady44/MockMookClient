@@ -2,16 +2,15 @@ import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 
-export class RessourceModel {
+export class ResourceModel {
     private idModule: string;
-    private idRessource: string;
+    private idResource: string;
     private url: string;
     private title: string;
     private description: string;
 
-    constructor(idModule: string, idRessource: string, url: string, title: string, description: string) {
+    constructor(idModule: string, url: string, title: string, description: string) {
         this.idModule = idModule;
-        this.idRessource = idRessource;
         this.url = url;
         this.title = title;
         this.description = description;
@@ -25,12 +24,12 @@ export class RessourceModel {
         this.idModule = value;
     }
 
-    get _idRessource(): string {
-        return this.idRessource;
+    get _idResource(): string {
+        return this.idResource;
     }
 
-    set _idRessource(value: string) {
-        this.idRessource = value;
+    set _idResource(value: string) {
+        this.idResource = value;
     }
 
     get _url(): string {

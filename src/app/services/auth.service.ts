@@ -2,14 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserModel} from '../model/User.model';
 import {Observable} from 'rxjs';
+import {Variables} from '../variables';
 
 @Injectable()
 export class AuthService {
-    private URL = 'http://localhost:3000/api/user';
     private token: string;
 
     constructor(private http: HttpClient,
-                private user: UserModel) {
+                private user: UserModel,
+                private app: Variables) {
         this._user = new UserModel();
     }
 
@@ -32,12 +33,12 @@ export class AuthService {
     signUp(pseudo: string, password: string): Observable<any> {
         this._user._pseudo = pseudo;
         this._user._password = password;
-        return this.http.post<any>(`${this.URL}/signup`, this._user);
+        return this.http.post<any>(`${this.app.URL}/user/signup`, this._user);
     }
 
     login(pseudo: string, password: string): Observable<any> {
         this._user._pseudo = pseudo;
         this._user._password = password;
-        return this.http.post<any>(`${this.URL}/login`, this._user);
+        return this.http.post<any>(`${this.app.URL}/user/login`, this._user);
     }
 }

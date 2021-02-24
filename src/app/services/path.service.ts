@@ -3,16 +3,19 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PathModel} from '../model/Path.model';
 import {Observable, Subject} from 'rxjs';
 import {ModuleModel} from '../model/Module.model';
+import {AppComponent} from '../app.component';
+import {Variable} from '@angular/compiler/src/render3/r3_ast';
+import {Variables} from '../variables';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PathService {
-    private URL = 'http://localhost:3000/api';
     private allPath = Array<PathModel>();
     private path: PathModel;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,
+                private app: Variables) {
     }
 
     createPath(title: string, description: string): Observable<any> {
@@ -23,13 +26,13 @@ export class PathService {
             title: path._title,
             description: path._description
         };
-        return this.http.put<any>(`${this.URL}/path/`, params, {
+        return this.http.put<any>(`${this.app.URL}/path/`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }
 
     async getAllPath(): Promise<any> {
-        return new Promise(resolve => this.http.get<any>(`${this.URL}/path/`).subscribe(
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/`).subscribe(
             res => {
                 this.allPath = [];
                 if (res.json) {
@@ -54,7 +57,7 @@ export class PathService {
     }
 
     async getOnePath(idPath: string): Promise<any> {
-        return new Promise(resolve => this.http.get<any>(`${this.URL}/path/${idPath}`).subscribe(
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}`).subscribe(
             res => {
                 this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, new Date(res.date));
                 if (res.modules) {

@@ -3,16 +3,17 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ModuleModel} from '../model/Module.model';
 import {Observable} from 'rxjs';
 import {ResourceModel} from '../model/Resource.model';
+import {Variables} from '../variables';
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class ModuleService {
-    private URL = 'http://localhost:3000/api';
     private module: ModuleModel;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,
+                private app: Variables) {
     }
 
     createModule(module: ModuleModel): Observable<any> {
@@ -22,13 +23,13 @@ export class ModuleService {
             description: module._description,
             idUser: sessionStorage.getItem('idUser')
         };
-        return this.http.put<any>(`${this.URL}/path/${module._idPath}/module`, params, {
+        return this.http.put<any>(`${this.app.URL}/path/${module._idPath}/module`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }
 
     async getOneModule(idPath: string, idModule: string): Promise<any> {
-        return new Promise(resolve => this.http.get<any>(`${this.URL}/path/${idPath}/${idModule}`).subscribe(
+        return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}/${idModule}`).subscribe(
             res => {
                 this.module = new ModuleModel(res.idPath, res.idCreator, res.title, res.description);
                 this.module._idModule = res.idModule;
@@ -54,7 +55,7 @@ export class ModuleService {
             idUser: sessionStorage.getItem('idUser')
         };
 
-        return this.http.put<any>(`${this.URL}/path/${resource._idModule}/resource`, params, {
+        return this.http.put<any>(`${this.app.URL}/path/${resource._idModule}/resource`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }

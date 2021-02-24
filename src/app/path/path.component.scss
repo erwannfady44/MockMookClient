@@ -3,10 +3,33 @@
     min-height: 250px;
     cursor: pointer;
 
+    .card-body {
+        font-family: 'Nunito', sans-serif;
+
+        h5 {
+            font-weight: 600;
+        }
+
+        small {
+            border: none;
+            background: #c8c8c8;
+            border-radius: 50px;
+            padding: 3px 10px;
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-top: 1em;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+        }
+    }
+
     .card-footer {
 
         span {
-            margin: 0 5px;
+            margin: 0 10px;
         }
     }
 }

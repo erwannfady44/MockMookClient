@@ -1,5 +1,10 @@
-<li class="list-group-item">
-    <h4>{{this.path._title}}</h4>
-    <p>{{this.path._description}}</p>
-    <p>{{this.getTime()}} {{this.path._pseudoCreator}}</p>
-</li>
+<div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{this.path._title}}</h5>
+        <p class="card-text">{{this.path._description}}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted"><i class="far fa-clock"></i> {{this.getTime()}} <strong>{{this.path._pseudoCreator}}</strong></small>
+    </div>
+</div>

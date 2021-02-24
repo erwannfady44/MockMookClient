@@ -32,6 +32,12 @@ export class ModuleService {
             res => {
                 this.module = new ModuleModel(res.idPath, res.idCreator, res.title, res.description);
                 this.module._idModule = res.idModule;
+                if (res.resources) {
+                    res.resources.forEach(resource => {
+                        const r = new ResourceModel(this.module._idModule, resource.url, resource.title, resource.description);
+                        r._idResource = resource.idResource;
+                    });
+                }
                 resolve(this.module);
             }
         ));

@@ -3,6 +3,7 @@ import {PathModel} from '../model/Path.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {PathService} from '../services/path.service';
+import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-view-one-path',

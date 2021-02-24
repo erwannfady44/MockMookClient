@@ -1,4 +1,4 @@
 <section>
-    <button *ngIf="isConnected()" [routerLink]="['create-path']">Nouveau parcours <i class="fas fa-plus"></i></button>
+    <button [routerLink]="['create-path']" *ngIf="isConnected()">Nouveau parcours <i class="fas fa-plus"></i></button>
     <app-view-path></app-view-path>
 </section>

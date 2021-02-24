@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
     userDropDown = false;
+    hover = false;
+
     constructor(private router: Router) {
     }
 
@@ -32,5 +34,19 @@ export class NavbarComponent implements OnInit {
 
     getPseudo(): string {
         return sessionStorage.getItem('pseudo');
+    }
+
+    show(): void {
+        console.log(this.hover + '   -   ' + this.userDropDown);
+        if (!this.userDropDown) {
+            this.userDropDown = true;
+        } else if (this.hover) {
+            this.userDropDown = false;
+            this.hover = false;
+        } else if (!this.hover) {
+            this.userDropDown = true;
+        } else {
+            this.userDropDown = false;
+        }
     }
 }

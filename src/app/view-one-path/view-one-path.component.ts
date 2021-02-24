@@ -21,6 +21,7 @@ export class ViewOnePathComponent implements OnInit {
 
     async ngOnInit(): Promise<any> {
         this.path = await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
+        console.log(this.path);
     }
 
     onCreateModule(): void {

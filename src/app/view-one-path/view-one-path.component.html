@@ -12,7 +12,7 @@
             <button (click)="onCreateModule()" class="btn btn-dark">créer un nouveau module</button>
         </li>
         <li *ngFor="let module of this.path._modules">
-            <div [routerLink]="['module/', module._idModule]">
+            <div [routerLink]="[module._idModule]">
                 <h3>{{module._title}}</h3><br>
                 <p>{{module._description}}</p>
             </div>

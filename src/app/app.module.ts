@@ -43,9 +43,9 @@ const appRoutes: Routes = [
     {path: 'create-path', component: CreatePathComponent},
     {path: 'path/:idPath/create-module', component: CreateModuleComponent},
     // {path: 'create-ressource', component: CreateRessourceComponent},
-    {path: 'path/:idPath/module/:idModule', component: ModuleComponent},
+    {path: 'path/:idPath/:idModule', component: ViewOneModuleComponent},
     {path: 'path/:idPath/view-all-module', component: ViewAllModuleComponent},
-    {path: 'path/:idPath/module/:idModule/create-ressource', component: CreateRessourceComponent},
+    {path: 'path/:idPath/:idModule/create-ressource', component: CreateRessourceComponent},
     {path: 'account', component: AccountComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}

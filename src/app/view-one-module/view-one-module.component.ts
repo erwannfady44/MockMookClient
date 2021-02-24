@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ModuleModel} from '../model/Module.model';
+import {ToastrService} from 'ngx-toastr';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ModuleService} from '../services/module.service';
 
 @Component({
     selector: 'app-view-one-module',
@@ -7,12 +10,16 @@ import {ModuleModel} from '../model/Module.model';
     styleUrls: ['./view-one-module.component.css']
 })
 export class ViewOneModuleComponent implements OnInit {
-    @Input() module: ModuleModel;
+    module: ModuleModel;
 
-    constructor() {
+    constructor(private toastr: ToastrService,
+                private router: Router,
+                private moduleService: ModuleService,
+                private route: ActivatedRoute) {
     }
 
-    ngOnInit(): void {
+    async ngOnInit(): Promise<any> {
+        this.module = await this.moduleService.getOneModule(this.route.snapshot.paramMap.get('idPath'), this.route.snapshot.paramMap.get('idModule'));
     }
 
 }

@@ -13,6 +13,7 @@ export class ModuleComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log();
     }
 
 }

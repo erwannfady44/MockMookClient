@@ -9,6 +9,7 @@ import {Observable} from 'rxjs';
 
 export class ModuleService {
     private URL = 'http://localhost:3000/api';
+    private module: ModuleModel;
 
     constructor(private http: HttpClient) {
     }
@@ -23,5 +24,15 @@ export class ModuleService {
         return this.http.put<any>(`${this.URL}/path/${module._idPath}/module`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
+    }
+
+    async getOneModule(idPath: string, idModule: string): Promise<any> {
+        return new Promise(resolve => this.http.get<any>(`${this.URL}/path/${idPath}/${idModule}`).subscribe(
+            res => {
+                this.module = new ModuleModel(res.idPath, res.idCreator, res.title, res.description);
+                this.module._idModule = res.idModule;
+                resolve(this.module);
+            }
+        ));
     }
 }

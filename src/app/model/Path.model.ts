@@ -7,19 +7,29 @@ export class PathModel {
     private title: string;
     private description: string;
     private pseudoCreator: string;
+    private idCreator: string;
     private idPath: string;
     private date: Date;
     private modules: Array<ModuleModel>;
 
-    constructor(title: string, description: string, pseudoCreator: string, idPath: string, date: Date) {
+    constructor(title: string, description: string, idCreator: string, pseudoCreator: string, idPath: string, date: Date) {
         this.title = title;
         this.description = description;
+        this.idCreator = idCreator;
         this.pseudoCreator = pseudoCreator;
         this.idPath = idPath;
         this.date = date;
         this.modules = new Array<ModuleModel>();
     }
 
+
+    get _idCreator(): string {
+        return this.idCreator;
+    }
+
+    set _idCreator(value: string) {
+        this.idCreator = value;
+    }
 
     get _modules(): Array<ModuleModel> {
         return this.modules;

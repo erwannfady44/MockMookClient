@@ -27,6 +27,7 @@ export class CreateModuleComponent implements OnInit {
         }
         const module = new ModuleModel(this.route.snapshot.paramMap.get('idPath'),
             sessionStorage.getItem('idUser'),
+            sessionStorage.getItem('pseudo'),
             form.value.title,
             form.value.description);
         this.moduleService.createModule(module)

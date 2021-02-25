@@ -5,6 +5,7 @@ import {ResourceModel} from './Resource.model';
 @Injectable({providedIn: 'root'})
 export class ModuleModel {
     private idPath: string;
+    private idCreator: string;
     private pseudo: string;
     private title: string;
     private description: string;
@@ -12,14 +13,23 @@ export class ModuleModel {
     private resource: Array<ResourceModel>;
     private position: number;
 
-    constructor(idPath: string, idCreator: string, title: string, description: string) {
+    constructor(idPath: string, idCreator: string, pseudo: string, title: string, description: string) {
         this.idPath = idPath;
-        this.pseudo = idCreator;
+        this.idCreator = idCreator;
+        this.pseudo = pseudo;
         this.title = title;
         this.description = description;
         this.resource = new Array<ResourceModel>();
     }
 
+
+    get _idCreator(): string {
+        return this.idCreator;
+    }
+
+    set _idCreator(value: string) {
+        this.idCreator = value;
+    }
 
     get _position(): number {
         return this.position;

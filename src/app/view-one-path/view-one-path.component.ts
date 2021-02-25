@@ -11,6 +11,8 @@ import {PathService} from '../services/path.service';
 })
 export class ViewOnePathComponent implements OnInit {
     path: PathModel;
+    edit: boolean;
+    canEdit: boolean;
 
     constructor(public route: ActivatedRoute,
                 private router: Router,
@@ -20,9 +22,20 @@ export class ViewOnePathComponent implements OnInit {
 
     async ngOnInit(): Promise<any> {
         this.path = await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
+        if (this.route.snapshot.queryParamMap.get('edit')) {
+            this.edit = true;
+        }
+
+        if (sessionStorage.getItem('idUser') === this.path._idCreator) {
+            this.canEdit = true;
+        }
     }
 
     onViewAllModule(): void {
         this.router.navigate(['/path', this.path._idPath, 'view-all-module']);
+    }
+
+    onValidate(): void {
+        this.edit = false;
     }
 }

@@ -17,7 +17,7 @@ export class PathService {
     }
 
     createPath(title: string, description: string): Observable<any> {
-        const path = new PathModel(title, description, sessionStorage.getItem('pseudo'), '', null);
+        const path = new PathModel(title, description, sessionStorage.getItem('idUser'), sessionStorage.getItem('pseudo'), '', null);
 
         const params = {
             idUser: sessionStorage.getItem('idUser'),
@@ -35,7 +35,12 @@ export class PathService {
                 this.allPath = [];
                 if (res.json) {
                     res.json.forEach(path => {
-                        this.allPath.push(new PathModel(path.title, path.description, path.pseudo, path.idPath, new Date(path.date)));
+                        this.allPath.push(new PathModel(path.title,
+                            path.description,
+                            path.idCreator,
+                            path.pseudo,
+                            path.idPath,
+                            new Date(path.date)));
                     });
                     this.allPath.sort((a, b) => {
                         if (a._date > b._date) {
@@ -57,10 +62,10 @@ export class PathService {
     async getOnePath(idPath: string): Promise<any> {
         return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}`).subscribe(
             res => {
-                this.path = new PathModel(res.title, res.description, res.pseudo, res.idPath, new Date(res.date));
+                this.path = new PathModel(res.title, res.description, res.idCreator, res.pseudo, res.idPath, new Date(res.date));
                 if (res.modules) {
                     res.modules.forEach((module) => {
-                        const m = new ModuleModel(res.idPath, module.pseudo, module.title, module.description);
+                        const m = new ModuleModel(res.idPath, module.idCreator, module.pseudo, module.title, module.description);
                         m._idModule = module.idModule;
                         m._position = module.position;
                         this.path.addModule(m);

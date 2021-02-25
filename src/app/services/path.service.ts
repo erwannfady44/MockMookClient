@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {PathModel} from '../model/Path.model';
 import {Observable} from 'rxjs';
 import {ModuleModel} from '../model/Module.model';
@@ -79,5 +79,11 @@ export class PathService {
                 console.log(error.message);
             }
         ));
+    }
+
+    deletePath(idPath: string): Observable<any> {
+        const param = new HttpParams().append('idUser', sessionStorage.getItem('idUser'));
+        const header = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`);
+        return this.http.delete<any>(`${this.app.URL}/path/${idPath}`, {headers: header, params: param});
     }
 }

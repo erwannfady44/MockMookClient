@@ -33,20 +33,43 @@
             background: #777;
             color: white;
             border-radius: 50px;
-            transition: color ease-in-out .2s;
-            -webkit-box-shadow: 5px 5px 5px 0px #999;
-            -moz-box-shadow: 5px 5px 5px 0px #999;
-            box-shadow: 5px 5px 5px 0px #999;
         }
 
         .cog {
             font-size: 30px;
             padding: 5px 13px;
+            transition: color ease-in-out .2s;
+            -webkit-box-shadow: 5px 5px 5px 0px #999;
+            -moz-box-shadow: 5px 5px 5px 0px #999;
+            box-shadow: 5px 5px 5px 0px #999;
 
             &:hover {
                 color: #777;
                 background: white;
             }
         }
+
+        .done {
+            font-size: 30px;
+            padding: 5px 13px;
+            transition: color ease-in-out .2s;
+
+            &:hover {
+                color: #777;
+                background: white;
+            }
+        }
+    }
+
+
+
+    .clone-button {
+        height: 55px;
+        margin-right: 50px;
+    }
+
+    .add-button {
+        height: 55px;
+        margin-right: 300px;
     }
 }

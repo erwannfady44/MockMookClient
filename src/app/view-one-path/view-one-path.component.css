@@ -25,18 +25,35 @@
   background: #777;
   color: white;
   border-radius: 50px;
+}
+.path-container .path-controls .cog {
+  font-size: 30px;
+  padding: 5px 13px;
   transition: color ease-in-out 0.2s;
   -webkit-box-shadow: 5px 5px 5px 0px #999;
   -moz-box-shadow: 5px 5px 5px 0px #999;
   box-shadow: 5px 5px 5px 0px #999;
 }
-.path-container .path-controls .cog {
-  font-size: 30px;
-  padding: 5px 13px;
-}
 .path-container .path-controls .cog:hover {
   color: #777;
   background: white;
+}
+.path-container .path-controls .done {
+  font-size: 30px;
+  padding: 5px 13px;
+  transition: color ease-in-out 0.2s;
+}
+.path-container .path-controls .done:hover {
+  color: #777;
+  background: white;
+}
+.path-container .clone-button {
+  height: 55px;
+  margin-right: 50px;
+}
+.path-container .add-button {
+  height: 55px;
+  margin-right: 300px;
 }
 
 /*# sourceMappingURL=view-one-path.component.css.map */

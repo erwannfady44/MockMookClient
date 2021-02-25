@@ -67,3 +67,4 @@ export class ViewOneModuleComponent implements OnInit {
         );
     }
 }
+

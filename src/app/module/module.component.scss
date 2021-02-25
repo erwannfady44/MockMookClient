@@ -23,6 +23,9 @@ li {
         background: white;
         border-radius: 0 0 5px 5px;
         font-family: 'Roboto', sans-serif;
+
+        max-height: 155px;
+        overflow: hidden;
     }
 
     .module-footer {

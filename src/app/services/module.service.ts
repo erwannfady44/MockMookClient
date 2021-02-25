@@ -93,4 +93,12 @@ export class ModuleService {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }
+
+    deleteModule(module: ModuleModel): Observable<any> {
+        const param = new HttpParams().append('idUser', sessionStorage.getItem('idUser'));
+        const header = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`);
+        return this.http.delete<any>(`${this.app.URL}/path/${module._idPath}/${module._idModule}`, {headers: header, params: param});
+
+    }
+
 }

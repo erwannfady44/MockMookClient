@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
                     sessionStorage.setItem('idUser', res.idUser);
                     sessionStorage.setItem('pseudo', form.value.pseudo);
                     this.router.navigate(['']);
-                    this.toastr.success('Bienvenue ' + form.value.pseudo + ' !', 'Connexion réussi');
+                    this.toastr.success('Bienvenue ' + form.value.pseudo + ' !', 'Connexion réussie');
 
                 }, error => {
                     this.toastr.error(error.error.error, 'Erreur');

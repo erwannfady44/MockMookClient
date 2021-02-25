@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
                     sessionStorage.setItem('token', res.token);
                     sessionStorage.setItem('idUser', res.idUser);
                     sessionStorage.setItem('pseudo', form.value.pseudo);
-                    this.toastr.success('Bienvenue ' + form.value.pseudo + ' !', 'Inscription réussi');
+                    this.toastr.success('Bienvenue ' + form.value.pseudo + ' !', 'Inscription réussie');
                     this.router.navigate(['']);
 
                 }, error => {

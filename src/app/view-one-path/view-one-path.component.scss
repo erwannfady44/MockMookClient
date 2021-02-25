@@ -11,7 +11,15 @@
     .path-right {
         width: 50%;
         height: 100%;
-        margin: 2em 0;
+        margin: 2em;
+
+        .modules-list-container {
+
+            li {
+                cursor: pointer;
+                list-style-type: none;
+            }
+        }
     }
 
     .path-controls {

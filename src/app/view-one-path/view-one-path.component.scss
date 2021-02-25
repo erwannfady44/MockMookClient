@@ -5,12 +5,40 @@
     .path-left {
         width: 50%;
         height: 100%;
-        margin: 2em 0;
+        margin: 2em;
     }
 
     .path-right {
         width: 50%;
         height: 100%;
         margin: 2em 0;
+    }
+
+    .path-controls {
+
+        button {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            background: #777;
+            color: white;
+            border-radius: 50px;
+            transition: color ease-in-out .2s;
+            -webkit-box-shadow: 5px 5px 5px 0px #999;
+            -moz-box-shadow: 5px 5px 5px 0px #999;
+            box-shadow: 5px 5px 5px 0px #999;
+        }
+
+        .cog {
+            font-size: 30px;
+            padding: 5px 13px;
+
+            &:hover {
+                color: #777;
+                background: white;
+            }
+        }
     }
 }

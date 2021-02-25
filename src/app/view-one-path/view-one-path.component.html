@@ -5,16 +5,6 @@
         </div>
 
         <div class="path-right">
-            <button *ngIf="canEdit && !edit" class="btn-success btn" (click)="edit = true">Modifier</button>
-
-            <button *ngIf="edit" (click)="onViewAllModule()" class="btn btn-dark">Ajouter un module existant</button>
-
-            <button *ngIf="edit" [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
-                    class="btn btn-dark">créer un nouveau module
-            </button>
-            <button *ngIf="edit" (click)="onValidate()" class="btn btn-outline-success">Valider</button>
-            <button *ngIf="edit" (click)="deletePath()" class="btn btn-outline-danger">Supprimer le parcours</button>
-
             <div class="modules-list-container">
                 <ol>
                     <li *ngFor="let module of this.path._modules">
@@ -25,6 +15,15 @@
                     </li>
                 </ol>
             </div>
+        </div>
+        <div class="path-controls">
+            <button *ngIf="canEdit && !edit"(click)="edit = true" class="cog"><i class="fas fa-cog"></i></button>
+
+            <button *ngIf="edit" (click)="onViewAllModule()">Ajouter un module existant</button>
+
+            <button *ngIf="edit" [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']">créer un nouveau module
+            </button>
+            <button *ngIf="edit" (click)="onValidate()">Valider</button>
         </div>
     </div>
 </div>

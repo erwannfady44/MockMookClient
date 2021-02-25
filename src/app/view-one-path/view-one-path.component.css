@@ -5,12 +5,38 @@
 .path-container .path-left {
   width: 50%;
   height: 100%;
-  margin: 2em 0;
+  margin: 2em;
 }
 .path-container .path-right {
   width: 50%;
   height: 100%;
-  margin: 2em 0;
+  margin: 2em;
+}
+.path-container .path-right .modules-list-container li {
+  cursor: pointer;
+  list-style-type: none;
+}
+.path-container .path-controls button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  background: #777;
+  color: white;
+  border-radius: 50px;
+  transition: color ease-in-out 0.2s;
+  -webkit-box-shadow: 5px 5px 5px 0px #999;
+  -moz-box-shadow: 5px 5px 5px 0px #999;
+  box-shadow: 5px 5px 5px 0px #999;
+}
+.path-container .path-controls .cog {
+  font-size: 30px;
+  padding: 5px 13px;
+}
+.path-container .path-controls .cog:hover {
+  color: #777;
+  background: white;
 }
 
 /*# sourceMappingURL=view-one-path.component.css.map */

@@ -53,7 +53,6 @@
 }
 .big-card .card-body {
   font-family: "Nunito", sans-serif;
-  overflow-y: scroll;
 }
 .big-card .card-body h5 {
   font-weight: 600;

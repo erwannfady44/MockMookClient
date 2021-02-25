@@ -86,7 +86,8 @@ const appRoutes: Routes = [
         FormsModule,
         ToastrModule.forRoot({
             positionClass: 'toast-top-right',
-            timeOut: 2000
+            timeOut: 2000,
+            tapToDismiss: false
         }),
         HttpClientModule
     ],

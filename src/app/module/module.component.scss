@@ -1,7 +1,27 @@
 li {
     border: none;
-    background: #DDD;
-    padding: .5em 1em;
+    background: white;
     border-radius: 5px;
     list-style-type: none;
+
+    .module-head {
+        padding: .5em 1em;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.03);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        font-family: 'Nunito', sans-serif;
+
+        h4 {
+            padding-top: .3em;
+            font-weight: 600;
+        }
+    }
+
+    .module-body {
+        padding: .5em 1em;
+        text-align: justify;
+        background: white;
+        border-radius: 0 0 5px 5px;
+        font-family: 'Roboto', sans-serif;
+    }
 }

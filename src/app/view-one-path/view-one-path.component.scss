@@ -1,21 +1,25 @@
 .path-container {
     display: flex;
     justify-content: space-around;
+    margin-top: 2em;
 
     .path-left {
         width: 50%;
         height: 100%;
-        margin: 2em;
+        margin-left: 2em;
     }
 
     .path-right {
         width: 50%;
         height: 100%;
-        margin: 2em;
+        margin-right: 2em;
 
         .modules-list-container {
 
             li {
+                border: 2px solid #DDD;
+                border-radius: 7px;
+                margin-bottom: 2em;
                 cursor: pointer;
                 list-style-type: none;
             }
@@ -35,7 +39,7 @@
             border-radius: 50px;
         }
 
-        .cog {
+        .edit {
             font-size: 30px;
             padding: 5px 13px;
             transition: color ease-in-out .2s;

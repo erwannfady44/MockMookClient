@@ -5,12 +5,12 @@
 .path-container .path-left {
   width: 50%;
   height: 100%;
-  margin: 2em;
+  margin: 2em 0;
 }
 .path-container .path-right {
   width: 50%;
   height: 100%;
-  margin: 2em;
+  margin: 2em 0;
 }
 
 /*# sourceMappingURL=view-one-path.component.css.map */

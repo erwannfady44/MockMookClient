@@ -24,6 +24,7 @@
   font-weight: 600;
 }
 .card .card-body small {
+  border: none;
   background: #c8c8c8;
   border-radius: 50px;
   padding: 3px 10px;
@@ -38,6 +39,40 @@
 .card .card-footer span {
   margin: 0 10px;
 }
+.card:hover {
+  border: 2px solid #777;
+}
 
+.big-card {
+  border: 2px solid #DDD;
+  border-radius: 7px;
+}
+.big-card svg {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.big-card .card-body {
+  font-family: "Nunito", sans-serif;
+  overflow-y: scroll;
+}
+.big-card .card-body h5 {
+  font-weight: 600;
+}
+.big-card .card-body small {
+  border: none;
+  background: #c8c8c8;
+  border-radius: 50px;
+  padding: 3px 10px;
+  margin-right: 5px;
+  font-weight: 700;
+}
+.big-card .card-body p {
+  margin-top: 1em;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
+.big-card .card-footer span {
+  margin: 0 10px;
+}
 
 /*# sourceMappingURL=path.component.css.map */

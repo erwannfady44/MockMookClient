@@ -34,7 +34,7 @@ export class CreateRessourceComponent implements OnInit {
 
         this.moduleService.addResource(resource).subscribe(
             () => {
-                this.toastr.success('La ressource ' + form.value.title + ' a été crée !', 'Ressource crée');
+                this.toastr.success('La ressource ' + form.value.title + ' a été crée !', 'Ressource créé');
                 this.router.navigate(['path', this.route.snapshot.paramMap.get('idPath'), this.route.snapshot.paramMap.get('idModule')]);
             }, error => {
                 this.toastr.error(error.message, 'erreur');

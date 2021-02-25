@@ -35,7 +35,7 @@ export class CreateModuleComponent implements OnInit {
         this.moduleService.createModule(module)
             .subscribe(
                 () => {
-                    this.toastr.success('Le cours ' + form.value.title + ' a été crée !', 'Module crée');
+                    this.toastr.success('Le cours ' + form.value.title + ' a été créé !', 'Module crée');
                     this.router.navigate(['path/', this.route.snapshot.paramMap.get('idPath')]);
                 }, error => {
                     this.toastr.error(error.message, 'erreur');

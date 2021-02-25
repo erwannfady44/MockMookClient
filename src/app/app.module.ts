@@ -85,7 +85,8 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes),
         FormsModule,
         ToastrModule.forRoot({
-            positionClass: 'toast-top-right'
+            positionClass: 'toast-top-right',
+            timeOut: 2000
         }),
         HttpClientModule
     ],

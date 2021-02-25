@@ -62,7 +62,11 @@ export class PathService {
                     res.modules.forEach((module) => {
                         const m = new ModuleModel(res.idPath, module.pseudo, module.title, module.description);
                         m._idModule = module.idModule;
+                        m._position = module.position;
                         this.path.addModule(m);
+                    });
+                    this.path._modules.sort((a, b) => {
+                        return a._position - b._position;
                     });
                 }
                 resolve(this.path);

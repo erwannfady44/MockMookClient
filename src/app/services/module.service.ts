@@ -63,20 +63,34 @@ export class ModuleService {
         );
     }
 
-    searchByKeyWords(keyWords: Array<string>): Promise<any> {
+    searchByKeyWords(idPath: string, keyWords: Array<string>): Promise<any> {
         const params = new HttpParams()
-            .append('keyWords', keyWords.join(', '));
+            .append('keyWords', keyWords.join(', '))
+            .append('idPath', idPath);
         return new Promise(resolve => this.http.get<any>(`${this.app.URL}/module/findByKeyWords`, {params}).subscribe(
             res => {
-                console.log(res);
                 const modules = [];
-                res.forEach(module => {
-                    modules.push(new ModuleModel(module.idPath, module.idCreator, module.title, module.description));
+                res.json.forEach(module => {
+                    const m = new ModuleModel(module.idPath, module.idCreator, module.title, module.description);
+                    m._idModule = module.idModule;
+                    m._idPath = module.idPath;
+                    modules.push(m);
                 });
                 resolve(modules);
             }, error => {
                 console.log(error);
             }
         ));
+    }
+
+    clone(module: ModuleModel, idPath: string): Observable<any> {
+        const params = {
+            idModule: module._idModule,
+            idUser: sessionStorage.getItem('idUser')
+        };
+
+        return this.http.post<any>(`${this.app.URL}/path/${idPath}/${module._idModule}/clone`, params, {
+            headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+        });
     }
 }

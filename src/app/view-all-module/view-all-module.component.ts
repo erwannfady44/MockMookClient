@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ModuleModel} from '../model/Module.model';
 import {ModuleService} from '../services/module.service';
+import {PathModel} from '../model/Path.model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'app-view-all-module',
@@ -10,8 +12,8 @@ import {ModuleService} from '../services/module.service';
 export class ViewAllModuleComponent implements OnInit {
     keyWord: any;
     modules: Array<ModuleModel>;
-
-    constructor(private moduleService: ModuleService) {
+    constructor(private moduleService: ModuleService,
+                public route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
@@ -19,9 +21,9 @@ export class ViewAllModuleComponent implements OnInit {
     }
 
     async search(): Promise<any> {
-        if (this.keyWord.length > 3) {
+        if (this.keyWord.length >= 3) {
             const keyWords = this.keyWord.split(' ');
-            this.modules = await this.moduleService.searchByKeyWords(keyWords);
+            this.modules = await this.moduleService.searchByKeyWords(this.route.snapshot.paramMap.get('idPath'), keyWords);
         }
     }
 }

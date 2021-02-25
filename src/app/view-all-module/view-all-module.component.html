@@ -1,6 +1,10 @@
 <input type="text" class="form-control" [(ngModel)]="keyWord" (ngModelChange)="search()">
 
 <app-module *ngFor="let module of this.modules"
-            [module]="module">
-
+            [module]="module"
+            [routerLink]="['../', module._idModule]"
+            [queryParams]="{
+                clone: 'true',
+                idPath: this.route.snapshot.paramMap.get('idPath')
+            }">
 </app-module>

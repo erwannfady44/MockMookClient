@@ -48,6 +48,7 @@ const appRoutes: Routes = [
     {path: 'path/:idPath/create-module', component: CreateModuleComponent},
     {path: 'path/:idPath/view-all-module', component: ViewAllModuleComponent},
     {path: 'path/:idPath/:idModule', component: ViewOneModuleComponent},
+    {path: 'path/:idPath/:idModule/clone', component: ViewOneModuleComponent},
     {path: 'path/:idPath/:idModule/create-resource', component: CreateRessourceComponent},
     {path: 'account', component: AccountComponent},
     {path: '', component: HomeComponent},

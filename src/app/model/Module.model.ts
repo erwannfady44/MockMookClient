@@ -10,6 +10,7 @@ export class ModuleModel {
     private description: string;
     private idModule: string;
     private resource: Array<ResourceModel>;
+    private position: number;
 
     constructor(idPath: string, idCreator: string, title: string, description: string) {
         this.idPath = idPath;
@@ -17,6 +18,15 @@ export class ModuleModel {
         this.title = title;
         this.description = description;
         this.resource = new Array<ResourceModel>();
+    }
+
+
+    get _position(): number {
+        return this.position;
+    }
+
+    set _position(value: number) {
+        this.position = value;
     }
 
     addResource(resource: ResourceModel): void {

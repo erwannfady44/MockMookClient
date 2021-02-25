@@ -1,20 +1,19 @@
 <div *ngIf="this.path">
-    <app-path [path]="this.path"></app-path>
+    <app-path [path]="this.path"></app-path><br>
+
+    <button (click)="onViewAllModule()" class="btn btn-dark">Ajouter un module existant</button><br>
+
+    <button [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
+            class="btn btn-dark">créer un nouveau module
+    </button><br>
+
 
     <ol>
-        <li>
-            <button (click)="onViewAllModule()" class="btn btn-dark">Ajouter un module existant</button>
-        </li>
-        <li>
-            <button [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
-                    class="btn btn-dark">créer un nouveau module
-            </button>
-        </li>
         <li *ngFor="let module of this.path._modules">
-            <div [routerLink]="[module._idModule]">
-                <h3>{{module._title}}</h3><br>
-                <p>{{module._description}}</p>
-            </div>
+            <app-module
+                [module]="module"
+                [routerLink]="[module._idModule]"
+            ></app-module>
         </li>
     </ol>
 

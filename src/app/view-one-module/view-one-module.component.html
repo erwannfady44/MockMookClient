@@ -6,6 +6,7 @@
     <button class="btn btn-success" (click)="this.edit = true" *ngIf="this.canEdit && !this.edit">Modifier</button>
     <button *ngIf="!clone && this.edit" class="btn btn-dark" [routerLink]="['create-resource']">créer une nouvelle ressource</button>
     <button class="btn btn-success" (click)="onValidated()" *ngIf="canEdit && edit">Valider</button>
+    <button *ngIf="edit" (click)="deleteModule()" class="btn btn-outline-danger">Supprimer le module</button>
     <ol>
         <li *ngFor="let resource of this.module._resources">
             <div>

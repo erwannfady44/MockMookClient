@@ -55,4 +55,15 @@ export class ViewOneModuleComponent implements OnInit {
     onValidated(): void {
         this.edit = false;
     }
+
+    deleteModule(): void {
+        this.moduleService.deleteModule(this.module).subscribe(
+            () => {
+                this.toastr.success('Module supprimé avec succès');
+                this.router.navigate(['/path', this.route.snapshot.queryParamMap.get('idPath')]);
+            }, error => {
+                this.toastr.error(error.message);
+            }
+        );
+    }
 }

@@ -27,6 +27,11 @@
                         [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
                         class="add-button"><i class="fas fa-plus"></i>
                 </button>
+
+                <button *ngIf="edit"
+                        (click)="deletePath()"
+                        class="delete-button"><i class="fas fa-times-circle"></i>
+                </button>
                 <button *ngIf="edit" (click)="onValidate()" class="done"><i class="fas fa-check"></i></button>
             </div>
         </div>

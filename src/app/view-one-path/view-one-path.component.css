@@ -50,7 +50,7 @@
   color: #777;
   background: white;
 }
-.path-container .clone-button {
+.path-container .path-controls .clone-button {
   height: 55px;
   margin-right: 70px;
   font-size: 25px;
@@ -59,7 +59,11 @@
   -moz-box-shadow: 5px 5px 5px 0px #999;
   box-shadow: 5px 5px 5px 0px #999;
 }
-.path-container .add-button {
+.path-container .path-controls .clone-button:hover {
+  color: #777;
+  background: white;
+}
+.path-container .path-controls .add-button {
   height: 55px;
   margin-right: 140px;
   font-size: 30px;
@@ -67,6 +71,23 @@
   -webkit-box-shadow: 5px 5px 5px 0px #999;
   -moz-box-shadow: 5px 5px 5px 0px #999;
   box-shadow: 5px 5px 5px 0px #999;
+}
+.path-container .path-controls .add-button:hover {
+  color: #777;
+  background: white;
+}
+.path-container .path-controls .delete-button {
+  height: 55px;
+  margin-right: 210px;
+  font-size: 30px;
+  padding: 5px 13px;
+  -webkit-box-shadow: 5px 5px 5px 0px #999;
+  -moz-box-shadow: 5px 5px 5px 0px #999;
+  box-shadow: 5px 5px 5px 0px #999;
+}
+.path-container .path-controls .delete-button:hover {
+  color: #777;
+  background: white;
 }
 
 /*# sourceMappingURL=view-one-path.component.css.map */

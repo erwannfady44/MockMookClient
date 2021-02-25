@@ -62,25 +62,50 @@
                 background: white;
             }
         }
-    }
 
-    .clone-button {
-        height: 55px;
-        margin-right: 70px;
-        font-size: 25px;
-        padding: 5px 15px;
-        -webkit-box-shadow: 5px 5px 5px 0px #999;
-        -moz-box-shadow: 5px 5px 5px 0px #999;
-        box-shadow: 5px 5px 5px 0px #999;
-    }
+        .clone-button {
+            height: 55px;
+            margin-right: 70px;
+            font-size: 25px;
+            padding: 5px 15px;
+            -webkit-box-shadow: 5px 5px 5px 0px #999;
+            -moz-box-shadow: 5px 5px 5px 0px #999;
+            box-shadow: 5px 5px 5px 0px #999;
 
-    .add-button {
-        height: 55px;
-        margin-right: 140px;
-        font-size: 30px;
-        padding: 5px 15px;
-        -webkit-box-shadow: 5px 5px 5px 0px #999;
-        -moz-box-shadow: 5px 5px 5px 0px #999;
-        box-shadow: 5px 5px 5px 0px #999;
+            &:hover {
+                color: #777;
+                background: white;
+            }
+        }
+
+        .add-button {
+            height: 55px;
+            margin-right: 140px;
+            font-size: 30px;
+            padding: 5px 15px;
+            -webkit-box-shadow: 5px 5px 5px 0px #999;
+            -moz-box-shadow: 5px 5px 5px 0px #999;
+            box-shadow: 5px 5px 5px 0px #999;
+
+            &:hover {
+                color: #777;
+                background: white;
+            }
+        }
+
+        .delete-button {
+            height: 55px;
+            margin-right: 210px;
+            font-size: 30px;
+            padding: 5px 13px;
+            -webkit-box-shadow: 5px 5px 5px 0px #999;
+            -moz-box-shadow: 5px 5px 5px 0px #999;
+            box-shadow: 5px 5px 5px 0px #999;
+
+            &:hover {
+                color: #777;
+                background: white;
+            }
+        }
     }
 }

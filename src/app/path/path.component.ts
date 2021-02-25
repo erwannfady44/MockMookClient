@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class PathComponent implements OnInit {
     @Input() path: PathModel;
     @Input() border: boolean;
+    @Input() classList: Array<string>;
     style: {};
 
     constructor(private router: Router) {

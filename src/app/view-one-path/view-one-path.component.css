@@ -42,6 +42,9 @@
   font-size: 30px;
   padding: 5px 13px;
   transition: color ease-in-out 0.2s;
+  -webkit-box-shadow: 5px 5px 5px 0px #999;
+  -moz-box-shadow: 5px 5px 5px 0px #999;
+  box-shadow: 5px 5px 5px 0px #999;
 }
 .path-container .path-controls .done:hover {
   color: #777;
@@ -49,11 +52,21 @@
 }
 .path-container .clone-button {
   height: 55px;
-  margin-right: 50px;
+  margin-right: 70px;
+  font-size: 25px;
+  padding: 5px 15px;
+  -webkit-box-shadow: 5px 5px 5px 0px #999;
+  -moz-box-shadow: 5px 5px 5px 0px #999;
+  box-shadow: 5px 5px 5px 0px #999;
 }
 .path-container .add-button {
   height: 55px;
-  margin-right: 300px;
+  margin-right: 140px;
+  font-size: 30px;
+  padding: 5px 15px;
+  -webkit-box-shadow: 5px 5px 5px 0px #999;
+  -moz-box-shadow: 5px 5px 5px 0px #999;
+  box-shadow: 5px 5px 5px 0px #999;
 }
 
 /*# sourceMappingURL=view-one-path.component.css.map */

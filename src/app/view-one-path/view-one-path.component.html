@@ -20,10 +20,12 @@
             <button *ngIf="canEdit && !edit" (click)="edit = true" class="cog"><i class="fas fa-cog"></i></button>
 
             <div class="expandable-container">
-                <button *ngIf="edit" (click)="onViewAllModule()" class="clone-button">Ajouter un module existant</button>
+                <button *ngIf="edit" (click)="onViewAllModule()" class="clone-button"><i class="fas fa-clone"></i>
+                </button>
 
-                <button *ngIf="edit" [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
-                        class="add-button">créer un nouveau module
+                <button *ngIf="edit"
+                        [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
+                        class="add-button"><i class="fas fa-plus"></i>
                 </button>
                 <button *ngIf="edit" (click)="onValidate()" class="done"><i class="fas fa-check"></i></button>
             </div>

@@ -65,7 +65,12 @@ export class PathService {
                 this.path = new PathModel(res.title, res.description, res.idCreator, res.pseudo, res.idPath, new Date(res.date));
                 if (res.modules) {
                     res.modules.forEach((module) => {
-                        const m = new ModuleModel(res.idPath, module.idCreator, module.pseudo, module.title, module.description);
+                        const m = new ModuleModel(res.idPath,
+                            module.idCreator,
+                            module.pseudo,
+                            module.title,
+                            module.description,
+                            module.date);
                         m._idModule = module.idModule;
                         m._position = module.position;
                         this.path.addModule(m);

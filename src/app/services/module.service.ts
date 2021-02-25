@@ -31,7 +31,7 @@ export class ModuleService {
     async getOneModule(idPath: string, idModule: string): Promise<any> {
         return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}/${idModule}`).subscribe(
             res => {
-                this.module = new ModuleModel(res.idPath, res.idCreator, res.pseudo, res.title, res.description);
+                this.module = new ModuleModel(res.idPath, res.idCreator, res.pseudo, res.title, res.description, res.date);
                 this.module._idModule = res.idModule;
                 this.module._pseudo = res.pseudo;
                 if (res.resources) {
@@ -71,7 +71,7 @@ export class ModuleService {
             res => {
                 const modules = [];
                 res.json.forEach(module => {
-                    const m = new ModuleModel(module.idPath, module.idCreator, '', module.title, module.description);
+                    const m = new ModuleModel(module.idPath, module.idCreator, '', module.title, module.description, module.date);
                     m._idModule = module.idModule;
                     m._idPath = module.idPath;
                     modules.push(m);

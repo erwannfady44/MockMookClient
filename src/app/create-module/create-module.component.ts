@@ -29,7 +29,9 @@ export class CreateModuleComponent implements OnInit {
             sessionStorage.getItem('idUser'),
             sessionStorage.getItem('pseudo'),
             form.value.title,
-            form.value.description);
+            form.value.description,
+            null
+            );
         this.moduleService.createModule(module)
             .subscribe(
                 () => {

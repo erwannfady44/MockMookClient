@@ -12,16 +12,17 @@ export class ModuleModel {
     private idModule: string;
     private resource: Array<ResourceModel>;
     private position: number;
+    private date: Date;
 
-    constructor(idPath: string, idCreator: string, pseudo: string, title: string, description: string) {
+    constructor(idPath: string, idCreator: string, pseudo: string, title: string, description: string, date: Date) {
         this.idPath = idPath;
         this.idCreator = idCreator;
         this.pseudo = pseudo;
         this.title = title;
         this.description = description;
         this.resource = new Array<ResourceModel>();
+        this.date = date;
     }
-
 
     get _idCreator(): string {
         return this.idCreator;
@@ -43,11 +44,11 @@ export class ModuleModel {
         this.resource.push(resource);
     }
 
-    get _resources(): Array<ResourceModel>{
+    get _resources(): Array<ResourceModel> {
         return this.resource;
     }
 
-    set _resources(value: Array<ResourceModel>){
+    set _resources(value: Array<ResourceModel>) {
         this.resource = value;
     }
 
@@ -90,5 +91,13 @@ export class ModuleModel {
 
     set _idModule(value: string) {
         this.idModule = value;
+    }
+
+    get _date(): Date {
+        return this.date;
+    }
+
+    set _date(date: Date) {
+        this.date = date;
     }
 }

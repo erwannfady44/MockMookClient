@@ -1,8 +1,11 @@
 <li *ngIf="this.module">
     <div class="module-head">
-        <h4>{{this.module._title}}</h4>
+        <h4>{{this.module._position}}. {{this.module._title}}</h4>
     </div>
     <div class="module-body">
         <p>{{this.module._description}}</p>
+    </div>
+    <div class="module-footer">
+        <small class="text-muted"><i class="far fa-clock"></i> {{this.module._date}}<span><strong><i class="fas fa-user"></i> {{this.module._pseudo}}</strong></span></small>
     </div>
 </li>

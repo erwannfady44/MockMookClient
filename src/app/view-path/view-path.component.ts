@@ -10,6 +10,7 @@ import {Subscription} from 'rxjs';
     styleUrls: ['./view-path.component.css']
 })
 export class ViewPathComponent implements OnInit {
+    border: {};
     allPath: Array<PathModel>;
     pathSubscription: Subscription;
 

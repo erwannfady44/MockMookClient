@@ -5,4 +5,8 @@
   grid-gap: 1rem;
 }
 
+app-path {
+    cursor: pointer;
+}
+
 /*# sourceMappingURL=view-path.component.css.map */

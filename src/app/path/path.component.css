@@ -3,7 +3,6 @@
   min-height: 250px;
   max-width: 363px;
   max-height: 547px;
-  cursor: pointer;
   margin-top: 2em;
   transition: all ease-in-out 0.2s;
   border: 2px solid #DDD;
@@ -25,7 +24,6 @@
   font-weight: 600;
 }
 .card .card-body small {
-  border: none;
   background: #c8c8c8;
   border-radius: 50px;
   padding: 3px 10px;
@@ -40,8 +38,6 @@
 .card .card-footer span {
   margin: 0 10px;
 }
-.card:hover {
-  border: 2px solid #777;
-}
+
 
 /*# sourceMappingURL=path.component.css.map */

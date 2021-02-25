@@ -9,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class PathComponent implements OnInit {
     @Input() path: PathModel;
+    @Input() border: boolean;
+    style: {};
 
     constructor(private router: Router) {
     }
@@ -51,5 +53,17 @@ export class PathComponent implements OnInit {
 
         const time = dateDiff(this.path._date, Date.now());
         return time.day ? time.day : time.hour ? time.hour : time.min;
+    }
+
+    mouseEnter(): void {
+        if (this.border) {
+            this.style = {border: '2px solid #777'};
+        }
+    }
+
+    mouseLeave(): void {
+        if (this.border) {
+            this.style = {border: '2px solid #DDD'};
+        }
     }
 }

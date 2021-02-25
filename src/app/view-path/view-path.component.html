@@ -3,6 +3,7 @@
         <app-path *ngFor="let path of this.allPath"
                   [path]="path"
                   [routerLink]="['path/', path._idPath]"
+                  [border]="true"
         ></app-path>
     </div>
 </div>

@@ -39,21 +39,29 @@ export class PathComponent implements OnInit {
             tmp2 = Math.floor((tmp2 - diff2.hour) / 24);
             diff2.day = tmp2;
 
-            if (diff2.day) {
-                diff2.day += 'j';
-            } else if (diff2.hour) {
-                diff2.hour += 'h';
-            } else if (diff2.min) {
-                diff2.min += 'min';
-            } else {
-                diff2.sec += 'sec';
-            }
-
             return diff2;
         }
 
         const time = dateDiff(this.path._date, Date.now());
-        return time.day ? time.day : time.hour ? time.hour : time.min;
+
+
+        if (time.day) {
+            if (time.day > 365) {
+                const t = Math.floor(time.day / 365);
+                return t + 'y ';
+            } else if (time.day > 60) {
+                const t = Math.floor(time.day / 30);
+                return t + 'm ';
+            } else {
+                return time.day + 'd';
+            }
+        } else if (time.hour) {
+            return time.hour + 'h';
+        } else if (time.min) {
+            return time.min + 'min ';
+        } else {
+            return 'à l\'instant';
+        }
     }
 
     mouseEnter(): void {

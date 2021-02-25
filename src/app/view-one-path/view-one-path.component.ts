@@ -38,4 +38,15 @@ export class ViewOnePathComponent implements OnInit {
     onValidate(): void {
         this.edit = false;
     }
+
+    deletePath(): void {
+        this.pathService.deletePath(this.path._idPath).subscribe(
+            () => {
+                this.tosatr.success('Parcours supprimé avec succès');
+                this.router.navigate(['']);
+            }, error => {
+                this.tosatr.error(error.message);
+            }
+        );
+    }
 }

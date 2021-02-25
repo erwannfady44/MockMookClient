@@ -1,3 +1,16 @@
-
+.path-container {
+  display: flex;
+  justify-content: space-around;
+}
+.path-container .path-left {
+  width: 50%;
+  height: 100%;
+  margin: 2em;
+}
+.path-container .path-right {
+  width: 50%;
+  height: 100%;
+  margin: 2em;
+}
 
 /*# sourceMappingURL=view-one-path.component.css.map */

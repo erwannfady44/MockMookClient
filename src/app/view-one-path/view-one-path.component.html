@@ -1,23 +1,29 @@
 <div *ngIf="this.path">
-    <app-path [path]="this.path" [classList]="['big-card']"></app-path><br>
+    <div class="path-container">
+        <div class="path-left">
+            <app-path [path]="this.path" [classList]="['big-card']"></app-path>
+        </div>
 
-    <button *ngIf="canEdit && !edit" class="btn-success btn" (click)="edit = true">Modifier</button>
+        <div class="path-right">
+            <button *ngIf="canEdit && !edit" class="btn-success btn" (click)="edit = true">Modifier</button>
 
-    <button *ngIf="edit" (click)="onViewAllModule()" class="btn btn-dark">Ajouter un module existant</button><br>
+            <button *ngIf="edit" (click)="onViewAllModule()" class="btn btn-dark">Ajouter un module existant</button>
 
-    <button *ngIf="edit" [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
-            class="btn btn-dark">créer un nouveau module
-    </button><br>
-    <button *ngIf="edit" (click)="onValidate()" class="btn btn-outline-success">Valider</button>
+            <button *ngIf="edit" [routerLink]="['/path', this.route.snapshot.paramMap.get('idPath'), 'create-module']"
+                    class="btn btn-dark">créer un nouveau module
+            </button>
+            <button *ngIf="edit" (click)="onValidate()" class="btn btn-outline-success">Valider</button>
 
-
-    <ol>
-        <li *ngFor="let module of this.path._modules">
-            <app-module
-                [module]="module"
-                [routerLink]="[module._idModule]"
-            ></app-module>
-        </li>
-    </ol>
-
+            <div class="modules-list-container">
+                <ol>
+                    <li *ngFor="let module of this.path._modules">
+                        <app-module
+                            [module]="module"
+                            [routerLink]="[module._idModule]"
+                        ></app-module>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>

@@ -38,4 +38,8 @@ export class ViewOnePathComponent implements OnInit {
     onValidate(): void {
         this.edit = false;
     }
+
+    deletePath() {
+        this.pathService.deletePath(this.path._idPath);
+    }
 }

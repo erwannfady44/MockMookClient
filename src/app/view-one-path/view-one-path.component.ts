@@ -3,6 +3,7 @@ import {PathModel} from '../model/Path.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {PathService} from '../services/path.service';
+import {ModuleModel} from '../model/Module.model';
 
 @Component({
     selector: 'app-view-one-path',
@@ -48,5 +49,11 @@ export class ViewOnePathComponent implements OnInit {
                 this.tosatr.error(error.message);
             }
         );
+    }
+
+    onViewOnModule(module: ModuleModel): void {
+        if (!this.edit) {
+            this.router.navigate(['path', this.path._idPath, module._idModule]);
+        }
     }
 }

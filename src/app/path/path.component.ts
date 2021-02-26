@@ -11,6 +11,7 @@ export class PathComponent implements OnInit {
     @Input() path: PathModel;
     @Input() border: boolean;
     @Input() classList: Array<string>;
+    @Input() edit: boolean;
     style: {};
 
     constructor(private router: Router) {

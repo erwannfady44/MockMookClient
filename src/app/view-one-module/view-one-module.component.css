@@ -24,9 +24,9 @@
 }
 .module-container .module-right .resources-list-container li:hover {
   border: 2px solid #777;
-  -webkit-box-shadow: 5px 5px 5px 0px #DDD;
-  -moz-box-shadow: 5px 5px 5px 0px #DDD;
-  box-shadow: 5px 5px 5px 0px #DDD;
+  -webkit-box-shadow: 5px 5px 5px 0 #DDD;
+  -moz-box-shadow: 5px 5px 5px 0 #DDD;
+  box-shadow: 5px 5px 5px 0 #DDD;
 }
 .module-container .module-controls button {
   position: fixed;
@@ -42,9 +42,9 @@
   font-size: 30px;
   padding: 5px 13px;
   transition: color ease-in-out 0.2s;
-  -webkit-box-shadow: 5px 5px 5px 0px #999;
-  -moz-box-shadow: 5px 5px 5px 0px #999;
-  box-shadow: 5px 5px 5px 0px #999;
+  -webkit-box-shadow: 5px 5px 5px 0 #999;
+  -moz-box-shadow: 5px 5px 5px 0 #999;
+  box-shadow: 5px 5px 5px 0 #999;
 }
 .module-container .module-controls .edit:hover {
   color: #777;
@@ -54,9 +54,9 @@
   font-size: 30px;
   padding: 5px 13px;
   transition: color ease-in-out 0.2s;
-  -webkit-box-shadow: 5px 5px 5px 0px #999;
-  -moz-box-shadow: 5px 5px 5px 0px #999;
-  box-shadow: 5px 5px 5px 0px #999;
+  -webkit-box-shadow: 5px 5px 5px 0 #999;
+  -moz-box-shadow: 5px 5px 5px 0 #999;
+  box-shadow: 5px 5px 5px 0 #999;
 }
 .module-container .module-controls .done:hover {
   color: #777;
@@ -69,9 +69,9 @@
   background: #00b4d8;
   padding: 5px 15px;
   transition: color ease-in-out 0.2s;
-  -webkit-box-shadow: 5px 5px 5px 0px #999;
-  -moz-box-shadow: 5px 5px 5px 0px #999;
-  box-shadow: 5px 5px 5px 0px #999;
+  -webkit-box-shadow: 5px 5px 5px 0 #999;
+  -moz-box-shadow: 5px 5px 5px 0 #999;
+  box-shadow: 5px 5px 5px 0 #999;
 }
 .module-container .module-controls .clone-button:hover {
   color: #777;
@@ -84,9 +84,9 @@
   background: #16d19f;
   padding: 5px 15px;
   transition: color ease-in-out 0.2s;
-  -webkit-box-shadow: 5px 5px 5px 0px #999;
-  -moz-box-shadow: 5px 5px 5px 0px #999;
-  box-shadow: 5px 5px 5px 0px #999;
+  -webkit-box-shadow: 5px 5px 5px 0 #999;
+  -moz-box-shadow: 5px 5px 5px 0 #999;
+  box-shadow: 5px 5px 5px 0 #999;
 }
 .module-container .module-controls .add-button:hover {
   color: #777;
@@ -99,9 +99,9 @@
   background: #f8333c;
   padding: 5px 13px;
   transition: color ease-in-out 0.2s;
-  -webkit-box-shadow: 5px 5px 5px 0px #999;
-  -moz-box-shadow: 5px 5px 5px 0px #999;
-  box-shadow: 5px 5px 5px 0px #999;
+  -webkit-box-shadow: 5px 5px 5px 0 #999;
+  -moz-box-shadow: 5px 5px 5px 0 #999;
+  box-shadow: 5px 5px 5px 0 #999;
 }
 .module-container .module-controls .delete-button:hover {
   color: #777;

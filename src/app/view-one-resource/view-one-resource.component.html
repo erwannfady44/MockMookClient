@@ -2,5 +2,5 @@
     <app-resource [resource]="this.resource">
     </app-resource>
 
-
+    <button *ngIf="edit" (click)="deleteResource()" class="btn btn-outline-danger">Supprimer la resource</button>
 </div>

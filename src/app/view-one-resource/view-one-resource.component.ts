@@ -22,7 +22,9 @@ export class ViewOneResourceComponent implements OnInit {
                 public route: ActivatedRoute) {
     }
 
-    ngOnInit(): void {
+    async ngOnInit(): Promise<any> {
+        // tslint:disable-next-line:max-line-length
+        this.resource = await this.resourceService.getOneResource( this.route.snapshot.paramMap.get('idModule'), this.route.snapshot.paramMap.get('idResource'));
     }
 
     onValidated(): void {
@@ -33,7 +35,7 @@ export class ViewOneResourceComponent implements OnInit {
         this.resourceService.deleteResource(this.resource).subscribe(
             () => {
                 this.toastr.success('resource supprimé avec succès');
-                this.router.navigate(['/path', this.route.snapshot.queryParamMap.get('idPath') ]);
+                this.router.navigate(['/path', this.route.snapshot.queryParamMap.get('idPath')]);
             }, error => {
                 this.toastr.error(error.message);
             }

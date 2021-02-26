@@ -15,14 +15,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {AuthService} from './services/auth.service';
 import {UserModel} from './model/User.model';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {CreateRessourceComponent} from './create-ressource/create-ressource.component';
+import {CreateResourceComponent} from './create-resource/create-resource.component';
 import {CreatePathComponent} from './create-path/create-path.component';
 import {ViewPathComponent} from './view-path/view-path.component';
 import {PathService} from './services/path.service';
 import {PathModel} from './model/Path.model';
 import {ModuleService} from './services/module.service';
 import {ModuleModel} from './model/Module.model';
-import {RessourceService} from './services/ressource.service';
+import {ResourceService} from './services/resource.service';
 import {ResourceModel} from './model/Resource.model';
 import {PathComponent} from './path/path.component';
 import {FooterComponent} from './footer/footer.component';
@@ -31,11 +31,12 @@ import {CreateModuleComponent} from './create-module/create-module.component';
 import {ModuleComponent} from './module/module.component';
 import {ViewAllModuleComponent} from './view-all-module/view-all-module.component';
 import {UserDropdownComponent} from './user-dropdown/user-dropdown.component';
-import {RessourceComponent} from './ressource/ressource.component';
+import {ResourceComponent} from './resource/resource.component';
 import {AccountComponent} from './account/account.component';
 import {ViewOneModuleComponent} from './view-one-module/view-one-module.component';
 import {Variables} from './variables';
-import { ViewOneRessourceComponent } from './view-one-ressource/view-one-ressource.component';
+import { ViewOneResourceComponent } from './view-one-resource/view-one-resource.component';
+import { CloneOneModuleComponent } from './clone-one-module/clone-one-module.component';
 
 export const environment = {
     production: true
@@ -50,8 +51,9 @@ const appRoutes: Routes = [
     {path: 'path/:idPath/view-all-module', component: ViewAllModuleComponent},
     {path: 'path/:idPath/:idModule', component: ViewOneModuleComponent},
     {path: 'path/:idPath/:idModule/clone', component: ViewOneModuleComponent},
-    {path: 'path/:idPath/:idModule/create-resource', component: CreateRessourceComponent},
-    {path: 'path/:idPath/:idModule/:idResource/', component: ViewOneRessourceComponent},
+    {path: 'path/:idPath/:idModule/clone', component: CloneOneModuleComponent},
+    {path: 'path/:idPath/:idModule/create-resource', component: CreateResourceComponent},
+    {path: 'path/:idPath/:idModule/:idResource', component: ViewOneResourceComponent},
     {path: 'account', component: AccountComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}
@@ -67,7 +69,7 @@ const appRoutes: Routes = [
         HomeComponent,
         NotFoundComponent,
         NavbarComponent,
-        CreateRessourceComponent,
+        CreateResourceComponent,
         CreatePathComponent,
         ViewPathComponent,
         PathComponent,
@@ -77,10 +79,11 @@ const appRoutes: Routes = [
         ModuleComponent,
         ViewAllModuleComponent,
         UserDropdownComponent,
-        RessourceComponent,
+        ResourceComponent,
         AccountComponent,
         ViewOneModuleComponent,
-        ViewOneRessourceComponent
+        ViewOneResourceComponent,
+        CloneOneModuleComponent
     ],
     imports: [
         BrowserModule,
@@ -101,7 +104,7 @@ const appRoutes: Routes = [
         PathModel,
         ModuleService,
         ModuleModel,
-        RessourceService,
+        ResourceService,
         ResourceModel,
         Variables
     ],

@@ -1,21 +1,21 @@
-.path-container {
+.module-container {
     display: flex;
     justify-content: space-around;
     margin-top: 2em;
 
-    .path-left {
+    .module-left {
         width: 50%;
         height: 100%;
         margin-left: 2em;
         margin-bottom: 2em;
     }
 
-    .path-right {
+    .module-right {
         width: 50%;
         height: 100%;
         margin-right: 2em;
 
-        .modules-list-container {
+        .resources-list-container {
 
             li {
                 border: 2px solid white;
@@ -35,7 +35,7 @@
         }
     }
 
-    .path-controls {
+    .module-controls {
 
         button {
             position: fixed;

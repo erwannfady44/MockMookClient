@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewOneRessourceComponent } from './view-one-ressource.component';
+import { CloneOneModuleComponent } from './clone-one-module.component';
 
-describe('ViewOneRessourceComponent', () => {
-  let component: ViewOneRessourceComponent;
-  let fixture: ComponentFixture<ViewOneRessourceComponent>;
+describe('CloneOneModuleComponent', () => {
+  let component: CloneOneModuleComponent;
+  let fixture: ComponentFixture<CloneOneModuleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewOneRessourceComponent ]
+      declarations: [ CloneOneModuleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewOneRessourceComponent);
+    fixture = TestBed.createComponent(CloneOneModuleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

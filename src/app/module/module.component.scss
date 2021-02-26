@@ -1,7 +1,7 @@
 li {
-    border: none;
+    border: 2px solid #DDD;
+    border-radius: 7px;
     background: white;
-    border-radius: 5px;
     list-style-type: none;
 
     .module-head {
@@ -23,9 +23,6 @@ li {
         background: white;
         border-radius: 0 0 5px 5px;
         font-family: 'Roboto', sans-serif;
-
-        max-height: 155px;
-        overflow: hidden;
     }
 
     .module-footer {

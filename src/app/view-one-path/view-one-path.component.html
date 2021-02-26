@@ -17,6 +17,7 @@
                 </ol>
             </div>
         </div>
+
         <div class="path-controls">
             <button *ngIf="canEdit && !edit" (click)="edit = true" class="edit"><i class="fas fa-pencil-alt"></i></button>
 
@@ -33,7 +34,6 @@
                     class="delete-button"><i class="fas fa-times-circle"></i>
             </button>
             <button *ngIf="edit" (click)="onValidate()" class="done"><i class="fas fa-check"></i></button>
-
         </div>
     </div>
 </div>

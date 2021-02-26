@@ -23,8 +23,10 @@ export class ViewOneResourceComponent implements OnInit {
     }
 
     async ngOnInit(): Promise<any> {
-        // tslint:disable-next-line:max-line-length
-        this.resource = await this.resourceService.getOneResource( this.route.snapshot.paramMap.get('idModule'), this.route.snapshot.paramMap.get('idResource'));
+        this.resource = await this.resourceService.getOneResource(
+            this.route.snapshot.paramMap.get('idModule'),
+            this.route.snapshot.paramMap.get('idResource')
+        );
     }
 
     onValidated(): void {

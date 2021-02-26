@@ -21,13 +21,26 @@
   background: white;
   border-radius: 0 0 5px 5px;
   font-family: "Roboto", sans-serif;
+  max-height: 265px;
 }
 .resource-container .resource-body .resource-thumbnail {
   width: 50%;
+  margin-right: 1em;
+}
+.resource-container .resource-body .resource-thumbnail img {
+  border-radius: 5px;
+  border: 1px solid #DDD;
+  max-width: 100%;
 }
 .resource-container .resource-body .resource-description {
   width: 50%;
   text-align: justify;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.resource-container .resource-body .resource-description::-webkit-scrollbar {
+  display: none;
 }
 .resource-container .resource-footer {
   padding: 0.75rem 1.25rem;

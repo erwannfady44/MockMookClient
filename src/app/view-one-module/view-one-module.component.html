@@ -9,10 +9,8 @@
     <button *ngIf="edit" (click)="deleteModule()" class="btn btn-outline-danger">Supprimer le module</button>
     <ol>
         <li *ngFor="let resource of this.module._resources">
-            <div>
-                <h3>{{resource._title}}</h3>
-                <h4>{{resource._description}}</h4>
-                <h4>{{resource._url}}</h4>
+            <div >
+                <app-ressource [ressource]="resource" [routerLink]="[resource._idResource]"></app-ressource>
             </div>
         </li>
     </ol>

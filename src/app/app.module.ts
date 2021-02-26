@@ -51,6 +51,7 @@ const appRoutes: Routes = [
     {path: 'path/:idPath/:idModule', component: ViewOneModuleComponent},
     {path: 'path/:idPath/:idModule/clone', component: ViewOneModuleComponent},
     {path: 'path/:idPath/:idModule/create-resource', component: CreateRessourceComponent},
+    {path: 'path/:idPath/:idModule/:idResource/', component: ViewOneRessourceComponent},
     {path: 'account', component: AccountComponent},
     {path: '', component: HomeComponent},
     {path: '**', component: NotFoundComponent}

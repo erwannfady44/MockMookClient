@@ -14,6 +14,7 @@ export class ViewOnePathComponent implements OnInit {
     path: PathModel;
     edit: boolean;
     canEdit: boolean;
+    class: string;
 
     constructor(public route: ActivatedRoute,
                 private router: Router,
@@ -55,5 +56,10 @@ export class ViewOnePathComponent implements OnInit {
         if (!this.edit) {
             this.router.navigate(['path', this.path._idPath, module._idModule]);
         }
+    }
+
+    onEdit(): void {
+        this.edit = true;
+        this.class = "unselectable";
     }
 }

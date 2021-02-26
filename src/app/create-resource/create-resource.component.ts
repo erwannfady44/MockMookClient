@@ -30,6 +30,7 @@ export class CreateResourceComponent implements OnInit {
             form.value.url,
             form.value.title,
             form.value.description,
+            new Date()
         );
 
         this.moduleService.addResource(resource).subscribe(

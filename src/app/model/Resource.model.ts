@@ -8,12 +8,23 @@ export class ResourceModel {
     private url: string;
     private title: string;
     private description: string;
+    private date: Date;
 
-    constructor(idModule: string, url: string, title: string, description: string) {
+    constructor(idModule: string, url: string, title: string, description: string, date: Date) {
         this.idModule = idModule;
         this.url = url;
         this.title = title;
         this.description = description;
+        this.date = date;
+    }
+
+
+    get _date(): Date {
+        return this.date;
+    }
+
+    set _date(value: Date) {
+        this.date = value;
     }
 
     get _idModule(): string {

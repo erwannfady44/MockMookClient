@@ -6,11 +6,11 @@ import {ModuleService} from '../services/module.service';
 import {ResourceModel} from '../model/Resource.model';
 
 @Component({
-    selector: 'app-create-ressource',
-    templateUrl: './create-ressource.component.html',
-    styleUrls: ['./create-ressource.component.css']
+    selector: 'app-create-resource',
+    templateUrl: './create-resource.component.html',
+    styleUrls: ['./create-resource.component.css']
 })
-export class CreateRessourceComponent implements OnInit {
+export class CreateResourceComponent implements OnInit {
 
     constructor(private router: Router,
                 private route: ActivatedRoute,
@@ -34,7 +34,7 @@ export class CreateRessourceComponent implements OnInit {
 
         this.moduleService.addResource(resource).subscribe(
             () => {
-                this.toastr.success('La ressource ' + form.value.title + ' a été crée !', 'Ressource créé');
+                this.toastr.success('La resource ' + form.value.title + ' a été crée !', 'resource créé');
                 this.router.navigate(['path', this.route.snapshot.paramMap.get('idPath'), this.route.snapshot.paramMap.get('idModule')]);
             }, error => {
                 this.toastr.error(error.message, 'erreur');

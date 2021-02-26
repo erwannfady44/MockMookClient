@@ -93,8 +93,14 @@ export class PathService {
     }
 
     editPath(): Observable<any> {
+        const params = {
+            idUser: sessionStorage.getItem('idUser'),
+            path: this._path
+        };
         console.log(this._path);
-        return null;
+        return this.http.post<any>(`${this.app.URL}/path/${this._path._idPath}`, params, {
+            headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+        });
     }
 
 

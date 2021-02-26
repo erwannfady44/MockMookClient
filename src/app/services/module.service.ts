@@ -36,7 +36,7 @@ export class ModuleService {
                 this.module._pseudo = res.pseudo;
                 if (res.resources) {
                     res.resources.forEach(resource => {
-                        const r = new ResourceModel(this.module._idModule, resource.url, resource.title, resource.description);
+                        const r = new ResourceModel(this.module._idModule, resource.url, resource.title, resource.description, res.date);
                         r._idResource = resource.idResource;
                         this.module.addResource(r);
                     });

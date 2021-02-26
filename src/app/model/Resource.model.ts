@@ -9,15 +9,35 @@ export class ResourceModel {
     private title: string;
     private description: string;
     private date: Date;
+    private pseudo: string;
+    private idCreator: string;
 
-    constructor(idModule: string, url: string, title: string, description: string, date: Date) {
+    constructor(idModule: string, idCreator: string, pseudo: string, url: string, title: string, description: string, date: Date,) {
         this.idModule = idModule;
         this.url = url;
         this.title = title;
         this.description = description;
         this.date = date;
+        this.pseudo = pseudo;
+        this.idCreator = idCreator;
     }
 
+
+    get _idCreator(): string {
+        return this.idCreator;
+    }
+
+    set _idCreator(value: string) {
+        this.idCreator = value;
+    }
+
+    get _pseudo(): string {
+        return this.pseudo;
+    }
+
+    set _pseudo(value: string) {
+        this.pseudo = value;
+    }
 
     get _date(): Date {
         return this.date;

@@ -28,6 +28,8 @@ export class CreateResourceComponent implements OnInit {
 
         const resource = new ResourceModel(this.route.snapshot.paramMap.get('idModule'),
             form.value.url,
+            sessionStorage.getItem('idUser'),
+            sessionStorage.getItem('pseudo'),
             form.value.title,
             form.value.description,
             new Date()

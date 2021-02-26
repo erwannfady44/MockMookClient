@@ -64,7 +64,7 @@ export class ModuleService {
             idUser: sessionStorage.getItem('idUser')
         };
 
-        return this.http.put<any>(`${this.app.URL}/path/${resource._idModule}/resource`, params, {
+        return this.http.put<any>(`${this.app.URL}/module/${resource._idModule}/resource`, params, {
                 headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
             }
         );

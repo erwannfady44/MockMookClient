@@ -35,6 +35,7 @@ import {RessourceComponent} from './ressource/ressource.component';
 import {AccountComponent} from './account/account.component';
 import {ViewOneModuleComponent} from './view-one-module/view-one-module.component';
 import {Variables} from './variables';
+import { ViewOneRessourceComponent } from './view-one-ressource/view-one-ressource.component';
 
 export const environment = {
     production: true
@@ -77,7 +78,8 @@ const appRoutes: Routes = [
         UserDropdownComponent,
         RessourceComponent,
         AccountComponent,
-        ViewOneModuleComponent
+        ViewOneModuleComponent,
+        ViewOneRessourceComponent
     ],
     imports: [
         BrowserModule,

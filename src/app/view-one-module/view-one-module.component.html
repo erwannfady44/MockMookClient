@@ -1,18 +1,29 @@
 <div *ngIf="this.module">
-    <button class="btn btn-success" (click)="onClone()" *ngIf="clone">Cloner</button>
-    <app-module [module]="this.module">
-    </app-module>
+    <div class="module-container">
+        <div class="module-left">
+            <app-module [module]="this.module"></app-module>
+        </div>
 
-    <button class="btn btn-success" (click)="this.edit = true" *ngIf="this.canEdit && !this.edit">Modifier</button>
-    <button *ngIf="!clone && this.edit" class="btn btn-dark" [routerLink]="['create-resource']">créer une nouvelle ressource</button>
-    <button class="btn btn-success" (click)="onValidated()" *ngIf="canEdit && edit">Valider</button>
-    <button *ngIf="edit" (click)="deleteModule()" class="btn btn-outline-danger">Supprimer le module</button>
-    <ol>
-        <li *ngFor="let resource of this.module._resources">
-            <div >
-                <app-ressource [ressource]="resource" [routerLink]="[resource._idResource]"></app-ressource>
+        <div class="module-right">
+            <div class="ressources-list-container">
+                <ol>
+                    <li *ngFor="let resource of this.module._resources">
+                        <div >
+                            <app-ressource [ressource]="resource" [routerLink]="[resource._idResource]"></app-ressource>
+                        </div>
+                    </li>
+                </ol>
             </div>
-        </li>
-    </ol>
+        </div>
+
+        <div class="module-controls">
+            <button class="edit" (click)="this.edit = true" *ngIf="this.canEdit && !this.edit"><i class="fas fa-pencil-alt"></i></button>
+            <button class="clone-button" *ngIf="edit"><i class="fas fa-clone"></i></button>
+            <button class="add-button" *ngIf="!clone && this.edit" [routerLink]="['create-resource']"><i class="fas fa-plus"></i></button>
+            <button class="delete-button" *ngIf="edit" (click)="deleteModule()"><i class="fas fa-times-circle"></i></button>
+            <button class="done" (click)="onValidated()" *ngIf="canEdit && edit"><i class="fas fa-check"></i></button>
+        </div>
+        <button class="clone-module-button" (click)="onClone()" *ngIf="clone"><i class="fas fa-clone"></i></button>
+    </div>
 </div>
 

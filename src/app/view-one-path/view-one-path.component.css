@@ -15,8 +15,8 @@
   margin-right: 2em;
 }
 .path-container .path-right .modules-list-container li {
-  border: 2px solid #DDD;
-  border-radius: 7px;
+  border: 2px solid white;
+  border-radius: 9px;
   margin-bottom: 2em;
   cursor: pointer;
   list-style-type: none;

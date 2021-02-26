@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {UserModel} from '../model/User.model';
 import {Observable} from 'rxjs';
-import {Variables} from '../variables';
+import {AppService} from './app.service';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +10,7 @@ export class AuthService {
 
     constructor(private http: HttpClient,
                 private user: UserModel,
-                private app: Variables) {
+                private app: AppService) {
         this._user = new UserModel();
     }
 

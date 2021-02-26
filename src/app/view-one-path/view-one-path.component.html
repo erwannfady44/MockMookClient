@@ -6,13 +6,22 @@
 
         <div class="path-right" >
             <div class="modules-list-container">
-                <ol>
+                <ol *ngIf="!edit">
                     <li *ngFor="let module of this.path._modules">
                         <app-module
                             [module]="module"
                             (click)="onViewOnModule(module)"
                             [edit]="this.edit"
                         ></app-module>
+                    </li>
+                </ol>
+
+                <ol *ngIf="edit" cdkDropList (cdkDropListDropped)="drop($event)">
+                    <li *ngFor="let module of this.path._modules" cdkDrag>
+                        <app-module
+                            [module]="module"
+                            [edit]="true">
+                        </app-module>
                     </li>
                 </ol>
             </div>

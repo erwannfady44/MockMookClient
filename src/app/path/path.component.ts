@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PathModel} from '../model/Path.model';
 import {Router} from '@angular/router';
-import {Variables} from '../variables';
+import {AppService} from '../services/app.service';
 
 @Component({
     selector: 'app-path',
@@ -16,7 +16,7 @@ export class PathComponent implements OnInit {
     style: {};
 
     constructor(private router: Router,
-                public app: Variables) {
+                public app: AppService) {
     }
 
     ngOnInit(): void {

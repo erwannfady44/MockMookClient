@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {ModuleModel} from '../model/Module.model';
 import {Observable} from 'rxjs';
 import {ResourceModel} from '../model/Resource.model';
-import {Variables} from '../variables';
+import {AppService} from './app.service';
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +13,7 @@ export class ModuleService {
     private module: ModuleModel;
 
     constructor(private http: HttpClient,
-                private app: Variables) {
+                private app: AppService) {
     }
 
     createModule(module: ModuleModel): Observable<any> {
@@ -36,7 +36,14 @@ export class ModuleService {
                 this.module._pseudo = res.pseudo;
                 if (res.resources) {
                     res.resources.forEach(resource => {
-                        const r = new ResourceModel(this.module._idModule, resource.idCreator, resource.pseudo, resource.url, resource.title, resource.description, res.date);
+                        const r = new ResourceModel(this.module._idModule,
+                            resource.idCreator,
+                            resource.pseudo,
+                            resource.url,
+                            resource.title,
+                            resource.description,
+                            res.date
+                        );
                         r._idResource = resource.idResource;
                         this.module.addResource(r);
                     });

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ResourceModel} from '../model/Resource.model';
-import {Variables} from '../variables';
+import {AppService} from '../services/app.service';
 
 @Component({
   selector: 'app-resource',
@@ -10,7 +10,7 @@ import {Variables} from '../variables';
 export class ResourceComponent implements OnInit {
     @Input() resource: ResourceModel;
 
-  constructor(private app: Variables) { }
+  constructor(private app: AppService) { }
 
   ngOnInit(): void {
   }

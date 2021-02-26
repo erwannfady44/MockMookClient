@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {PathModel} from '../model/Path.model';
 import {Observable} from 'rxjs';
 import {ModuleModel} from '../model/Module.model';
-import {Variables} from '../variables';
+import {AppService} from './app.service';
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +13,7 @@ export class PathService {
     private path: PathModel;
 
     constructor(private http: HttpClient,
-                private app: Variables) {
+                private app: AppService) {
     }
 
     createPath(title: string, description: string): Observable<any> {
@@ -90,5 +90,28 @@ export class PathService {
         const param = new HttpParams().append('idUser', sessionStorage.getItem('idUser'));
         const header = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`);
         return this.http.delete<any>(`${this.app.URL}/path/${idPath}`, {headers: header, params: param});
+    }
+
+    editPath(): Observable<any> {
+        console.log(this._path);
+        return null;
+    }
+
+
+    get _allPath(): PathModel[] {
+        return this.allPath;
+    }
+
+    set _allPath(value: PathModel[]) {
+        this.allPath = value;
+    }
+
+
+    get _path(): PathModel {
+        return this.path;
+    }
+
+    set _path(value: PathModel) {
+        this.path = value;
     }
 }

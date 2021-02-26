@@ -34,9 +34,9 @@ import {UserDropdownComponent} from './user-dropdown/user-dropdown.component';
 import {ResourceComponent} from './resource/resource.component';
 import {AccountComponent} from './account/account.component';
 import {ViewOneModuleComponent} from './view-one-module/view-one-module.component';
-import {Variables} from './variables';
 import { ViewOneResourceComponent } from './view-one-resource/view-one-resource.component';
 import { CloneOneModuleComponent } from './clone-one-module/clone-one-module.component';
+import {CdkDragDrop, DragDropModule, moveItemInArray} from '@angular/cdk/drag-drop';
 
 export const environment = {
     production: true
@@ -95,7 +95,8 @@ const appRoutes: Routes = [
             timeOut: 2000,
             tapToDismiss: true
         }),
-        HttpClientModule
+        HttpClientModule,
+        DragDropModule,
     ],
     providers: [
         AuthService,
@@ -106,7 +107,6 @@ const appRoutes: Routes = [
         ModuleModel,
         ResourceService,
         ResourceModel,
-        Variables
     ],
     bootstrap: [AppComponent]
 })

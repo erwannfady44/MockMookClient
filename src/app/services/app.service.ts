@@ -1,7 +1,12 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-@Injectable()
-export class Variables {
+@Injectable({
+  providedIn: 'root'
+})
+export class AppService {
+
+  constructor() { }
+
     URL = 'http://localhost:3000/api';
 
 
@@ -41,7 +46,5 @@ export class Variables {
         } else {
             return 'à l\'instant';
         }
-
-
     }
 }

@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {PathService} from '../services/path.service';
 import {ModuleModel} from '../model/Module.model';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
     selector: 'app-view-one-path',
@@ -23,7 +24,8 @@ export class ViewOnePathComponent implements OnInit {
     }
 
     async ngOnInit(): Promise<any> {
-        this.path = await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
+        await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
+        this.path = this.pathService._path;
         if (this.route.snapshot.queryParamMap.get('edit')) {
             this.edit = true;
         }
@@ -39,6 +41,7 @@ export class ViewOnePathComponent implements OnInit {
 
     onValidate(): void {
         this.edit = false;
+        this.pathService.editPath();
     }
 
     deletePath(): void {
@@ -53,13 +56,20 @@ export class ViewOnePathComponent implements OnInit {
     }
 
     onViewOnModule(module: ModuleModel): void {
-        if (!this.edit) {
-            this.router.navigate(['path', this.path._idPath, module._idModule]);
-        }
+        this.router.navigate(['path', this.path._idPath, module._idModule]);
     }
 
     onEdit(): void {
         this.edit = true;
-        this.class = "unselectable";
+        this.class = 'unselectable';
+    }
+
+    drop(event: CdkDragDrop<string[]>): void {
+        moveItemInArray(this.path._modules, event.previousIndex, event.currentIndex);
+        console.log(this.path._modules);
+        let i = 0;
+        this.path._modules.forEach(module => {
+            module._position = i++;
+        });
     }
 }

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ResourceModel} from '../model/Resource.model';
-import {Variables} from '../variables';
+import {AppService} from './app.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +11,7 @@ export class ResourceService {
     private URL = 'http://localhost:3000/api/module';
 
     constructor(private http: HttpClient,
-                private app: Variables) {
+                private app: AppService) {
     }
 
     deleteResource(resource: ResourceModel): Observable<any> {

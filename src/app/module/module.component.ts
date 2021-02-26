@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ModuleModel} from '../model/Module.model';
-import {Variables} from '../variables';
+import {AppService} from '../services/app.service';
 
 @Component({
     selector: 'app-module',
@@ -11,7 +11,7 @@ export class ModuleComponent implements OnInit {
     @Input() module: ModuleModel;
     @Input() edit: boolean;
 
-    constructor(private app: Variables) {
+    constructor(private app: AppService) {
     }
 
     ngOnInit(): void {

@@ -12,14 +12,13 @@ import {Subscription} from 'rxjs';
 export class ViewPathComponent implements OnInit {
     border: {};
     allPath: Array<PathModel>;
-    pathSubscription: Subscription;
 
     constructor(private pathService: PathService,
                 private toastr: ToastrService) {
     }
 
     async ngOnInit(): Promise<any> {
-        this.allPath = await this.pathService.getAllPath();
+        await this.pathService.getAllPath();
+        this.allPath = this.pathService._allPath;
     }
-
 }

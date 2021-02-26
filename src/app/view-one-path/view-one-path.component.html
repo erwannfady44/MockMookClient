@@ -1,7 +1,7 @@
 <div *ngIf="this.path">
     <div class="path-container">
         <div class="path-left">
-            <app-path [path]="this.path" [classList]="['big-card']"></app-path>
+            <app-path [path]="this.path" [classList]="['big-card']" [edit]="this.edit"></app-path>
         </div>
 
         <div class="path-right">
@@ -10,7 +10,8 @@
                     <li *ngFor="let module of this.path._modules">
                         <app-module
                             [module]="module"
-                            [routerLink]="[module._idModule]"
+                            (click)="onViewOnModule(module)"
+                            [edit]="this.edit"
                         ></app-module>
                     </li>
                 </ol>

@@ -8,6 +8,7 @@ import {ModuleModel} from '../model/Module.model';
 })
 export class ModuleComponent implements OnInit {
     @Input() module: ModuleModel;
+    @Input() edit: boolean;
 
     constructor() {
     }
@@ -15,5 +16,4 @@ export class ModuleComponent implements OnInit {
     ngOnInit(): void {
         console.log();
     }
-
 }

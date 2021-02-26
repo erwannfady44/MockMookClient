@@ -5,11 +5,11 @@
         </div>
 
         <div class="module-right">
-            <div class="ressources-list-container">
+            <div class="resources-list-container">
                 <ol>
                     <li *ngFor="let resource of this.module._resources">
                         <div >
-                            <app-ressource [ressource]="resource" [routerLink]="[resource._idResource]"></app-ressource>
+                            <app-resource [resource]="resource" [routerLink]="[resource._idResource]"></app-resource>
                         </div>
                     </li>
                 </ol>

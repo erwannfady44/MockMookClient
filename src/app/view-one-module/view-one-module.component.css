@@ -14,7 +14,7 @@
   height: 100%;
   margin-right: 2em;
 }
-.module-container .module-right .ressources-list-container li {
+.module-container .module-right .resources-list-container li {
   border: 2px solid white;
   border-radius: 9px;
   margin-bottom: 2em;
@@ -22,7 +22,7 @@
   list-style-type: none;
   transition: all ease-in-out 0.2s;
 }
-.module-container .module-right .ressources-list-container li:hover {
+.module-container .module-right .resources-list-container li:hover {
   border: 2px solid #777;
   -webkit-box-shadow: 5px 5px 5px 0px #DDD;
   -moz-box-shadow: 5px 5px 5px 0px #DDD;

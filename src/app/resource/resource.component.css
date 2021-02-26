@@ -1,3 +1,41 @@
-
+.resource-container {
+  border: 2px solid #DDD;
+  border-radius: 7px;
+  background: white;
+  list-style-type: none;
+}
+.resource-container .resource-header {
+  padding: 0.5em 1em;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  font-family: "Nunito", sans-serif;
+}
+.resource-container .resource-header h5 {
+  padding-top: 0.4em;
+  font-weight: 600;
+}
+.resource-container .resource-body {
+  padding: 1em 1em;
+  display: flex;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  font-family: "Roboto", sans-serif;
+}
+.resource-container .resource-body .resource-thumbnail {
+  width: 50%;
+}
+.resource-container .resource-body .resource-description {
+  width: 50%;
+  text-align: justify;
+}
+.resource-container .resource-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+.resource-container .resource-footer span {
+  margin: 0 10px;
+}
 
 /*# sourceMappingURL=resource.component.css.map */

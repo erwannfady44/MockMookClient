@@ -18,6 +18,15 @@ export class ResourceModel {
         this.date = date;
     }
 
+
+    get _date(): Date {
+        return this.date;
+    }
+
+    set _date(value: Date) {
+        this.date = value;
+    }
+
     get _idModule(): string {
         return this.idModule;
     }

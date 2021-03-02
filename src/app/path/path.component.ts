@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PathModel} from '../model/Path.model';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AppService} from '../services/app.service';
+import {TagModel} from '../model/Tag.model';
+import {TagService} from '../services/tag.service';
 
 @Component({
     selector: 'app-path',
@@ -14,9 +16,13 @@ export class PathComponent implements OnInit {
     @Input() classList: Array<string>;
     @Input() edit: boolean;
     style: {};
+    tags: string;
+    tagList: Array<TagModel>;
 
     constructor(private router: Router,
-                public app: AppService) {
+                public app: AppService,
+                private tagService: TagService,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
@@ -37,5 +43,21 @@ export class PathComponent implements OnInit {
         if (this.border) {
             this.style = {border: '2px solid #DDD'};
         }
+    }
+
+    async createTag(): Promise<any> {
+        const tmp = this.tags.replace(' ', '');
+        const t = tmp.split('#');
+        if (this.tags.length >= 4) {
+            this.tagList = await this.tagService.getTagByKeyWords(t, this.route.snapshot.paramMap.get('idPath'));
+        } else {
+            this.tagList = [];
+        }
+    }
+
+    addTag(tag: TagModel): void {
+        console.log(this.path._tags);
+        this.path._tags.push(tag);
+        this.tagList = [];
     }
 }

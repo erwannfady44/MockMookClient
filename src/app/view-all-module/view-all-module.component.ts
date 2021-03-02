@@ -24,6 +24,8 @@ export class ViewAllModuleComponent implements OnInit {
         if (this.keyWord.length >= 3) {
             const keyWords = this.keyWord.split(' ');
             this.modules = await this.moduleService.searchByKeyWords(this.route.snapshot.paramMap.get('idPath'), keyWords);
+        } else {
+            this.modules = [];
         }
     }
 }

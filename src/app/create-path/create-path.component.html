@@ -7,5 +7,12 @@
         <label for="description">Description</label>
         <input class="form-text" id="description" name="description" ngModel required>
     </div>
+
+    <input type="text" class="form-text" [(ngModel)]="this.tags" (ngModelChange)="createTag()" placeholder="tag" name="tags">
+    <div  *ngIf="tagList">
+        <small *ngFor="let tag of this.tagList" (click)="addTag(tag)">#{{tag._name}}</small><br>
+    </div>
+
+
     <button [disabled]="form.invalid" class="btn-primary" type="submit">Créer le parcours</button>
 </form>

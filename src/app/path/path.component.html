@@ -3,10 +3,11 @@
     <div class="card-body">
         <h5 class="card-title" *ngIf="!edit">{{this.path._title}}</h5>
         <input *ngIf="edit" class="card-title" type="text" value="{{this.path._title}}" [(ngModel)]="this.path._title">
-        <small>#Tag</small>
-        <small>#Tag</small>
-        <small>#Tag</small>
-        <small>#Tag</small>
+        <small *ngFor="let tag of this.path._tags">#{{tag._name}}</small>
+        <input type="text" class="form-text" *ngIf="edit" [(ngModel)]="this.tags" (ngModelChange)="createTag()">
+        <div  *ngIf="edit && tagList">
+            <small *ngFor="let tag of this.tagList" (click)="addTag(tag)">#{{tag._name}}</small><br>
+        </div>
         <p *ngIf="!edit" class="card-text">{{this.path._description}}</p>
         <textarea *ngIf="edit" class="card-text" [(ngModel)]="path._description">{{this.path._description}}</textarea>
     </div>

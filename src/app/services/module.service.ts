@@ -93,10 +93,11 @@ export class ModuleService {
     clone(module: ModuleModel, idPath: string): Observable<any> {
         const params = {
             idModule: module._idModule,
-            idUser: sessionStorage.getItem('idUser')
+            idUser: sessionStorage.getItem('idUser'),
+            idPath2: idPath
         };
 
-        return this.http.post<any>(`${this.app.URL}/path/${idPath}/${module._idModule}/clone`, params, {
+        return this.http.post<any>(`${this.app.URL}/path/${module._idPath}/${module._idModule}/clone`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });
     }

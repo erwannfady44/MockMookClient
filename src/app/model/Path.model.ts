@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ModuleModel} from './Module.model';
+import {TagModel} from './Tag.model';
 
 @Injectable({providedIn: 'root'})
 
@@ -11,8 +12,15 @@ export class PathModel {
     private idPath: string;
     private date: Date;
     private modules: Array<ModuleModel>;
+    private tags: Array<TagModel>;
 
-    constructor(title: string, description: string, idCreator: string, pseudoCreator: string, idPath: string, date: Date) {
+    constructor(title: string,
+                description: string,
+                idCreator: string,
+                pseudoCreator: string,
+                idPath: string,
+                date: Date,
+                tags: Array<TagModel>) {
         this.title = title;
         this.description = description;
         this.idCreator = idCreator;
@@ -20,8 +28,17 @@ export class PathModel {
         this.idPath = idPath;
         this.date = date;
         this.modules = new Array<ModuleModel>();
+        this.tags = tags;
     }
 
+
+    get _tags(): Array<TagModel> {
+        return this.tags;
+    }
+
+    set _tags(value: Array<TagModel>) {
+        this.tags = value;
+    }
 
     get _idCreator(): string {
         return this.idCreator;
@@ -81,5 +98,9 @@ export class PathModel {
 
     addModule(module: ModuleModel): void {
         this.modules.push(module);
+    }
+
+    addTag(tag: TagModel): void {
+        this.tags.push(tag);
     }
 }

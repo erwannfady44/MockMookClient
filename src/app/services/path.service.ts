@@ -4,6 +4,7 @@ import {PathModel} from '../model/Path.model';
 import {Observable} from 'rxjs';
 import {ModuleModel} from '../model/Module.model';
 import {AppService} from './app.service';
+import {TagModel} from '../model/Tag.model';
 
 @Injectable({
     providedIn: 'root'
@@ -16,13 +17,21 @@ export class PathService {
                 private app: AppService) {
     }
 
-    createPath(title: string, description: string): Observable<any> {
-        const path = new PathModel(title, description, sessionStorage.getItem('idUser'), sessionStorage.getItem('pseudo'), '', null);
+    createPath(title: string, description: string, tagList: Array<TagModel>): Observable<any> {
+        const path = new PathModel(title,
+            description,
+            sessionStorage.getItem('idUser'),
+            sessionStorage.getItem('pseudo'),
+            '',
+            null,
+            new Array<TagModel>()
+        );
 
         const params = {
             idUser: sessionStorage.getItem('idUser'),
             title: path._title,
-            description: path._description
+            description: path._description,
+            tags: tagList
         };
         return this.http.put<any>(`${this.app.URL}/path/`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
@@ -35,12 +44,14 @@ export class PathService {
                 this.allPath = [];
                 if (res.json) {
                     res.json.forEach(path => {
-                        this.allPath.push(new PathModel(path.title,
+                        this.allPath.push(new PathModel(
+                            path.title,
                             path.description,
                             path.idCreator,
                             path.pseudo,
                             path.idPath,
-                            new Date(path.date)));
+                            new Date(path.date),
+                            new Array<TagModel>()));
                     });
                     this.allPath.sort((a, b) => {
                         if (a._date > b._date) {
@@ -62,8 +73,15 @@ export class PathService {
     async getOnePath(idPath: string): Promise<any> {
         return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}`).subscribe(
             res => {
-                this.path = new PathModel(res.title, res.description, res.idCreator, res.pseudo, res.idPath, new Date(res.date));
-                if (res.modules) {
+                // TODO : changer
+                this.path = new PathModel(
+                    res.title, res.description,
+                    res.idCreator,
+                    res.pseudo,
+                    res.idPath,
+                    new Date(res.date),
+                    new Array<TagModel>());
+                if (res.modules.length > 0) {
                     res.modules.forEach((module) => {
                         const m = new ModuleModel(res.idPath,
                             module.idCreator,
@@ -77,6 +95,11 @@ export class PathService {
                     });
                     this.path._modules.sort((a, b) => {
                         return a._position - b._position;
+                    });
+                }
+                if (res.tags.length > 0) {
+                    res.tags.forEach(tag => {
+                        this._path.addTag(new TagModel(tag.name));
                     });
                 }
                 resolve(this.path);

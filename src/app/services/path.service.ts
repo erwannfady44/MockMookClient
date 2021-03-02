@@ -44,6 +44,15 @@ export class PathService {
                 this.allPath = [];
                 if (res.json) {
                     res.json.forEach(path => {
+                        const tags = [];
+                        path.tags.forEach(tag => {
+                            if (tag) {
+                                const t = new TagModel(tag.name);
+                                t._idTag = tag._id;
+                                tags.push(t);
+                            }
+                        });
+
                         this.allPath.push(new PathModel(
                             path.title,
                             path.description,
@@ -51,7 +60,8 @@ export class PathService {
                             path.pseudo,
                             path.idPath,
                             new Date(path.date),
-                            new Array<TagModel>()));
+                            tags
+                        ));
                     });
                     this.allPath.sort((a, b) => {
                         if (a._date > b._date) {
@@ -73,7 +83,6 @@ export class PathService {
     async getOnePath(idPath: string): Promise<any> {
         return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}`).subscribe(
             res => {
-                // TODO : changer
                 this.path = new PathModel(
                     res.title, res.description,
                     res.idCreator,
@@ -102,6 +111,7 @@ export class PathService {
                         this._path.addTag(new TagModel(tag.name));
                     });
                 }
+                console.log(this.path);
                 resolve(this.path);
             }, error => {
                 console.log(error.message);

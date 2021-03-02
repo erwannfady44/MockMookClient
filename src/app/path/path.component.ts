@@ -26,7 +26,7 @@ export class PathComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
+        console.log(this.path);
     }
 
     getTime(): string {

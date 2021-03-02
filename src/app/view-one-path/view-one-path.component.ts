@@ -25,6 +25,7 @@ export class ViewOnePathComponent implements OnInit {
 
     async ngOnInit(): Promise<any> {
         await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
+        console.log('ok');
         this.path = this.pathService._path;
         if (this.route.snapshot.queryParamMap.get('edit')) {
             this.edit = true;

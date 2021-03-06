@@ -28,13 +28,15 @@ export class CreatePathComponent implements OnInit {
 
     onSubmit(form: NgForm): void {
         const tags = [];
+        if (this.tags) {
 
-        const tmp = this.tags.replace(' ', '');
-        const t = tmp.split('#');
-        t.splice(0, 1);
-        t.forEach(tag => {
-            tags.push(new TagModel(tag));
-        });
+            const tmp = this.tags.replace(' ', '');
+            const t = tmp.split('#');
+            t.splice(0, 1);
+            t.forEach(tag => {
+                tags.push(new TagModel(tag));
+            });
+        }
 
         this.pathService.createPath(form.value.title, form.value.description, tags)
             .subscribe((res) => {

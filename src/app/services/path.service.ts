@@ -98,7 +98,7 @@ export class PathService {
                             module.title,
                             module.description,
                             module.date);
-                        m._idModule = module.idModule;
+                        m._idModule = module._id;
                         m._position = module.position;
                         this.path.addModule(m);
                     });
@@ -111,7 +111,6 @@ export class PathService {
                         this._path.addTag(new TagModel(tag.name));
                     });
                 }
-                console.log(this.path);
                 resolve(this.path);
             }, error => {
                 console.log(error.message);
@@ -130,7 +129,6 @@ export class PathService {
             idUser: sessionStorage.getItem('idUser'),
             path: this._path
         };
-        console.log(this._path);
         return this.http.post<any>(`${this.app.URL}/path/${this._path._idPath}`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
         });

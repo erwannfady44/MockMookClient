@@ -26,7 +26,6 @@ export class PathComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.path);
     }
 
     getTime(): string {
@@ -56,7 +55,6 @@ export class PathComponent implements OnInit {
     }
 
     addTag(tag: TagModel): void {
-        console.log(this.path._tags);
         this.path._tags.push(tag);
         this.tagList = [];
     }

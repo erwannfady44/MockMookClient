@@ -42,13 +42,15 @@ export class ViewOnePathComponent implements OnInit {
 
     onValidate(): void {
         this.edit = false;
-        this.pathService.editPath().subscribe(
-            res => {
-                console.log(res);
-            }, error => {
-                console.log(error);
-            }
-        );
+        if (this.path !== this.pathService._path) {
+            this.pathService.editPath().subscribe(
+                res => {
+                    console.log(res);
+                }, error => {
+                    console.log(error);
+                }
+            );
+        }
     }
 
     deletePath(): void {

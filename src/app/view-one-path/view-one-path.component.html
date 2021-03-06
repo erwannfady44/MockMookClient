@@ -16,7 +16,7 @@
                     </li>
                 </ol>
 
-                <ol *ngIf="edit" cdkDropList (cdkDropListDropped)="drop($event)">
+                <ol *ngIf="edit" cdkDropList (cdkDropListDropped)="dragAndDrop($event)">
                     <li *ngFor="let module of this.path._modules" cdkDrag>
                         <app-module
                             [module]="module"

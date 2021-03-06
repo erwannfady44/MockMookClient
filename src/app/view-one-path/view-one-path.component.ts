@@ -25,7 +25,6 @@ export class ViewOnePathComponent implements OnInit {
 
     async ngOnInit(): Promise<any> {
         await this.pathService.getOnePath(this.route.snapshot.paramMap.get('idPath'));
-        console.log('ok');
         this.path = this.pathService._path;
         if (this.route.snapshot.queryParamMap.get('edit')) {
             this.edit = true;
@@ -63,6 +62,7 @@ export class ViewOnePathComponent implements OnInit {
     }
 
     onViewOnModule(module: ModuleModel): void {
+        console.log(module);
         this.router.navigate(['path', this.path._idPath, module._idModule]);
     }
 
@@ -71,7 +71,7 @@ export class ViewOnePathComponent implements OnInit {
         this.class = 'unselectable';
     }
 
-    drop(event: CdkDragDrop<string[]>): void {
+    dragAndDrop(event: CdkDragDrop<string[]>): void {
         moveItemInArray(this.path._modules, event.previousIndex, event.currentIndex);
         console.log(this.path._modules);
         let i = 0;

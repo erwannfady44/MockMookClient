@@ -12,6 +12,7 @@ export class AppService {
 
     dateDiff(d1, d2): string {
         const diff2 = {sec: null, min: null, hour: null, day: null};
+        d1 = new Date(d1);
         let tmp2 = d2 - d1;
 
         tmp2 = Math.floor(tmp2 / 1000);

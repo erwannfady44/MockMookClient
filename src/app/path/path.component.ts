@@ -8,7 +8,7 @@ import {TagService} from '../services/tag.service';
 @Component({
     selector: 'app-path',
     templateUrl: './path.component.html',
-    styleUrls: ['./path.component.css']
+    styleUrls: ['./path.component.scss']
 })
 export class PathComponent implements OnInit {
     @Input() path: PathModel;

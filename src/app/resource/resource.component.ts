@@ -5,7 +5,7 @@ import {AppService} from '../services/app.service';
 @Component({
   selector: 'app-resource',
   templateUrl: './resource.component.html',
-  styleUrls: ['./resource.component.css']
+  styleUrls: ['./resource.component.scss']
 })
 export class ResourceComponent implements OnInit {
     @Input() resource: ResourceModel;

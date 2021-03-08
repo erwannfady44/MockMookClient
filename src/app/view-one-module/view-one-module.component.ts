@@ -7,7 +7,7 @@ import {ModuleService} from '../services/module.service';
 @Component({
     selector: 'app-view-one-module',
     templateUrl: './view-one-module.component.html',
-    styleUrls: ['./view-one-module.component.css']
+    styleUrls: ['./view-one-module.component.scss']
 })
 export class ViewOneModuleComponent implements OnInit {
     module: ModuleModel;

@@ -7,7 +7,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
     selector: 'app-view-all-module',
     templateUrl: './view-all-module.component.html',
-    styleUrls: ['./view-all-module.component.css']
+    styleUrls: ['./view-all-module.component.scss']
 })
 export class ViewAllModuleComponent implements OnInit {
     keyWord: any;

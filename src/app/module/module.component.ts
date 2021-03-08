@@ -5,7 +5,7 @@ import {AppService} from '../services/app.service';
 @Component({
     selector: 'app-module',
     templateUrl: './module.component.html',
-    styleUrls: ['./module.component.css']
+    styleUrls: ['./module.component.scss']
 })
 export class ModuleComponent implements OnInit {
     @Input() module: ModuleModel;

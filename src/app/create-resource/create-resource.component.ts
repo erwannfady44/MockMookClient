@@ -8,7 +8,7 @@ import {ResourceModel} from '../model/Resource.model';
 @Component({
     selector: 'app-create-resource',
     templateUrl: './create-resource.component.html',
-    styleUrls: ['./create-resource.component.css']
+    styleUrls: ['./create-resource.component.scss']
 })
 export class CreateResourceComponent implements OnInit {
 

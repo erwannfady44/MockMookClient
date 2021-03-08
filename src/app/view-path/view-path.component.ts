@@ -7,7 +7,7 @@ import {Subscription} from 'rxjs';
 @Component({
     selector: 'app-view-path',
     templateUrl: './view-path.component.html',
-    styleUrls: ['./view-path.component.css']
+    styleUrls: ['./view-path.component.scss']
 })
 export class ViewPathComponent implements OnInit {
     border: {};

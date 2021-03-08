@@ -9,7 +9,7 @@ import {TagService} from '../services/tag.service';
 @Component({
     selector: 'app-create-path',
     templateUrl: './create-path.component.html',
-    styleUrls: ['./create-path.component.css']
+    styleUrls: ['./create-path.component.scss']
 })
 export class CreatePathComponent implements OnInit {
     tags: string;

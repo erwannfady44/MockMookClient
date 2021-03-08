@@ -8,7 +8,7 @@ import {ModuleService} from '../services/module.service';
 @Component({
     selector: 'app-create-class',
     templateUrl: './create-module.component.html',
-    styleUrls: ['./create-module.component.css']
+    styleUrls: ['./create-module.component.scss']
 })
 export class CreateModuleComponent implements OnInit {
 

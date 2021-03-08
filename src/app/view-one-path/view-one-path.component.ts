@@ -9,7 +9,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 @Component({
     selector: 'app-view-one-path',
     templateUrl: './view-one-path.component.html',
-    styleUrls: ['./view-one-path.component.css']
+    styleUrls: ['./view-one-path.component.scss']
 })
 export class ViewOnePathComponent implements OnInit {
     path: PathModel;

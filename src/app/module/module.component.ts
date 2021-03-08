@@ -21,4 +21,10 @@ export class ModuleComponent implements OnInit {
     getTime(): string {
         return this.app.dateDiff(this.module._date, Date.now());
     }
+
+    getPosition(): string {
+        if (this.module._position) {
+            return this.module._position + '.';
+        }
+    }
 }

@@ -1,6 +1,6 @@
 <li *ngIf="this.module">
     <div class="module-head">
-        <h4 *ngIf="!edit">{{this.module._position}}. {{this.module._title}}</h4>
+        <h4 *ngIf="!edit">{{getPosition()}} {{this.module._title}}</h4>
         <label for="title" *ngIf="edit">{{this.module._position}}. </label><input *ngIf="edit" [(ngModel)]="module._title" id="title" type="text" class="form-text" value="{{this.module._title}}">
     </div>
     <div class="module-body">

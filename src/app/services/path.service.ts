@@ -124,10 +124,10 @@ export class PathService {
         return this.http.delete<any>(`${this.app.URL}/path/${idPath}`, {headers: header, params: param});
     }
 
-    editPath(): Observable<any> {
+    editPath(path: PathModel): Observable<any> {
         const params = {
             idUser: sessionStorage.getItem('idUser'),
-            path: this._path
+            path
         };
         return this.http.post<any>(`${this.app.URL}/path/${this._path._idPath}`, params, {
             headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)

@@ -45,6 +45,11 @@ export class CreatePathComponent implements OnInit {
                 this.router.navigate(['']);
             }, error => {
                 this.toastr.error(error.message, 'Erreur');
+                switch (error.status) {
+                    case 401:
+                        this.toastr.error();
+                        this.router.navigate(['/login']);
+                }
             });
     }
 

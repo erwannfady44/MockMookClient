@@ -14,6 +14,7 @@ export class PathModel {
     private modules: Array<ModuleModel>;
     private tags: Array<TagModel>;
 
+
     constructor(title: string,
                 description: string,
                 idCreator: string,
@@ -31,6 +32,9 @@ export class PathModel {
         this.tags = tags;
     }
 
+    static clone(path: PathModel): PathModel {
+        return new PathModel(path._title, path._description, path._description, path._pseudoCreator, path._idPath, path._date, path._tags);
+    }
 
     get _tags(): Array<TagModel> {
         return this.tags;
@@ -95,6 +99,7 @@ export class PathModel {
     set _pseudoCreator(value: string) {
         this.pseudoCreator = value;
     }
+
 
     addModule(module: ModuleModel): void {
         this.modules.push(module);

@@ -54,7 +54,7 @@ export class CreatePathComponent implements OnInit {
     }
 
     async createTag(): Promise<any> {
-        if (this.tags.includes(' ', this.tags.length - 1))  {
+        if (this.tags.includes(' ', this.tags.length - 1)) {
             this.tags += '#';
         }
         const tmp = this.tags.replace(' ', '');

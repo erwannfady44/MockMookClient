@@ -24,6 +24,7 @@ export class CreatePathComponent implements OnInit {
 
     ngOnInit(): void {
         this.pathTag = new Array<TagModel>();
+        this.tags = '#';
     }
 
     onSubmit(form: NgForm): void {
@@ -48,6 +49,9 @@ export class CreatePathComponent implements OnInit {
     }
 
     async createTag(): Promise<any> {
+        if (this.tags.includes(' ', this.tags.length - 1))  {
+            this.tags += '#';
+        }
         const tmp = this.tags.replace(' ', '');
         let t = tmp.split('#');
         const pathTagName = [];

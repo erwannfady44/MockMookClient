@@ -1,28 +1,10 @@
-<div class="card">
-    <article class="card-body ">
-        <h4 class="card-title text-center mb-4 mt-1">Connexion</h4>
-        <hr>
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input class="form-control" name="pseudo" ngModel placeholder="Pseudo" required type="text">
-                </div> <!-- input-group.// -->
-            </div> <!-- form-group// -->
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" name="password" ngModel placeholder="******" required type="password">
-                </div> <!-- input-group.// -->
-            </div> <!-- form-group// -->
-            <div class="form-group">
-                <button [disabled]="form.invalid" class="btn btn-primary btn-block" type="submit">Connexion</button>
-            </div> <!-- form-group// -->
-            <p class="text-center"><a [routerLink]="['/signup']" class="btn">Pas encore inscrit ?</a></p>
+<div class="container">
+    <div class="form">
+        <form class="login-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input type="text" name="pseudo" ngModel placeholder="Username"/>
+            <input type="password" name="password" ngModel placeholder="Password"/>
+            <button [disabled]="form.invalid">Login</button>
+            <p class="message">Not registered? <a [routerLink]="['/signup']">Create an account</a></p>
         </form>
-    </article>
+    </div>
 </div>

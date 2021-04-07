@@ -26,6 +26,13 @@
     font-weight: bold;
 }
 
+.form small {
+    border-radius: 30px;
+    padding: 5px 10px;
+    background: #cbcbcb;
+    margin: 10px;
+}
+
 .form button {
     outline: 0;
     background: #727272;
@@ -37,6 +44,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 15px;
 }
 
 .container {

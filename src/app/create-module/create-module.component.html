@@ -1,12 +1,11 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <div class="form-group">
-        <label for="title">Titre</label>
-        <input class="form-text" id="title" name="title" ngModel required>
+<div class="container">
+    <div class="form">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <label for="title"><i class="fas fa-check-circle"></i>Title</label>
+            <input class="form-text" id="title" name="title" ngModel required>
+            <label for="title"><i class="fas fa-check-circle"></i>Description</label>
+            <input class="form-text" id="description" name="description" ngModel required>
+            <button [disabled]="!form.valid" type="submit">Create module</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="title">Description</label>
-        <input class="form-text" id="description" name="description" ngModel required>
-    </div>
-    <input [disabled]="!form.valid" class="btn btn-primary" type="submit" value="Créer le module">
-</form>
-
+</div>

@@ -2,7 +2,7 @@
   min-width: 366px;
   min-height: 250px;
   max-width: 363px;
-  max-height: 547px;
+  max-height: 546px;
   margin-top: 2em;
   transition: all ease-in-out 0.2s;
   border: 2px solid #DDD;
@@ -10,6 +10,7 @@
   -webkit-box-shadow: 7px 7px 5px 0px #DDD;
   -moz-box-shadow: 7px 7px 5px 0px #DDD;
   box-shadow: 7px 7px 5px 0px #DDD;
+  cursor: pointer;
 }
 .card svg {
   min-width: 362px;

@@ -37,6 +37,7 @@ import {ViewOneModuleComponent} from './view-one-module/view-one-module.componen
 import { ViewOneResourceComponent } from './view-one-resource/view-one-resource.component';
 import { CloneOneModuleComponent } from './clone-one-module/clone-one-module.component';
 import {CdkDragDrop, DragDropModule, moveItemInArray} from '@angular/cdk/drag-drop';
+import { ResourceVideoComponent } from './resource-video/resource-video.component';
 
 export const environment = {
     production: true
@@ -83,7 +84,8 @@ const appRoutes: Routes = [
         AccountComponent,
         ViewOneModuleComponent,
         ViewOneResourceComponent,
-        CloneOneModuleComponent
+        CloneOneModuleComponent,
+        ResourceVideoComponent
     ],
     imports: [
         BrowserModule,

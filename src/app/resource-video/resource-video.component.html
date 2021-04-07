@@ -1,0 +1,16 @@
+<div class="resource-container">
+    <div class="resource-header">
+        <h5>{{this.resource._title}}</h5>
+    </div>
+    <div class="resource-body">
+        <div class="resource-thumbnail">
+            <img src="https://img.youtube.com/vi/{{this.resource._url.substring(17)}}/maxresdefault.jpg">
+        </div>
+        <div class="resource-description">
+            <p>{{this.resource._description}}</p>
+        </div>
+    </div>
+    <div class="resource-footer">
+        <small class="text-muted"><i class="far fa-clock"></i> {{this.getTime()}}</small>
+    </div>
+</div>

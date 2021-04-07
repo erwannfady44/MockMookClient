@@ -3,6 +3,7 @@
     border-radius: 7px;
     background: white;
     list-style-type: none;
+    margin: 2em;
 
     .resource-header {
         padding: .5em 1em;
@@ -23,9 +24,10 @@
         background: white;
         border-radius: 0 0 5px 5px;
         font-family: 'Roboto', sans-serif;
+        height: 75vh;
 
         .resource-thumbnail {
-            width: 50%;
+            width: 60%;
             margin-right: 1em;
 
             img {

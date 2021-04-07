@@ -21,7 +21,6 @@
   background: white;
   border-radius: 0 0 5px 5px;
   font-family: "Roboto", sans-serif;
-  max-height: 265px;
 }
 .resource-container .resource-body .resource-thumbnail {
   width: 50%;

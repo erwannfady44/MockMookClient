@@ -74,4 +74,10 @@
   margin: 0 10px;
 }
 
+input[type=text] {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 /*# sourceMappingURL=path.component.css.map */

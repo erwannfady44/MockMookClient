@@ -33,13 +33,15 @@ export class PathModel {
     }
 
     static clone(path: PathModel): PathModel {
-        return new PathModel(path._title,
+        const p = new PathModel(path._title,
             path._description,
             path._idCreator,
             path._pseudoCreator,
             path._idPath,
             path._date,
             path._tags);
+        p._modules = path._modules;
+        return p;
     }
 
     get _tags(): Array<TagModel> {

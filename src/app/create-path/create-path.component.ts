@@ -65,7 +65,6 @@ export class CreatePathComponent implements OnInit {
 
         t.splice(0, 1);
 
-
         t.forEach(theTag => {
             if (pathTagName.includes(theTag)) {
                 t = t.filter(item => item !== (theTag));

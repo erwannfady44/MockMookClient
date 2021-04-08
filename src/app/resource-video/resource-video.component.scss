@@ -27,12 +27,16 @@
         height: 75vh;
 
         .resource-thumbnail {
-            width: 60%;
+            width: 80%;
             margin-right: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            img {
+            iframe {
+                position: relative;
                 border-radius: 5px;
-                border: 1px solid #DDD;
+                border: 2px solid #DDD;
                 max-width: 100%;
             }
         }

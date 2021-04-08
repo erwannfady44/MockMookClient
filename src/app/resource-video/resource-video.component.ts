@@ -14,6 +14,7 @@ export class ResourceVideoComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log(this.resource._url.substring(17));
     }
 
     getTime(): string {

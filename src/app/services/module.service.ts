@@ -29,12 +29,16 @@ export class ModuleService {
     }
 
     async getOneModule(idPath: string, idModule: string): Promise<any> {
+        // Appel http en get pour récupérer le json
         return new Promise(resolve => this.http.get<any>(`${this.app.URL}/path/${idPath}/${idModule}`).subscribe(
             res => {
+                // Création du nouveau module avec le json renvoyé
                 this.module = new ModuleModel(res.idPath, res.idCreator, res.pseudo, res.title, res.description, res.date);
                 this.module._idModule = res.idModule;
                 this.module._pseudo = res.pseudo;
+                // Ajout des ressources s'il y en a
                 if (res.resources) {
+                    // Pour chaque ressource, on crée une ressource et on l'ajoute au module
                     res.resources.forEach(resource => {
                         const r = new ResourceModel(this.module._idModule,
                             resource.idCreator,
@@ -48,6 +52,7 @@ export class ModuleService {
                         this.module.addResource(r);
                     });
                 }
+                // Renvoie le module
                 resolve(this.module);
             }, error => {
                 console.log(error);
@@ -105,7 +110,10 @@ export class ModuleService {
     deleteModule(module: ModuleModel): Observable<any> {
         const param = new HttpParams().append('idUser', sessionStorage.getItem('idUser'));
         const header = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`);
-        return this.http.delete<any>(`${this.app.URL}/path/${module._idPath}/${module._idModule}`, {headers: header, params: param});
+        return this.http.delete<any>(`${this.app.URL}/path/${module._idPath}/${module._idModule}`, {
+            headers: header,
+            params: param
+        });
 
     }
 

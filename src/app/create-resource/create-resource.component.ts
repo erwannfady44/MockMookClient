@@ -1,3 +1,8 @@
+//
+// ############################################################ Créer Ressource ############################################################
+// Déclaration des méthodes en TypeScript pour le composant création d'une ressource.
+//
+
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -21,6 +26,7 @@ export class CreateResourceComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // fonction qui ajoute une ressouce dans la base de donnée à l'envoi du formulaire
     onSubmit(form: NgForm): void {
         if (!sessionStorage.getItem('token')) {
             this.router.navigate(['login']);

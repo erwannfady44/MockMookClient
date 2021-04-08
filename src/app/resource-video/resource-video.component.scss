@@ -1,3 +1,8 @@
+//
+// ###################################################### Ressource ####################################################
+// Feuille de style pour le composant permettant l'affichage d'une ressource.
+//
+
 .resource-container {
     border: 2px solid #DDD;
     border-radius: 7px;
@@ -42,6 +47,7 @@
         }
 
         .resource-description {
+            margin-top: 3em;
             width: 50%;
             text-align: justify;
             overflow-y: scroll;

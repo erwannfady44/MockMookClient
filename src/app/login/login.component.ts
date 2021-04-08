@@ -1,3 +1,8 @@
+//
+// ############################################################### Connexion ###############################################################
+// Déclaration des méthodes en TypeScript pour la connexion d'un utilisateur.
+//
+
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
@@ -19,6 +24,8 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // fonction permettant de connecter l'utilisateur à l'envoi du formulaire
+    // affichage d'un message si la connexion réussi ou en cas d'erreur sous la forme de Toast.
     onSubmit(form: NgForm): void {
         this.auth.login(form.value.pseudo, form.value.password)
             .subscribe(

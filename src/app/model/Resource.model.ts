@@ -1,3 +1,8 @@
+//
+// ############################################################# Ressource modèle ##########################################################
+// Déclaration du modèle "Ressource" avec ses différentes méthodes. (getters et setters)
+//
+
 import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})

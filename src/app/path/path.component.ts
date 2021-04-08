@@ -1,3 +1,8 @@
+//
+// ############################################################### Parcours ################################################################
+// Déclaration des méthodes en TypeScript pour un parcours.
+//
+
 import {Component, Input, OnInit} from '@angular/core';
 import {PathModel} from '../model/Path.model';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -28,22 +33,26 @@ export class PathComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // fonction retournant le temps écoulé depuis la dernière modification du parcours
     getTime(): string {
         return this.app.dateDiff(this.path._date, Date.now());
     }
 
+    // fonction permettant de déterminer si la souris de l'utilisateur survole le parcours
     mouseEnter(): void {
         if (this.border) {
             this.style = {border: '2px solid #777'};
         }
     }
 
+    // fonction permettant de déterminer si la souris de l'utilisateur ne survole plus le parcours
     mouseLeave(): void {
         if (this.border) {
             this.style = {border: '2px solid #DDD'};
         }
     }
 
+    // fonction permettant de créer un tag
     async createTag(): Promise<any> {
         const tmp = this.tags.replace(' ', '');
         const t = tmp.split('#');
@@ -54,6 +63,7 @@ export class PathComponent implements OnInit {
         }
     }
 
+    // fonction permettant d'ajouter un tag au parcours
     addTag(tag: TagModel): void {
         this.path._tags.push(tag);
         this.tagList = [];

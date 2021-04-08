@@ -1,3 +1,8 @@
+//
+// ############################################################# Module modèle #############################################################
+// Déclaration du modèle "Module" avec ses différentes méthodes. (getters et setters)
+//
+
 import {Injectable} from '@angular/core';
 import {ResourceModel} from './Resource.model';
 
@@ -40,6 +45,7 @@ export class ModuleModel {
         this.position = value;
     }
 
+    // méthode permettant d'ajouter une ressource à un module
     addResource(resource: ResourceModel): void {
         this.resource.push(resource);
     }

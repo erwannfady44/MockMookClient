@@ -1,3 +1,8 @@
+//
+// ############################################################# Tag modèle ###########################################################
+// Déclaration du modèle "Tag" avec ses différentes méthodes. (getters et setters)
+//
+
 import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})

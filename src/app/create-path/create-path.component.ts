@@ -1,3 +1,8 @@
+//
+// ############################################################ Créer Parcours #############################################################
+// Déclaration des méthodes en TypeScript pour le composant création d'un parcours.
+//
+
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
@@ -27,6 +32,7 @@ export class CreatePathComponent implements OnInit {
         this.tags = '#';
     }
 
+    // fonction pour la gestion de l'envoi du formulaire
     onSubmit(form: NgForm): void {
         const tags = [];
         if (this.tags) {
@@ -53,6 +59,7 @@ export class CreatePathComponent implements OnInit {
             });
     }
 
+    // fonction asynchrone permettant de créer un tag
     async createTag(): Promise<any> {
         if (this.tags.includes(' ', this.tags.length - 1)) {
             this.tags += '#';
@@ -83,6 +90,7 @@ export class CreatePathComponent implements OnInit {
         }
     }
 
+    // fonction permettant d'ajouter un tag au parcours
     addTag(tag: TagModel): void {
         this.pathTag.push(tag);
         this.tags = '';

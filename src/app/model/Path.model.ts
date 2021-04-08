@@ -1,3 +1,8 @@
+//
+// ############################################################# Parcours modèle ###########################################################
+// Déclaration du modèle "Parcours" avec ses différentes méthodes. (getters et setters)
+//
+
 import {Injectable} from '@angular/core';
 import {ModuleModel} from './Module.model';
 import {TagModel} from './Tag.model';
@@ -32,6 +37,7 @@ export class PathModel {
         this.tags = tags;
     }
 
+    // fonction statique permettant de cloner un parcours
     static clone(path: PathModel): PathModel {
         const p = new PathModel(path._title,
             path._description,
@@ -108,11 +114,12 @@ export class PathModel {
         this.pseudoCreator = value;
     }
 
-
+    // méthode permettant d'ajouter une module à un parcours
     addModule(module: ModuleModel): void {
         this.modules.push(module);
     }
 
+    // méthode permettant d'ajouter un tag à un parcours
     addTag(tag: TagModel): void {
         this.tags.push(tag);
     }

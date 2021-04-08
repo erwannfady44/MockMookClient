@@ -64,49 +64,4 @@
   background: #777;
 }
 
-.top-nav-right ul{
-    list-style-type: none;
-}
-
-.top-nav-right ul li{
-    float: left;
-    width: 25%;
-    text-align: center;
-    position: relative;
-}
-.dropdown-content ul::after{
-    content: "";
-    display: table;
-    text-align: center;
-}
-
-.top-nav a:hover{
-    color: orange;
-    border-bottom: 2px solid gold;
-}
-
-.sous a{
-    padding: 10px;
-    border-bottom: none;
-}
-.sous a:hover{
-    border-bottom: none;
-    background-color: RGba(200,200,200,0.1);
-}
-.dropdown-content > a::after{
-    content: " ▼";
-    font-size: 12px;
-}
-
-.sous{
-    display: none;
-    box-shadow: 0px 1px 2px #CCC;
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-}
-
-
-
 /*# sourceMappingURL=navbar.component.css.map */

@@ -1,5 +1,5 @@
 //
-// #################################################### Créer Module ######################################################
+// ############################################################# Créer Module ##############################################################
 // Déclaration des méthodes en TypeScript pour le composant création d'un module.
 //
 
@@ -26,6 +26,7 @@ export class CreateModuleComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // fonction pour la gestion de l'envoi du formulaire
     onSubmit(form: NgForm): void {
         if (!sessionStorage.getItem('token')) {
             this.router.navigate(['login']);

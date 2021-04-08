@@ -1,3 +1,8 @@
+//
+// ################################################################ Navbar #################################################################
+// Déclaration des méthodes en TypeScript pour la barre de navigation.
+//
+
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
@@ -16,26 +21,32 @@ export class NavbarComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // fonction pour rediriger vers la page de connexion
     onLogin(): void {
         this.router.navigate(['login']);
     }
 
+    // fonction pour rediriger vers la page d'inscription
     onSignUp(): void {
         this.router.navigate(['signup']);
     }
 
+    // fonction pour rediriger vers la page d'accueil
     onHome(): void {
         this.router.navigate(['']);
     }
 
+    // fonction retournant un boolean permettant de modifier l'affichage si l'utilisateur est connecté
     isConnect(): boolean {
         return !!sessionStorage.getItem('token');
     }
 
+    // fonction retournant le pseudonyme de l'utilisateur connecté
     getPseudo(): string {
         return sessionStorage.getItem('pseudo');
     }
 
+    // fonction permettant de gérer l'affichage du menu déroulant utilisateur
     show(): void {
         console.log(this.hover + '   -   ' + this.userDropDown);
         if (!this.userDropDown) {

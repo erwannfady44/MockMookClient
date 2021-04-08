@@ -1,3 +1,8 @@
+//
+// #################################################### Créer Module ######################################################
+// Déclaration des méthodes en TypeScript pour le composant création d'un module.
+//
+
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ModuleModel} from '../model/Module.model';

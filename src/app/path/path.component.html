@@ -1,18 +1,32 @@
 <div class="{{classList}}" [ngStyle]="this.style" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
-    <svg width="362" height="180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 180" preserveAspectRatio="none"><defs><style type="text/css">#holder_177d43bf56d text { fill:rgba(255,255,255,.75);font-weight:normal;font-family:Helvetica, monospace;font-size:18pt } </style></defs><g id="holder_177d43bf56d"><rect width="362" height="180" fill="#777"></rect><g><text x="134.953125" y="98.1"></text></g></g></svg>
+    <svg width="362" height="180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 180" preserveAspectRatio="none">
+        <defs>
+            <style type="text/css">#holder_177d43bf56d text {
+                fill: rgba(255, 255, 255, .75);
+                font-weight: normal;
+                font-family: Helvetica, monospace;
+                font-size: 18pt
+            } </style>
+        </defs>
+        <g id="holder_177d43bf56d">
+
+            <rect width="362" height="180" fill="#777777"></rect>
+        </g>
+    </svg>
     <div class="card-body">
         <h5 class="card-title" *ngIf="!edit">{{this.path._title}}</h5>
         <input *ngIf="edit" class="card-title" type="text" value="{{this.path._title}}" [(ngModel)]="this.path._title">
         <small *ngFor="let tag of this.path._tags">#{{tag._name}}</small>
         <input type="text" class="form-text" *ngIf="edit" [(ngModel)]="this.tags" (ngModelChange)="createTag()">
-        <div  *ngIf="edit && tagList">
+        <div *ngIf="edit && tagList">
             <small *ngFor="let tag of this.tagList" (click)="addTag(tag)">#{{tag._name}}</small><br>
         </div>
         <p *ngIf="!edit" class="card-text">{{this.path._description}}</p>
         <textarea *ngIf="edit" class="card-text" [(ngModel)]="path._description">{{this.path._description}}</textarea>
     </div>
     <div class="card-footer">
-        <small class="text-muted"><i class="far fa-clock"></i> {{getTime()}}<span><strong><i class="fas fa-user"></i> {{this.path._pseudoCreator}}</strong></span></small>
+        <small class="text-muted"><i class="far fa-clock"></i> {{getTime()}}<span><strong><i
+            class="fas fa-user"></i> {{this.path._pseudoCreator}}</strong></span></small>
     </div>
 </div>
 
